@@ -93,7 +93,7 @@ Most sites have no idea whether AI engines mention them. Here's a free way to fi
 3. For each answer, log three things: Are you mentioned? Are you cited with a link? Who got cited instead?
 4. Count your citation share per engine. That's your baseline.
 
-In our own audits across 50 established sites, the median citation share before any GEO work was 8%. Eight per cent. Most owners assumed it was zero, and a few assumed it was much higher. Both were wrong, which is exactly why you measure instead of guess.
+In our own audits across 50 established sites, the median citation share before any GEO work was 8%. Eight per cent. Most owners assumed it was zero, and a few assumed it was much higher. Both were wrong, which is exactly why you measure instead of guess. That pilot is now a larger, repeatable benchmark — 200+ sites, four engines, refreshed quarterly — and the full method is public: **[The Citation-Share Study](/research/citation-share-study/)**.
 
 Do this once now, then again every quarter. It's the single cheapest visibility signal you can collect, and almost nobody collects it. When you're ready to automate it: **[AI Citation Monitoring: Tools and a DIY Method](/measurement/citation-monitoring/)**.
 
@@ -212,7 +212,7 @@ Digital PR in 2026 is about getting mentioned in the sources answer engines actu
 
 **Ahrefs found that the number of times a brand is mentioned across the web correlated more strongly with its appearance in AI answers than almost any other factor** ([Ahrefs, 2025](https://ahrefs.com/blog/ai-brand-visibility-study/)). Mentions are the currency.
 
-And the best PR asset you own is the original data from Step 3. Journalists don't cover your product update. They cover "median site appears in 8% of AI answers" — a number nobody else has. Run a study, publish the numbers, pitch the finding. One dataset earns mentions for a year. How: **[Digital PR for Citations: Getting Mentioned Where LLMs Are Listening](/distribution/digital-pr/)**.
+And the best PR asset you own is the original data from Step 3. Journalists don't cover your product update. They cover "median site appears in 8% of AI answers" — a number nobody else has. Run a study, publish the numbers, pitch the finding. One dataset earns mentions for a year — which is exactly what **[The Citation-Share Study](/research/citation-share-study/)** is built to do. How to turn it into coverage: **[Digital PR for Citations: Getting Mentioned Where LLMs Are Listening](/distribution/digital-pr/)**.
 
 ### Email: the only channel an answer engine can't intercept
 
