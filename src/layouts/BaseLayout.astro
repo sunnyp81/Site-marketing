@@ -1,0 +1,137 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  datePublished?: Date;
+  dateModified?: Date;
+  path: string;
+  faqs?: { q: string; a: string }[];
+  articleSchema?: boolean;
+}
+
+const {
+  title,
+  description,
+  datePublished,
+  dateModified,
+  path,
+  faqs = [],
+  articleSchema = false,
+} = Astro.props;
+
+const siteUrl = 'https://site.marketing';
+const canonical = new URL(path, siteUrl).toString();
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Sunny Patel',
+  url: siteUrl,
+  sameAs: ['https://www.linkedin.com/in/sunny-patel/'],
+};
+
+const articleJsonLd = articleSchema
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: title,
+      description,
+      author: { '@type': 'Person', name: 'Sunny Patel' },
+      datePublished: datePublished?.toISOString(),
+      dateModified: dateModified?.toISOString(),
+      mainEntityOfPage: canonical,
+    }
+  : null;
+
+const faqSchema =
+  faqs.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+      }
+    : null;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content={articleSchema ? 'article' : 'website'} />
+    <meta property="og:site_name" content="site.marketing" />
+    {dateModified && (
+      <meta property="article:modified_time" content={dateModified.toISOString()} />
+    )}
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    {articleJsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
+    )}
+    {faqSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    )}
+
+    <style>
+      :root {
+        --fg: #111;
+        --muted: #555;
+        --bg: #fff;
+        --accent: #0a5;
+        --rule: #eee;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root { --fg: #eee; --muted: #aaa; --bg: #0b0b0b; --accent: #4ee29a; --rule: #222; }
+      }
+      * { box-sizing: border-box; }
+      html { color-scheme: light dark; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', system-ui, sans-serif;
+        color: var(--fg);
+        background: var(--bg);
+        margin: 0;
+        line-height: 1.65;
+      }
+      main { max-width: 44rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+      header.site { max-width: 44rem; margin: 0 auto; padding: 1.5rem 1.25rem 0; }
+      header.site a { color: var(--fg); text-decoration: none; font-weight: 600; }
+      footer.site { max-width: 44rem; margin: 0 auto; padding: 2rem 1.25rem 3rem; color: var(--muted); font-size: 0.9rem; }
+      h1 { font-size: 2.1rem; line-height: 1.2; margin: 1rem 0 1.5rem; }
+      h2 { margin-top: 2.5rem; font-size: 1.4rem; }
+      h3 { margin-top: 2rem; font-size: 1.1rem; }
+      p, ul, ol { font-size: 1.05rem; }
+      a { color: var(--accent); }
+      hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
+      code { background: var(--rule); padding: 0.1em 0.35em; border-radius: 4px; font-size: 0.95em; }
+      pre { background: var(--rule); padding: 1rem; border-radius: 6px; overflow-x: auto; }
+      table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; display: block; overflow-x: auto; }
+      th, td { text-align: left; padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+      th { font-weight: 600; }
+      blockquote { border-left: 3px solid var(--accent); margin: 1.5rem 0; padding: 0.25rem 1rem; color: var(--muted); }
+      img { max-width: 100%; height: auto; }
+      .meta { color: var(--muted); font-size: 0.9rem; margin: -0.5rem 0 2rem; }
+    </style>
+  </head>
+  <body>
+    <header class="site">
+      <a href="/">site.marketing</a>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site">
+      <p>site.marketing — the operator's manual for marketing an existing website. Written by <a href="https://www.linkedin.com/in/sunny-patel/">Sunny Patel</a>.</p>
+    </footer>
+  </body>
+</html>

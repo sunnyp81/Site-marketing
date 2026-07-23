@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pillars = (await getCollection('pillars', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.dateModified.valueOf() - a.data.dateModified.valueOf());
+---
+<BaseLayout
+  title="site.marketing — the operator's manual for marketing an existing website"
+  description="site.marketing is a resource for marketing a website that already exists. Sequence, not channels. Written by Sunny Patel."
+  path="/"
+>
+  <h1>Marketing a website that already exists.</h1>
+  <p class="meta">By Sunny Patel — 14 years in SEO, specialising in topical authority and entity SEO.</p>
+
+  <p><strong>Most guides tell you how to launch a site. This one is for websites that already exist.</strong></p>
+
+  <p>You have history, indexed pages, and at least one conversion leak you don't know about yet. The order is the strategy: <em>measure, fix, strengthen, amplify</em>. Not a channel buffet.</p>
+
+  <h2>Start here</h2>
+  <ul>
+    {pillars.map((p) => (
+      <li>
+        <a href={`/${p.id}/`}><strong>{p.data.title}</strong></a>
+        <br />
+        <span class="meta">{p.data.description}</span>
+      </li>
+    ))}
+  </ul>
+
+  <h2>What's on this site</h2>
+  <p>A topical map on marketing an existing website, an original citation-share study, cluster pages, glossary, teardowns, and product specs — organised into seven core sections (strategy, search visibility, content ops, technical foundation, CRO, distribution, measurement). Content is in git; the site itself is the case study.</p>
+</BaseLayout>

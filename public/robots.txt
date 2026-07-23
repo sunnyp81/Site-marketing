@@ -1,0 +1,21 @@
+User-agent: GPTBot
+Allow: /
+Disallow: /ops/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /ops/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /ops/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /ops/
+
+User-agent: *
+Allow: /
+Disallow: /ops/
+
+Sitemap: https://site.marketing/sitemap-index.xml

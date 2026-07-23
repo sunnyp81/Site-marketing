@@ -1,10 +1,13 @@
+---
+title: "GEO for Established Websites: How to Get Cited by ChatGPT, Perplexity and Gemini"
+description: "GEO isn't a second retainer. SEO and GEO share 80% of their inputs. Here's the 20% that differs, backed by citation data from a 50-site pilot."
+datePublished: 2026-07-23
+dateModified: 2026-07-23
+section: visibility
+author: sunny
+---
+
 # GEO for Established Websites: How to Get Cited by ChatGPT, Perplexity and Gemini
-
-**Meta title:** GEO for Established Websites: Get Cited by AI Engines
-
-**Meta description:** GEO isn't a second retainer. SEO and GEO share 80% of their inputs. Here's the 20% that differs, backed by citation data from a 50-site pilot.
-
-**Suggested URL slug:** `/visibility/geo/`
 
 <!--
 PRODUCTION NOTES (do not publish this block):

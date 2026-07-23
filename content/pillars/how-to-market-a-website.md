@@ -1,8 +1,13 @@
+---
+title: "How to Market a Website in 2026: The Existing-Site Playbook"
+description: "Marketing a website in 2026 isn't a channel buffet. It's a sequence: measure, fix, strengthen, amplify. The existing-site playbook, in order."
+datePublished: 2026-07-23
+dateModified: 2026-07-23
+section: strategy
+author: sunny
+---
+
 # How to Market a Website in 2026: The Existing-Site Playbook
-
-**Meta description:** Marketing a website in 2026 isn't a channel buffet. It's a sequence: measure, fix, strengthen, amplify. The existing-site playbook, in order.
-
-**Suggested URL slug:** `/how-to-market-a-website/`
 
 <!--
 PRODUCTION NOTES (do not publish this block):
