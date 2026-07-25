@@ -2,7 +2,7 @@
 
 ```markdown
 ---
-title: "The 90-Minute Website Audit — Done For You, £450, No Sales Call"
+title: "The Audit and Action Plan — Done For You, £450, No Sales Call"
 description: "The exact audit method published free at site.marketing, run on your site by the person who wrote it. Fixed price, 5-day turnaround, no discovery call."
 slug: /offers/90-minute-audit
 section: "Website Marketing Strategy"
@@ -15,7 +15,7 @@ sources:
   - label: "site.marketing — Website Marketing Audit: The 90-Minute Framework (the free method this productises)"
     url: "/strategy/audit/"
 faqs:
-  - q: "How long does the 90-minute audit take to deliver?"
+  - q: "How long does the audit and action plan take to deliver?"
     a: "Five business days from the moment your intake form and read-only access land. The audit itself is 90 timed minutes; the write-up, the ranked fix list and the Loom take another three hours on top. You get all of it inside a week, with the timer screenshot attached so you can see the 90 minutes were real."
   - q: "What access do you need from me?"
     a: "Two read-only grants and a form: Google Search Console read-only, GA4 read-only, and a 10-question intake form about your site, your money pages and what you sell. No admin access, no CMS login, no passwords. The confirmation email walks you through granting viewer access in about four minutes."
@@ -49,7 +49,7 @@ content/ops/90-minute-audit-delivery-template.md before launch.
 SCHEMA (Asset A only)
 - Schema: Product + Offer + FAQPage + BreadcrumbList. Author/seller Person schema for Sunny Patel,
   sameAs -> LinkedIn (same @id as /about/, per positioning deck — one @id sitewide).
-  - Product.name = "90-Minute Website Audit". Two Offers under one Product:
+  - Product.name = "Audit and Action Plan". Two Offers under one Product:
       Offer 1: price 950, priceCurrency GBP, availability LimitedAvailability (4 slots/mo).
       Offer 2: price 2400, priceCurrency GBP, name "Audit + Fix Sprint".
     priceValidUntil set to the next price-rise review; see pricing rationale for the trigger.
@@ -114,7 +114,7 @@ DATA CONSISTENCY (locked upstream — do not restate differently)
   "scored the same way" as the paid audit.
 -->
 
-# The 90-Minute Website Audit — Done For You, £450, No Sales Call
+# The Audit and Action Plan — Done For You, £450, No Sales Call
 
 The entire method is free. It's published at [the 90-minute audit framework](/strategy/audit/) — five timed blocks, the six numbers, the fix-list rubric, all of it. Read it. Run it on your own site this afternoon. Nothing on this page is a secret you have to pay to unlock.
 
@@ -149,7 +149,7 @@ Five things I'm not selling you, so nobody's disappointed.
 
 ## Who Runs It
 
-Me. Sunny Patel. I've been in SEO since 2010, these days on topical authority and entity SEO — the two things that decide whether Google and the answer engines actually trust your site.
+Me. Sunny Patel. I've been in SEO since 2010 and built and ranked 40+ sites from scratch, these days on semantic SEO, topical authority and AI search — the things that decide whether Google and the answer engines actually trust your site.
 
 The 8% number you'll see quoted all over this site is mine: I ran the audits myself, 50 established sites, 20 buyer-language prompts each, across ChatGPT, Perplexity and Gemini. Median citation share before any GEO work: **8%**. Not a stat I borrowed. One I collected. Your audit gets scored against that benchmark and the 30% "good" line.
 
@@ -196,7 +196,7 @@ Fewer than 10 of the 15 fixes are things you didn't already know about? Full ref
 
 Two tiers. Both prices are on the page because that's the point of the whole product.
 
-| | **Audit — £450** | **Audit + Fix Sprint — £2,400** |
+| | **Audit and Action Plan — £450** | **Audit + Fix Sprint — £1,200** |
 |---|---|---|
 | The findings document | ✓ | ✓ |
 | The 15 ranked fixes | ✓ | ✓ |
@@ -208,15 +208,15 @@ Two tiers. Both prices are on the page because that's the point of the whole pro
 
 *Tier two is for teams that want to see one fix done properly before they do the other fourteen. It's not implementation — it's one worked example plus two weeks of me on Slack while you ship the rest.*
 
-<!-- STRIPE: embed Payment Link buttons here. Button 1 -> £450 Offer. Button 2 -> £2,400 Offer. -->
+<!-- STRIPE: embed Payment Link buttons here. Button 1 -> £450 Offer. Button 2 -> £1,200 Offer. -->
 
-**[ Book the Audit — £450 ]**  ·  **[ Book Audit + Fix Sprint — £2,400 ]**
+**[ Book the Audit and Action Plan — £450 ]**  ·  **[ Book Audit + Fix Sprint — £1,200 ]**
 
 **4 slots a month.** Solo operator, no juniors, no white-labelling — so when they're gone, they're gone until next month. The scarcity isn't a countdown-timer trick; it's just how many audits one person can do properly.
 
 ## FAQ
 
-### How long does the 90-minute audit take to deliver?
+### How long does the audit and action plan take to deliver?
 
 Five business days from the moment your intake form and read-only access land. The audit itself is 90 timed minutes; the write-up, the ranked fix list and the Loom take another three hours on top. You get all of it inside a week, with the timer screenshot attached so you can see the 90 minutes were real.
 
@@ -240,7 +240,7 @@ No. Tier two adds one page rewritten as a worked example, a 60-day re-score, and
 
 ---
 
-*Written by Sunny Patel — in SEO since 2010, specialising in topical authority and entity SEO. Last updated 23 July 2026. The method this productises is free: [the 90-minute website marketing audit](/strategy/audit/).*
+*Written by Sunny Patel — in SEO since 2010, specialising in semantic SEO, topical authority and AI search. Last updated 23 July 2026. The method this productises is free: [the 90-minute website marketing audit](/strategy/audit/).*
 
 <!-- ============================================================================
      ASSET B — CLIENT-FACING DELIVERY TEMPLATE  (NOINDEX — NEVER SERVED TO READERS)
@@ -251,7 +251,7 @@ No. Tier two adds one page rewritten as a worked example, a 60-day re-score, and
      method so the client can hold the free page and the paid doc side by side.
      ============================================================================ -->
 
-# 90-Minute Website Audit — Findings for {{site}}
+# Audit and Action Plan — Findings for {{site}}
 
 **Site:** {{site}}
 **Audit date:** {{date}}
@@ -380,8 +380,8 @@ prefill {{site}}, six numbers, index counts; the human writes verdict, fixes and
 
 ```markdown
 ---
-title: "Pricing Rationale: The 90-Minute Website Audit (Internal)"
-description: "Why the productised 90-minute audit is priced at £450 / £2,400, why exactly two tiers, why no lite tier, and the price-rise trigger. Internal — not for publication."
+title: "Pricing Rationale: The Audit and Action Plan (Internal)"
+description: "Why the audit and action plan is priced at £450 / £1,200, why exactly two tiers, why no lite tier, and the price-rise trigger. Internal — not for publication."
 slug: /ops/90-minute-audit-pricing-rationale
 type: internal
 noindex: true
@@ -398,7 +398,7 @@ NOT FOR PUBLICATION. INTERNAL PRICING + REVENUE MATH.
 - If /ops/ robots/sitemap exclusion is ever weakened, this file must be moved out of any built collection.
 -->
 
-# Pricing Rationale — 90-Minute Website Audit (Internal)
+# Pricing Rationale — Audit and Action Plan (Internal)
 
 This records why the productised audit is priced the way it is. It is binding on the offer page copy: if a number changes here, the page changes, and vice versa. Internal only.
 
@@ -426,7 +426,7 @@ The page competes on **certainty and speed**, not on being cheap. £450 is cheap
 Two tiers, no more. One is the product; one pays for the month.
 
 - **Tier 1 (£450) is the product.** It's the thing being sold, the thing the free method proves, the thing the guarantee covers.
-- **Tier 2 (£2,400) is the upsell that funds capacity.** Async Slack + 60-day re-score + one worked-example page rewrite. It's not implementation — it's the "show me one done" tier for teams that need to see the pattern before they trust the list.
+- **Tier 2 (£1,200) is the upsell that funds capacity.** Async Slack + 60-day re-score + one worked-example page rewrite. It's not implementation — it's the "show me one done" tier for teams that need to see the pattern before they trust the list.
 
 **Capacity math at 4 slots/month:**
 
@@ -434,7 +434,7 @@ Two tiers, no more. One is the product; one pays for the month.
 |---|---|---|
 | 4 × Tier 1 | £1,800 | £21,600 |
 | 2 × Tier 1 + 1 × Tier 2 (typical) | £3,300 | £39,600 |
-| Full Tier 2 (not the goal) | £9,600 | £115,200 |
+| Full Tier 2 (not the goal) | £4,800 | £57,600 |
 
 The realistic ceiling is **~£39,600/yr solo**, and that's fine — it's deliberately capped. The audit is a proof-of-competence and trust engine for the rest of site.marketing (tooling, larger consulting), not the whole business. Scarcity ("4 slots") is real, not a copy device: it's the actual limit of one person doing them properly.
 
@@ -451,7 +451,7 @@ This is the wedge restated as pricing strategy: the method is free, the doing is
 Fixed, so it's not a judgement call in the moment:
 
 - **Trigger:** two consecutive months sold out (all 4 slots).
-- **Action:** £450 → £1,250 (Tier 1); Tier 2 £2,400 → £2,900. (Not strictly proportional — +32% vs +21% — and doesn't need to be: Tier 1 slots are the constrained resource.)
+- **Action:** £450 → £595 (Tier 1); Tier 2 £1,200 → £1,450. (Not strictly proportional — +32% vs +21% — and doesn't need to be: Tier 1 slots are the constrained resource.)
 - **No grandfathering.** New price applies to the next booking. Fixed-price product; the fixed price is allowed to change, but not per-customer.
 - **Announcement:** to the [email list](/distribution/email/) one week ahead, framed as "slots got scarce, price reflects it" — honest, not FOMO theatre.
 - **Page update:** offer page copy, both Stripe Payment Links, Product/Offer schema `price` and `priceValidUntil`, and the delivery-template benchmark line all update the same day. Single source of truth is this file; the page follows.

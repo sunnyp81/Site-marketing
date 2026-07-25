@@ -317,4 +317,4 @@ Don't start by filling in all four quarters. Start with Q1, and start Q1 with a 
 
 Copy the Q1 block above, then book **[the 90-minute website marketing audit](/strategy/audit/)** this week. Record your six numbers, run the 20-prompt check, find your leaks. Everything else in this template is downstream of knowing where you actually stand. The order is the point, and the order starts with measuring. The full argument for why lives in the pillar: **[How to Market a Website in 2026](/how-to-market-a-website/)**.
 
-*Written by Sunny Patel — in SEO since 2010, specialising in topical authority and entity SEO. Last updated 23 July 2026.*
+*Written by Sunny Patel — in SEO since 2010, specialising in semantic SEO, topical authority and AI search. Last updated 23 July 2026.*

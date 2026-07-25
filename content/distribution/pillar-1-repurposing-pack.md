@@ -695,8 +695,8 @@ Three talking points I can carry a segment on:
 Format: I'm good for 30–60 minutes, remote, and I bring the data
 and the receipts, not talking points a PR person wrote for me.
 
-One line of proof: in SEO since 2010, specialising in topical
-authority and entity SEO.
+One line of proof: in SEO since 2010, specialising in semantic SEO, topical authority
+and AI search.
 ```
 
 > **Adaptation notes.** One-pager for cold or warm podcast outreach. The lead is the *host's* opening line, pre-written — you're doing their prep for them, which is why data-led pitches book. The 8% stat is the currency (50 sites, three-engine pilot — same discipline as everywhere else). This is the pitch mechanics; the full method for turning one dataset into a year of coverage is [Digital PR for Citations](/distribution/digital-pr/): journalists cover "8%", not your product update. Send as plain text in the email body, not a PDF attachment nobody opens.

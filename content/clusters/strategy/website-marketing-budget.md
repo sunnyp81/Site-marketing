@@ -282,4 +282,4 @@ Yes, if the site has passed the Fix stage. Paid multiplies a funnel that already
 
 Don't pick a row from memory — you'll pick the flattering one. Run the **[90-minute website marketing audit](/strategy/audit/)** first, get your six numbers and your citation share, then let the diagnostic tell you which row you're in. Adopt it, copy the table above, and spend against the site you actually have.
 
-*Written by Sunny Patel — in SEO since 2010, specialising in topical authority and entity SEO. Last updated 23 July 2026.*
+*Written by Sunny Patel — in SEO since 2010, specialising in semantic SEO, topical authority and AI search. Last updated 23 July 2026.*

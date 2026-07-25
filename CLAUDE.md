@@ -28,16 +28,30 @@ direct fetches of `sunnypatel.co.uk`, so cross-checks have to go through web sea
 
 ### Open conflicts with sunnypatel.co.uk (unresolved — do not "fix" by guessing)
 
-| Claim in this repo | sunnypatel.co.uk says | Status |
+| Was | Now | Source |
 |---|---|---|
-| ~~"14 years in SEO"~~ → "in SEO since 2010" | "over 15 years" | **Resolved** — owner confirmed 2010 |
-| ~~£950 audit~~ → £450 | £495 fixed audit | **Resolved** — owner set £450 |
-| "topical authority and entity SEO" | "semantic SEO, topical authority, AI search optimisation" | Awaiting owner — "entity SEO" is not language he uses |
-| jobTitle "SEO Consultant" | "SEO Consultant & AI Strategist" | Awaiting owner |
-| Tier 2 upsell at £2,400 | — | Awaiting owner — now 5.3x Tier 1, likely too wide |
-| Product called "The 90-Minute Website Audit" | — | Awaiting owner — he calls it "audit and action plan" |
-| No location stated | Reading, Berkshire | Awaiting owner — missing entity/local signal |
-| "40+ sites built and ranked" not used anywhere | Stated on his site | Unused credibility asset |
+| "14 years in SEO" | "in SEO since 2010" | Owner |
+| £950 audit | £450 | Owner |
+| "topical authority and entity SEO" | "semantic SEO, topical authority and AI search" | sunnypatel.co.uk |
+| jobTitle "SEO Consultant" | "SEO Consultant & AI Strategist" | sunnypatel.co.uk |
+| No location | `address`: Reading, Berkshire, GB | sunnypatel.co.uk |
+| Proof point unused | "built and ranked 40+ sites from scratch" | sunnypatel.co.uk |
+| Product "The 90-Minute Website Audit" | "The Audit and Action Plan" | Owner |
+| Tier 2 £2,400 | £1,200 | **Derived**, not confirmed — preserves the 2.5x ratio the rationale doc argued |
+
+Note: the **free method** at `/strategy/audit/` keeps the "90-Minute Framework" name.
+Only the **paid product** is the "Audit and Action Plan". Don't collapse the two.
+
+### Still open
+
+- **£450 vs the £495 audit already on sunnypatel.co.uk.** Near-identical products,
+  near-identical prices, two domains, one owner. Either differentiate this one on
+  GEO/citation-share specifically, or retire it and point at the existing offer.
+  This is the substantive unresolved question — see the OPEN block in
+  `content/ops/90-minute-audit-pricing-rationale.md`.
+- **£100/hr implied rate** sits below the £150–£300/hr consulting range he publishes.
+  Deliberate loss-leader or padded time estimate — needs a stated position.
+- **Tier 2 at £1,200** is derived, not chosen. Confirm or change.
 
 **If a fact about the owner's real-world identity, accounts, pricing, or credentials
 is not in this table, ask — do not infer it.** Anything that resolves to a real

@@ -32,9 +32,15 @@ const personSchema = {
   '@id': PERSON_ID,
   name: 'Sunny Patel',
   url: siteUrl,
-  jobTitle: 'SEO Consultant',
-  description: 'In SEO since 2010, specialising in topical authority and entity SEO.',
-  knowsAbout: ['SEO', 'Generative Engine Optimization', 'Topical Authority', 'Entity SEO', 'Conversion Rate Optimization'],
+  jobTitle: 'SEO Consultant & AI Strategist',
+  description: 'In SEO since 2010, specialising in semantic SEO, topical authority and AI search. 40+ sites built and ranked from scratch.',
+  knowsAbout: ['SEO', 'Generative Engine Optimization', 'Topical Authority', 'Semantic SEO', 'Entity SEO', 'AI Search Optimisation'],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Reading',
+    addressRegion: 'Berkshire',
+    addressCountry: 'GB',
+  },
   sameAs: [
     'https://www.linkedin.com/in/sunny-patel-co-uk/',
     'https://sunnypatel.co.uk/',
