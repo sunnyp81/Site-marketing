@@ -1,0 +1,36 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('glossary', ({ data }) => !data.draft);
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const definedTermSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTerm',
+  name: entry.data.term,
+  description: entry.data.description,
+  inDefinedTermSet: 'https://site.marketing/glossary/',
+};
+---
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  datePublished={entry.data.datePublished}
+  dateModified={entry.data.dateModified}
+  path={`/glossary/${entry.id}/`}
+  articleSchema
+>
+  <script type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
+  <Content />
+  <hr />
+  <p class="meta"><a href="/glossary/">← back to the glossary</a></p>
+</BaseLayout>

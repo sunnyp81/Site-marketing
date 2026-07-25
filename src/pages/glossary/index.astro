@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const entries = (await getCollection('glossary', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.term.localeCompare(b.data.term));
+---
+<BaseLayout
+  title="Glossary — site.marketing"
+  description="Website marketing terms defined with a stance, not a Wikipedia paraphrase. GEO, AEO, information gain, topical authority, E-E-A-T, and more."
+  path="/glossary/"
+>
+  <h1>Glossary</h1>
+  <p class="meta">Definitions with a stance, and a number in them where one exists. Not Wikipedia paraphrase.</p>
+
+  <ul>
+    {entries.map((e) => (
+      <li>
+        <a href={`/glossary/${e.id}/`}><strong>{e.data.term}</strong></a>
+        <br />
+        <span class="meta">{e.data.description}</span>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>

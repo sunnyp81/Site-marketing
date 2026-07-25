@@ -28,6 +28,14 @@ const pillars = (await getCollection('pillars', ({ data }) => !data.draft))
     ))}
   </ul>
 
+  <h2>Sections</h2>
+  <ul>
+    <li><a href="/strategy/"><strong>Website Marketing Strategy</strong></a> — the operating system: sequencing, budgets, audits, plans</li>
+    <li><a href="/glossary/"><strong>Glossary</strong></a> — definitions with a stance, not Wikipedia paraphrase</li>
+  </ul>
+
   <h2>What's on this site</h2>
   <p>A topical map on marketing an existing website, an original citation-share study, cluster pages, glossary, teardowns, and product specs — organised into seven core sections (strategy, search visibility, content ops, technical foundation, CRO, distribution, measurement). Content is in git; the site itself is the case study.</p>
+
+  <p class="meta"><a href="/rss.xml">RSS</a> · <a href="/sitemap-index.xml">sitemap</a></p>
 </BaseLayout>

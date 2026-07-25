@@ -1,8 +1,14 @@
+---
+title: "Website Marketing Plan Template: Quarter-by-Quarter Sequencing"
+description: "A website marketing plan template built on gates, not Gantt charts: four quarters mapped to Measure, Fix, Strengthen, Amplify — with exit criteria for each."
+slug: /strategy/plan-template
+section: "Website Marketing Strategy"
+cluster: strategy
+datePublished: 2026-07-23
+dateModified: 2026-07-23
+---
+
 # Website Marketing Plan Template: Quarter-by-Quarter Sequencing
-
-**Meta description:** A website marketing plan template built on gates, not Gantt charts: four quarters mapped to Measure, Fix, Strengthen, Amplify — with exit criteria for each.
-
-**Suggested URL slug:** `/strategy/plan-template/`
 
 <!--
 PRODUCTION NOTES (do not publish this block):

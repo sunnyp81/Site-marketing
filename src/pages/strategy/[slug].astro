@@ -1,0 +1,32 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('strategy', ({ data }) => !data.draft);
+  return entries.map((entry) => {
+    // Prefer frontmatter slug's last path segment; fall back to entry.id
+    const slug = entry.data.slug
+      ? entry.data.slug.replace(/^\/|\/$/g, '').split('/').pop()!
+      : entry.id;
+    return { params: { slug }, props: { entry } };
+  });
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const slug = entry.data.slug
+  ? entry.data.slug.replace(/^\/|\/$/g, '').split('/').pop()!
+  : entry.id;
+---
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  datePublished={entry.data.datePublished}
+  dateModified={entry.data.dateModified}
+  path={`/strategy/${slug}/`}
+  faqs={entry.data.faqs}
+  articleSchema
+>
+  <Content />
+</BaseLayout>

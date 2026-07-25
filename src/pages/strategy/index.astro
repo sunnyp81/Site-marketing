@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const entries = (await getCollection('strategy', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+function urlFor(e: typeof entries[number]) {
+  const slug = e.data.slug
+    ? e.data.slug.replace(/^\/|\/$/g, '').split('/').pop()!
+    : e.id;
+  return `/strategy/${slug}/`;
+}
+---
+<BaseLayout
+  title="Website Marketing Strategy — the operator's hub"
+  description="Strategy for marketing a website that already exists: sequence, budgets, audits, plans, and how to decide between SEO, GEO and CRO."
+  path="/strategy/"
+>
+  <h1>Website Marketing Strategy</h1>
+  <p class="meta">The operating system: sequencing, prioritisation, budgets, and audits for an existing site.</p>
+
+  <p>Marketing an existing website is not a channel buffet. It's a sequence: <em>measure, fix, strengthen, amplify</em>. Everything in this section is one of those four moves, or how to decide between them.</p>
+
+  <h2>Start here</h2>
+  <ul>
+    <li><a href="/how-to-market-a-website/"><strong>How to Market a Website in 2026: The Existing-Site Playbook</strong></a> — the section pillar</li>
+  </ul>
+
+  <h2>Cluster pages</h2>
+  <ul>
+    {entries.map((e) => (
+      <li>
+        <a href={urlFor(e)}><strong>{e.data.title}</strong></a>
+        <br />
+        <span class="meta">{e.data.description}</span>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
