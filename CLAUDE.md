@@ -10,8 +10,23 @@ one was confirmed.
 | Fact | Value |
 |---|---|
 | LinkedIn (canonical, used in `sameAs` and every visible link) | `https://www.linkedin.com/in/sunny-patel-co-uk/` |
+| Existing main site (in `sameAs`; authoritative for owner bio facts) | `https://sunnypatel.co.uk/` |
 | Domain | `site.marketing` |
 | Author name | Sunny Patel |
+
+**`sunnypatel.co.uk` outranks this repo on any claim about Sunny himself** — years of
+experience, specialisms, job title, location, pricing. If a claim here contradicts that
+site, that site wins and this one gets corrected. Note the sandbox network policy blocks
+direct fetches of `sunnypatel.co.uk`, so cross-checks have to go through web search.
+
+### Open conflicts with sunnypatel.co.uk (unresolved — do not "fix" by guessing)
+
+| Claim in this repo | sunnypatel.co.uk says | Status |
+|---|---|---|
+| "14 years in SEO" (10+ places incl. Person schema) | "over 15 years" | Awaiting owner |
+| "topical authority and entity SEO" | "semantic SEO, topical authority, AI search optimisation" | Awaiting owner |
+| jobTitle "SEO Consultant" | "SEO Consultant & AI Strategist" | Awaiting owner |
+| 90-minute audit at £950 | £495 fixed full technical/content/AI-visibility audit | Awaiting owner — commercial decision |
 
 **If a fact about the owner's real-world identity, accounts, pricing, or credentials
 is not in this table, ask — do not infer it.** Anything that resolves to a real
