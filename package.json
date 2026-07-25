@@ -7,6 +7,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "verify": "node scripts/verify.mjs",
+    "check": "astro build && node scripts/verify.mjs",
     "astro": "astro"
   },
   "dependencies": {
@@ -14,5 +16,8 @@
     "@astrojs/rss": "^4.0.0",
     "@astrojs/sitemap": "^3.4.0",
     "astro": "^5.14.0"
+  },
+  "devDependencies": {
+    "cheerio": "^1.2.0"
   }
 }
