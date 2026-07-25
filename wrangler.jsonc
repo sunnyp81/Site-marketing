@@ -1,0 +1,37 @@
+{
+  // Deploy site.marketing as a Worker serving static assets.
+  //
+  // Why Workers and not Pages: Pages has a soft cap of 100 projects per
+  // account and rate-limits new project creation. Workers Static Assets has
+  // no such project-creation limit, and it is where Cloudflare is steering
+  // static hosting. Nothing about the site changes — this serves the exact
+  // same `dist/` output that `astro build` already produces.
+  //
+  // There is no adapter and no server code. `assets.directory` is the whole
+  // integration: Wrangler uploads dist/ and serves it from the edge.
+  //
+  //   npx wrangler login       (once)
+  //   npm run deploy           (build + deploy)
+  //
+  // Custom domain is attached in the dashboard afterwards:
+  //   Workers & Pages -> site-marketing -> Settings -> Domains & Routes
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "site-marketing",
+  "compatibility_date": "2026-07-25",
+  "assets": {
+    "directory": "./dist",
+
+    // Astro builds with format:'directory', so every route is <route>/index.html.
+    // auto-trailing-slash serves /strategy/audit/ and /strategy/audit
+    // from the same file rather than 404ing on one of them.
+    "html_handling": "auto-trailing-slash",
+
+    // Astro emits dist/404.html at the root; serve it with a real 404 status
+    // instead of Cloudflare's generic edge error page.
+    "not_found_handling": "404-page"
+  },
+
+  "observability": {
+    "enabled": true
+  }
+}
