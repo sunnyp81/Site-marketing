@@ -695,7 +695,7 @@ Three talking points I can carry a segment on:
 Format: I'm good for 30–60 minutes, remote, and I bring the data
 and the receipts, not talking points a PR person wrote for me.
 
-One line of proof: 14 years in SEO, specialising in topical
+One line of proof: in SEO since 2010, specialising in topical
 authority and entity SEO.
 ```
 

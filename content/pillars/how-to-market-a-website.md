@@ -303,4 +303,4 @@ Run the **[90-minute website marketing audit](/strategy/audit/)**. Baseline your
 
 That's the whole playbook. The order is the point.
 
-*Written by Sunny Patel — 14 years in SEO, specialising in topical authority and entity SEO. Last updated 23 July 2026.*
+*Written by Sunny Patel — in SEO since 2010, specialising in topical authority and entity SEO. Last updated 23 July 2026.*

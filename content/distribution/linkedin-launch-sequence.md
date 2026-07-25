@@ -28,7 +28,7 @@ This sequence's whole wedge is "check our work," so the claims and links were ve
 | `/strategy/audit/` | **Live** | `content/clusters/strategy/website-marketing-audit.md`, slug `/strategy/audit`. Free method + checklist. |
 | `/research/citation-share-study` | **Live** | Methodology page. Used to source the 8% provenance. |
 | `/visibility/geo/` | **Live** | GEO pillar. Reply ammo only, not a scheduled link. |
-| `/offers/90-minute-audit` | **Live — but cut from the sequence** | The £950 done-for-you page. Posting a paid personal-brand offer from Sunny's feed fails the employer-safe / no-side-hustle rule, so it never appears in a post or first comment. Reply-only, and only if someone explicitly asks to have it run for them. |
+| `/offers/90-minute-audit` | **Live — but cut from the sequence** | The £450 done-for-you page. Posting a paid personal-brand offer from Sunny's feed fails the employer-safe / no-side-hustle rule, so it never appears in a post or first comment. Reply-only, and only if someone explicitly asks to have it run for them. |
 | `/measurement/citation-monitoring/` | **CUT** | The only matching file (`content/ops/measurement-and-citation-monitoring-setup.md`) is `noindex`, internal. Not a public URL. Post 5's secondary link repointed to the methodology page instead. |
 | `/teardowns/zapier` | **NOT publishable** | Teardown draft carries a live pre-publish gate: three of six scores provisional, first-party crawl blocked (403), right-of-reply not sent. **Hard dependency for post 3.** See the Day 5 dependency gate below. |
 

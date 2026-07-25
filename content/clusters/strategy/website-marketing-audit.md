@@ -277,4 +277,4 @@ Scope. A **technical SEO audit**<!-- relink: /technical/audit/ --> goes deep on 
 
 Block 90 minutes tomorrow morning before standup, **copy the free checklist**<!-- relink: /audit-checklist/ -->, and run it. Five blocks, one timer, one ordered fix list at the end. You'll arrive at the "fix" step of the [website marketing playbook](/how-to-market-a-website/) with a top-ten in hand instead of a 200-row spreadsheet you'll never finish. That's the point. Start the clock.
 
-*Written by Sunny Patel — 14 years in SEO, specialising in topical authority and entity SEO. Last updated 23 July 2026.*
+*Written by Sunny Patel — in SEO since 2010, specialising in topical authority and entity SEO. Last updated 23 July 2026.*

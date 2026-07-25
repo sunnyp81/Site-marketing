@@ -371,4 +371,4 @@ Don't sign a GEO retainer today. Run the 20-prompt audit first — 30 minutes, t
 
 Then run the full [90-minute website marketing audit](/strategy/audit/) to see where GEO sits against everything else competing for your budget. Measure, then decide. Never the other way round.
 
-*Written by Sunny Patel — 14 years in SEO, specialising in topical authority and entity SEO. Last updated 23 July 2026.*
+*Written by Sunny Patel — in SEO since 2010, specialising in topical authority and entity SEO. Last updated 23 July 2026.*

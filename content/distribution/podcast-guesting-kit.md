@@ -165,7 +165,7 @@ Sunny
 | Line 1 — the finding | Leads with the defensible original data (8%, 50 sites, 3 engines, 20-prompt method) — earns the read in one sentence |
 | Line 2 — why *this* show | The `{{episode}}` merge proves you listened; it is the anti-spam signal and the fit argument in one line |
 | Lines 3–5 — three defensible beats | The three §5 angles, previewed so a producer sees the segment already built |
-| Line 6 — one-line credential | The study, not the résumé — "it's my data" beats "I have 14 years' experience" |
+| Line 6 — one-line credential | The study, not the résumé — "it's my data" beats "I've been doing this since 2010" |
 | CTA — a single yes/no question | One decision, one recording, no calendar-link friction |
 
 ### Hard rules (non-negotiable)

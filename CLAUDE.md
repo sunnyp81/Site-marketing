@@ -13,6 +13,13 @@ one was confirmed.
 | Existing main site (in `sameAs`; authoritative for owner bio facts) | `https://sunnypatel.co.uk/` |
 | Domain | `site.marketing` |
 | Author name | Sunny Patel |
+| Started in SEO | **2010** |
+| Productised audit price | **£450** — "audit and action plan" |
+
+**Write experience as "in SEO since 2010", never as a running year count.** A count
+goes stale every January and this site's own thesis is about content decay. The repo
+previously claimed "14 years" in 19 places, which was wrong in both directions —
+invented, and destined to rot.
 
 **`sunnypatel.co.uk` outranks this repo on any claim about Sunny himself** — years of
 experience, specialisms, job title, location, pricing. If a claim here contradicts that
@@ -23,10 +30,14 @@ direct fetches of `sunnypatel.co.uk`, so cross-checks have to go through web sea
 
 | Claim in this repo | sunnypatel.co.uk says | Status |
 |---|---|---|
-| "14 years in SEO" (10+ places incl. Person schema) | "over 15 years" | Awaiting owner |
-| "topical authority and entity SEO" | "semantic SEO, topical authority, AI search optimisation" | Awaiting owner |
+| ~~"14 years in SEO"~~ → "in SEO since 2010" | "over 15 years" | **Resolved** — owner confirmed 2010 |
+| ~~£950 audit~~ → £450 | £495 fixed audit | **Resolved** — owner set £450 |
+| "topical authority and entity SEO" | "semantic SEO, topical authority, AI search optimisation" | Awaiting owner — "entity SEO" is not language he uses |
 | jobTitle "SEO Consultant" | "SEO Consultant & AI Strategist" | Awaiting owner |
-| 90-minute audit at £950 | £495 fixed full technical/content/AI-visibility audit | Awaiting owner — commercial decision |
+| Tier 2 upsell at £2,400 | — | Awaiting owner — now 5.3x Tier 1, likely too wide |
+| Product called "The 90-Minute Website Audit" | — | Awaiting owner — he calls it "audit and action plan" |
+| No location stated | Reading, Berkshire | Awaiting owner — missing entity/local signal |
+| "40+ sites built and ranked" not used anywhere | Stated on his site | Unused credibility asset |
 
 **If a fact about the owner's real-world identity, accounts, pricing, or credentials
 is not in this table, ask — do not infer it.** Anything that resolves to a real

@@ -204,4 +204,4 @@ Allocate by your site's stage, not by splitting a pie three ways. A leaking site
 
 Don't split your quarter three ways at 33% each — that's how all three move slowly and none of them proves anything. Run the **[90-minute audit](/strategy/audit/)**, find your state, and commit one lane for 90 days. Then map the full sequence across the year with the **[plan template](/strategy/plan-template/)** and re-run the rule. The order is the strategy. Pick the lane.
 
-*Written by Sunny Patel — 14 years in SEO, specialising in topical authority and entity SEO. Last updated 23 July 2026.*
+*Written by Sunny Patel — in SEO since 2010, specialising in topical authority and entity SEO. Last updated 23 July 2026.*

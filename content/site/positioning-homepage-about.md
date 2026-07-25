@@ -88,7 +88,7 @@ This is the other kind of guide. It assumes your site exists and gets to work.
 
 No logo wall. Three numbers instead.
 
-| 8% | 14 years | 4 steps |
+| 8% | since 2010 | 4 steps |
 |---|---|---|
 | Median AI citation share across our 50-site, 20-prompt audit. Original data nobody else has. | Sunny's time in SEO. Long enough to have deleted things on purpose. | The entire method. Not twenty-one. Four. |
 
@@ -138,7 +138,7 @@ No website builders. No "start a blog". If your site doesn't exist yet, we can't
 <!--
 FRONT-MATTER
 title: About site.marketing (and Sunny) | site.marketing
-meta_description: site.marketing is written by Sunny Patel — 14 years in SEO, topical authority and entity SEO. One author, one method, no academy.
+meta_description: site.marketing is written by Sunny Patel — in SEO since 2010, topical authority and entity SEO. One author, one method, no academy.
 slug: /about/
 -->
 
@@ -167,7 +167,7 @@ So I do. That's the gap, and this site owns it: the existing-site angle, treated
 
 ### 2.2 Who Writes This
 
-I'm Sunny Patel. I've spent 14 years in SEO, and these days I specialise in topical authority and entity SEO — the two things that decide whether Google and the answer engines actually trust your site.
+I'm Sunny Patel. I've been in SEO since 2010, and these days I specialise in topical authority and entity SEO — the two things that decide whether Google and the answer engines actually trust your site.
 
 I've deleted 400 pages from a client's site and watched the traffic climb. I've argued with founders who wanted to buy ads for a funnel that leaked at every seam. Most of what's on this site is a lesson I learned the expensive way, so you don't have to.
 
@@ -196,7 +196,7 @@ OUT OF SCOPE: JSON-LD code generation, headshot production, LinkedIn profile edi
 - `name`: "Sunny Patel"
 - `jobTitle`: "SEO Consultant"
 - `knowsAbout`: ["SEO", "Generative Engine Optimization", "Topical Authority", "Entity SEO", "Conversion Rate Optimization"]
-- `description`: "14 years in SEO, specialising in topical authority and entity SEO."
+- `description`: "in SEO since 2010, specialising in topical authority and entity SEO."
 - `sameAs`: 2–3 links maximum, only profiles Sunny actively posts to. Two live links beat eight stale ones.
   - LinkedIn (PRIMARY): `https://www.linkedin.com/in/sunny-patel-co-uk/` — the one canonical value. Must be byte-identical in the pillar's Person schema, this page's visible "Connect on LinkedIn" link, the 90-minute-audit offer page, and every future `sameAs`.
   - X/Twitter (confirm handle with Sunny before implementation; omit if inactive)
