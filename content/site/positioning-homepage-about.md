@@ -173,7 +173,7 @@ I've deleted 400 pages from a client's site and watched the traffic climb. I've 
 
 The 8% number you'll see everywhere here is mine. I ran the audits myself — 50 established sites, 20 buyer-language prompts each, across ChatGPT, Perplexity and Gemini. Median citation share before any GEO work: 8%. Not a stat I borrowed. One I collected, and [the full method is public](/research/citation-share-study/).
 
-Byline convention, so you always know who's talking: anything in this voice — first person, dry, opinionated — is written by me. Neutral reference pages (definitions, specs) are labelled as such. [Connect on LinkedIn](https://www.linkedin.com/in/sunny-patel-seo/).
+Byline convention, so you always know who's talking: anything in this voice — first person, dry, opinionated — is written by me. Neutral reference pages (definitions, specs) are labelled as such. [Connect on LinkedIn](https://www.linkedin.com/in/sunny-patel-co-uk/).
 
 <!-- HEADSHOT alt text: "Sunny Patel, SEO consultant and author of site.marketing" -->
 
@@ -198,7 +198,7 @@ OUT OF SCOPE: JSON-LD code generation, headshot production, LinkedIn profile edi
 - `knowsAbout`: ["SEO", "Generative Engine Optimization", "Topical Authority", "Entity SEO", "Conversion Rate Optimization"]
 - `description`: "14 years in SEO, specialising in topical authority and entity SEO."
 - `sameAs`: 2–3 links maximum, only profiles Sunny actively posts to. Two live links beat eight stale ones.
-  - LinkedIn (PRIMARY): `https://www.linkedin.com/in/sunny-patel-seo/` — the one canonical value. Must be byte-identical in the pillar's Person schema, this page's visible "Connect on LinkedIn" link, the 90-minute-audit offer page, and every future `sameAs`.
+  - LinkedIn (PRIMARY): `https://www.linkedin.com/in/sunny-patel-co-uk/` — the one canonical value. Must be byte-identical in the pillar's Person schema, this page's visible "Connect on LinkedIn" link, the 90-minute-audit offer page, and every future `sameAs`.
   - X/Twitter (confirm handle with Sunny before implementation; omit if inactive)
   - GitHub (include only if the profile is live and active; omit otherwise)
 

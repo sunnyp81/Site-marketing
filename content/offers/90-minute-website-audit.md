@@ -153,7 +153,7 @@ Me. Sunny Patel. I've spent 14 years in SEO, these days on topical authority and
 
 The 8% number you'll see quoted all over this site is mine: I ran the audits myself, 50 established sites, 20 buyer-language prompts each, across ChatGPT, Perplexity and Gemini. Median citation share before any GEO work: **8%**. Not a stat I borrowed. One I collected. Your audit gets scored against that benchmark and the 30% "good" line.
 
-No juniors, no white-label, no "our team of specialists". One named human with mileage runs your audit start to finish. [Here's my LinkedIn](https://www.linkedin.com/in/sunny-patel-seo/) if you want to check the mileage is real.
+No juniors, no white-label, no "our team of specialists". One named human with mileage runs your audit start to finish. [Here's my LinkedIn](https://www.linkedin.com/in/sunny-patel-co-uk/) if you want to check the mileage is real.
 
 **You're not paying for 90 minutes of my time.** The audit is 90 timed minutes; writing it up properly takes another three hours. You're paying for the fourteen years that make 90 minutes enough.
 
