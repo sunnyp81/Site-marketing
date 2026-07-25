@@ -1,6 +1,6 @@
 ---
 title: "E-E-A-T"
-description: "E-E-A-T stands for Experience, Expertise, Authoritativeness, and Trust — the framework in Google's Search Quality Rater Guidelines used to assess content quality. It is not a ranking…"
+description: "E-E-A-T is Experience, Expertise, Authoritativeness and Trust — the framework in Google's quality rater guidelines. Evidence to show, not a score to chase."
 term: "E-E-A-T"
 datePublished: 2026-07-23
 dateModified: 2026-07-23
@@ -23,4 +23,4 @@ Anyone selling you an "E-E-A-T optimization package" is selling you a score that
 | Trust | Accurate, current, safe | Visible `dateModified` + real citations and contact |
 
 **Related:** [Information gain](/glossary/information-gain/) · [GEO](/glossary/geo/)
-**Read up:** [How AI Answer Engines Choose Citations](/visibility/citations/) · [Information Gain: Pages LLMs Can't Paraphrase](/content/information-gain/) · [How to Market a Website in 2026](/how-to-market-a-website/) <!-- all LIVE day one; citations + information-gain slugs [PROVISIONAL]. Natural parent = Entity & Brand Building (Outer Section 3, e.g. /brand/entity-building/) [PHASE-2] — wire when Section 6/brand ships. -->
+**Read up:** **How AI Answer Engines Choose Citations**<!-- relink: /visibility/citations/ --> · **Information Gain: Pages LLMs Can't Paraphrase**<!-- relink: /content/information-gain/ --> · [How to Market a Website in 2026](/how-to-market-a-website/) <!-- all LIVE day one; citations + information-gain slugs [PROVISIONAL]. Natural parent = Entity & Brand Building (Outer Section 3, e.g. /brand/entity-building/) [PHASE-2] — wire when Section 6/brand ships. -->

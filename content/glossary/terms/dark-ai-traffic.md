@@ -1,6 +1,6 @@
 ---
 title: "Dark AI traffic"
-description: "Dark AI traffic is website traffic and influence that originates from AI assistants but arrives without referrer data, so analytics misattributes it to the direct or none channel. It…"
+description: "Dark AI traffic is AI-driven visits that arrive without referrer data, so analytics files them under direct. What it hides and how to measure it."
 term: "Dark AI traffic"
 datePublished: 2026-07-23
 dateModified: 2026-07-23
@@ -22,4 +22,4 @@ Your "direct" traffic is lying to you. A chunk of it is people who read about yo
 | Organic down, revenue flat or up | AI-referred visitors arrived pre-sold and converted | Run a 20-prompt citation audit quarterly |
 
 **Related:** [GEO](/glossary/geo/) · [Crawl budget](/glossary/crawl-budget/)
-**Read up:** [How to Market a Website in 2026 — Step 1: Measure](/how-to-market-a-website/) · [Measurement & Attribution](/measurement/) <!-- pillar + section ROOT are LIVE day one. Deep parents /measurement/ai-traffic/ (Tracking AI Traffic) and /measurement/citation-monitoring/ are [PHASE-2] — Section 7 not in the day-one batch; wire when it ships. -->
+**Read up:** [How to Market a Website in 2026 — Step 1: Measure](/how-to-market-a-website/) · **Measurement & Attribution**<!-- relink: /measurement/ --> <!-- pillar + section ROOT are LIVE day one. Deep parents /measurement/ai-traffic/ (Tracking AI Traffic) and /measurement/citation-monitoring/ are [PHASE-2] — Section 7 not in the day-one batch; wire when it ships. -->

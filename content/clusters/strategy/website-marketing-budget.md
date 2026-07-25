@@ -121,7 +121,7 @@ flowchart TD
     D -->|No| G[AMPLIFY]
 ```
 
-Run the questions honestly and you'll land on exactly one row. To do them properly you need the numbers first: the **[90-minute website marketing audit](/strategy/audit/)** gives you the baseline and the money-page check, the **[technical SEO audit](/technical/audit/)** surfaces the fires, and the **[CRO audit](/conversion/audit/)** tells you which money pages leak. Do the audit, then pick your row.
+Run the questions honestly and you'll land on exactly one row. To do them properly you need the numbers first: the **[90-minute website marketing audit](/strategy/audit/)** gives you the baseline and the money-page check, the **technical SEO audit**<!-- relink: /technical/audit/ --> surfaces the fires, and the **CRO audit**<!-- relink: /conversion/audit/ --> tells you which money pages leak. Do the audit, then pick your row.
 
 ---
 
@@ -142,7 +142,7 @@ Here's the asset nobody else publishes: budget ratios keyed to your site's stage
 
 *³ The 10% Amplify bucket in the Fix row is owned-channel maintenance only — emailing the list you already have, keeping earned mentions warm. Zero net-new paid acquisition goes to a site that still leaks; that's the subsidy-for-a-broken-funnel mistake the playbook warns about. Paid scales in Amplify, once the funnel is proven.*
 
-What the fixed 10% measurement line actually buys: **[AI traffic tracking](/measurement/ai-traffic/)** so you can see the referrals GA4 undercounts, and **[citation monitoring](/measurement/citation-monitoring/)** so your citation-share number stays honest quarter to quarter. Those two are how you know when to change rows.
+What the fixed 10% measurement line actually buys: **AI traffic tracking**<!-- relink: /measurement/ai-traffic/ --> so you can see the referrals GA4 undercounts, and **citation monitoring**<!-- relink: /measurement/citation-monitoring/ --> so your citation-share number stays honest quarter to quarter. Those two are how you know when to change rows.
 
 ---
 
@@ -208,7 +208,7 @@ The site converts, it's cited, the content inventory is clean. Now the money goe
 | Retargeting + paid to warm audiences | 20,250 | Amplify | Warm only — proven funnel |
 | **Total** | **145,000** | — | — |
 
-One caveat that keeps this table credible: the $65,250 Amplify bucket is the *website-marketing* distribution slice — brand PR, email, and retargeting that compound your owned visibility. It is **not** an ecommerce operator's full performance-media or blended-CAC budget. Prospecting paid, marketplace fees, and channel scaling live outside this 7% line — that's a separate discipline with its own budget. Don't read ~3% of revenue on distribution as "all the paid an ecommerce site runs." It isn't. Build the distribution engine here: **[digital PR](/distribution/digital-pr/)** and the **[email moat](/distribution/email-moat/)**, fed by a clean **[content inventory](/content/audit/)**. *What changes the row: a new money-page leak or a failed technical audit snaps it straight back to Fix — even a $25M site amplifying a leak is a subsidy for a broken funnel.*
+One caveat that keeps this table credible: the $65,250 Amplify bucket is the *website-marketing* distribution slice — brand PR, email, and retargeting that compound your owned visibility. It is **not** an ecommerce operator's full performance-media or blended-CAC budget. Prospecting paid, marketplace fees, and channel scaling live outside this 7% line — that's a separate discipline with its own budget. Don't read ~3% of revenue on distribution as "all the paid an ecommerce site runs." It isn't. Build the distribution engine here: **digital PR**<!-- relink: /distribution/digital-pr/ --> and the **email moat**<!-- relink: /distribution/email-moat/ -->, fed by a clean **content inventory**<!-- relink: /content/audit/ -->. *What changes the row: a new money-page leak or a failed technical audit snaps it straight back to Fix — even a $25M site amplifying a leak is a subsidy for a broken funnel.*
 
 ---
 

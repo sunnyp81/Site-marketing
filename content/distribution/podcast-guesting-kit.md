@@ -55,7 +55,7 @@ The currency of this kit is a number, not a bio. Every pitch leads with the 8% p
 
 **One guest spot = four assets, in one hour of effort:** (1) an audio mention in front of a borrowed audience, (2) a show-notes backlink from an indexed page, (3) a transcript you re-host as canonical text LLMs can retrieve, and (4) repurposing feedstock (clips, quotes, a newsletter issue). Producing your own episode buys you one asset for roughly eight times the effort.
 
-The mechanism is earned mentions. **Ahrefs found the number of times a brand is mentioned across the web correlated more strongly with its appearance in AI answers than almost any other factor** ([Ahrefs, 2025](https://ahrefs.com/blog/ai-brand-visibility-study/)). Guesting manufactures mentions in sources the models read — which is the whole point of [digital PR for citations](/distribution/digital-pr/).
+The mechanism is earned mentions. **Ahrefs found the number of times a brand is mentioned across the web correlated more strongly with its appearance in AI answers than almost any other factor** ([Ahrefs, 2025](https://ahrefs.com/blog/ai-overview-brand-correlation/)). Guesting manufactures mentions in sources the models read — which is the whole point of [digital PR for citations](/distribution/digital-pr/).
 
 > **Prerequisite — you need the number before you pitch.** The entire pitch engine is "your 8% stat." If Sunny is pitching site.marketing's own data, it exists. Anyone reusing this kit for a client must run the 20-prompt audit first, or the template has nothing to lead with: **[the 90-minute audit / 20-prompt method](/strategy/audit/)**. No original data, no pitch — a bio pitch converts at the under-5% rate this kit assumes (working target, §4).
 

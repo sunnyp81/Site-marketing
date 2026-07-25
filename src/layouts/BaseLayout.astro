@@ -7,6 +7,7 @@ export interface Props {
   path: string;
   faqs?: { q: string; a: string }[];
   articleSchema?: boolean;
+  ogImage?: string;
 }
 
 const {
@@ -17,17 +18,24 @@ const {
   path,
   faqs = [],
   articleSchema = false,
+  ogImage = '/images/og-default.png',
 } = Astro.props;
 
 const siteUrl = 'https://site.marketing';
 const canonical = new URL(path, siteUrl).toString();
+const ogImageAbsoluteUrl = new URL(ogImage, siteUrl).toString();
 
+const PERSON_ID = 'https://site.marketing/#sunny-patel';
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': PERSON_ID,
   name: 'Sunny Patel',
   url: siteUrl,
-  sameAs: ['https://www.linkedin.com/in/sunny-patel/'],
+  jobTitle: 'SEO Consultant',
+  description: '14 years in SEO, specialising in topical authority and entity SEO.',
+  knowsAbout: ['SEO', 'Generative Engine Optimization', 'Topical Authority', 'Entity SEO', 'Conversion Rate Optimization'],
+  sameAs: ['https://www.linkedin.com/in/sunny-patel-seo/'],
 };
 
 const articleJsonLd = articleSchema
@@ -36,12 +44,57 @@ const articleJsonLd = articleSchema
       '@type': 'Article',
       headline: title,
       description,
-      author: { '@type': 'Person', name: 'Sunny Patel' },
+      author: { '@id': PERSON_ID },
+      publisher: { '@id': PERSON_ID },
+      image: [ogImageAbsoluteUrl],
       datePublished: datePublished?.toISOString(),
       dateModified: dateModified?.toISOString(),
       mainEntityOfPage: canonical,
     }
   : null;
+
+const HUBS: Record<string, string> = {
+  strategy: 'Website Marketing Strategy',
+  visibility: 'Search Visibility',
+  glossary: 'Glossary',
+};
+
+let breadcrumbSchema: Record<string, unknown> | null = null;
+if (path !== '/' && path !== '/404/') {
+  const segments = path.split('/').filter(Boolean);
+  const items: Record<string, unknown>[] = [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+  ];
+  const first = segments[0];
+  if (segments.length > 1 && first in HUBS) {
+    items.push({
+      '@type': 'ListItem',
+      position: items.length + 1,
+      name: HUBS[first],
+      item: `${siteUrl}/${first}/`,
+    });
+  }
+  items.push({ '@type': 'ListItem', position: items.length + 1, name: title });
+  breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items,
+  };
+}
+
+const organizationSchema =
+  path === '/'
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        '@id': 'https://site.marketing/#organization',
+        name: 'site.marketing',
+        url: 'https://site.marketing/',
+        logo: 'https://site.marketing/favicon.svg',
+        image: ogImageAbsoluteUrl,
+        founder: { '@id': PERSON_ID },
+      }
+    : null;
 
 const faqSchema =
   faqs.length > 0
@@ -64,18 +117,30 @@ const faqSchema =
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content={articleSchema ? 'article' : 'website'} />
     <meta property="og:site_name" content="site.marketing" />
+    <meta property="og:image" content={ogImageAbsoluteUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="site.marketing — the operator's manual for marketing an existing website." />
     {dateModified && (
       <meta property="article:modified_time" content={dateModified.toISOString()} />
     )}
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImageAbsoluteUrl} />
 
     <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    {organizationSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    )}
+    {breadcrumbSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    )}
     {articleJsonLd && (
       <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
     )}
@@ -88,7 +153,7 @@ const faqSchema =
         --fg: #111;
         --muted: #555;
         --bg: #fff;
-        --accent: #0a5;
+        --accent: #007a3d;
         --rule: #eee;
       }
       @media (prefers-color-scheme: dark) {
@@ -115,7 +180,8 @@ const faqSchema =
       hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
       code { background: var(--rule); padding: 0.1em 0.35em; border-radius: 4px; font-size: 0.95em; }
       pre { background: var(--rule); padding: 1rem; border-radius: 6px; overflow-x: auto; }
-      table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; display: block; overflow-x: auto; }
+      table { width: 100%; border-collapse: collapse; }
+      .table-scroll { overflow-x: auto; margin: 1.25rem 0; }
       th, td { text-align: left; padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
       th { font-weight: 600; }
       blockquote { border-left: 3px solid var(--accent); margin: 1.5rem 0; padding: 0.25rem 1rem; color: var(--muted); }
@@ -129,9 +195,12 @@ const faqSchema =
     </header>
     <main>
       <slot />
+      {articleSchema && dateModified && (
+        <p class="meta">Last updated: {dateModified.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+      )}
     </main>
     <footer class="site">
-      <p>site.marketing — the operator's manual for marketing an existing website. Written by <a href="https://www.linkedin.com/in/sunny-patel/">Sunny Patel</a>.</p>
+      <p>site.marketing — the operator's manual for marketing an existing website. Written by <a href="https://www.linkedin.com/in/sunny-patel-seo/">Sunny Patel</a>.</p>
     </footer>
   </body>
 </html>

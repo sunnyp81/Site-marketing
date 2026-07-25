@@ -1,6 +1,6 @@
 ---
 title: "GEO (Generative Engine Optimization)"
-description: "Generative Engine Optimization (GEO) is the practice of structuring a website so generative AI engines — ChatGPT, Perplexity, Gemini, and Google's AI Overviews — retrieve and cite its…"
+description: "Generative Engine Optimization (GEO) is structuring a website so AI engines — ChatGPT, Perplexity, Gemini — retrieve and cite its pages in their answers."
 term: "GEO"
 datePublished: 2026-07-23
 dateModified: 2026-07-23

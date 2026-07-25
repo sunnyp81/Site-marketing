@@ -1,5 +1,5 @@
 ---
-title: "Website Marketing Plan Template: Quarter-by-Quarter Sequencing"
+title: "Website Marketing Plan Template: Quarterly, Gated"
 description: "A website marketing plan template built on gates, not Gantt charts: four quarters mapped to Measure, Fix, Strengthen, Amplify — with exit criteria for each."
 slug: /strategy/plan-template
 section: "Website Marketing Strategy"
@@ -17,7 +17,7 @@ PRODUCTION NOTES (do not publish this block):
 - Numbers are inherited from Pillar #1 (/how-to-market-a-website/), which is the source of truth: 6 baseline metrics, 20-prompt citation audit, 8% median citation share (50-site pilot), 5 money pages, 15% refresh rule. Zero drift allowed. If the pillar's numbers change, this page changes with it.
 - Data guard (matches GEO page notes): the ONLY publishable citation figure is the 50-site pilot median of 8%. Do NOT publish IQR, per-engine spread, segment cuts, or "% of owners who guessed X" as data. The ">=30% good" figure is the pillar's own baseline target, not study output.
 - Internal link slugs verified against the published pillar. /conversion/audit/ (NOT /cro/audit/), /content/audit/, /distribution/digital-pr/, /measurement/ai-traffic/ are confirmed in the pillar but their own cluster pages may not be live yet — swap to live status when Sections 4/5/6/7 publish.
-- Diagram: adapt the pillar's framework graphic into the four-gate pipeline referenced below (src /images/plan-template-gated-pipeline.png is the agreed path; design owes the export). Alt text is final — do not redraw the gates without updating it.
+- Diagram: cut. The four-gate pipeline ships as the numbered list of gates; exit-criteria detail is covered in the body sections. No image dependency.
 - v2 (not launch-blocking): downloadable Google Sheets / Notion duplicate of the fill-in template. Launch with copyable on-page markdown only.
 - Register: sunny-voice for the argument (S1-S7, S9-S10). Neutral-doc for the fill-in blocks and week lists (S8 and the week-by-week sections). A template that sounds like a personality is a template nobody fills in.
 - dateModified visible on page. Refresh diary: re-check slugs + numbers against the pillar each time the pillar refreshes.
@@ -35,8 +35,6 @@ Here's the whole template in four gates. This page expands the "those timelines 
 2. **[Q2 — Strengthen](#q2--strengthen-weeks-14-26)** — Fix the content inventory you already have.
 3. **[Q3 — Amplify](#q3--amplify-weeks-27-39)** — Distribute a site that finally deserves it.
 4. **[Q4 — Re-measure + Re-plan](#q4--re-measure--re-plan-weeks-40-52)** — Prove it moved, then go again.
-
-![Four-quarter gated pipeline: Q1 Measure + Fix, Q2 Strengthen, Q3 Amplify, Q4 Re-measure + Re-plan, drawn as one line with a gate between each stage. Each gate lists exit criteria that must pass before the arrow advances, and the gate into Q3 carries the two-box amplification checkbox.](/images/plan-template-gated-pipeline.png)
 
 ---
 
@@ -93,8 +91,8 @@ The unglamorous quarter, and the one that makes every other quarter work. You me
 **The work, week by week:**
 
 - **Weeks 1-2:** Run the **[90-minute website marketing audit](/strategy/audit/)** and record your 6 baseline numbers: organic clicks, AI referrals, citation share, conversion rate, indexed-vs-valuable pages, revenue per visit.
-- **Weeks 2-3:** Run the 20-prompt citation audit across ChatGPT, Perplexity, and Gemini. Log whether you're mentioned, cited with a link, and who got cited instead. That's your citation-share baseline. If you've never measured, assume you're near the crowd: the median site in our **[50-site citation-share pilot](/research/citation-share-study/)** appeared in just 8% of relevant AI answers.
-- **Weeks 4-13:** Work the fix list, capped at 12 items, 5 money pages first (homepage, pricing, top landing page, forms, checkout/signup). Put out fires first (anything blocking crawl, render, or indexing), then plug conversion leaks. Full method: **[CRO Audit](/conversion/audit/)**.
+- **Weeks 2-3:** Run the 20-prompt citation audit across ChatGPT, Perplexity, and Gemini. Log whether you're mentioned, cited with a link, and who got cited instead. That's your citation-share baseline. If you've never measured, assume you're near the crowd: the median site in our **50-site citation-share pilot**<!-- relink: /research/citation-share-study/ --> appeared in just 8% of relevant AI answers.
+- **Weeks 4-13:** Work the fix list, capped at 12 items, 5 money pages first (homepage, pricing, top landing page, forms, checkout/signup). Put out fires first (anything blocking crawl, render, or indexing), then plug conversion leaks. Full method: **CRO Audit**<!-- relink: /conversion/audit/ -->.
 
 **Exit gate (see the master table row Q1):** 6 numbers recorded, citation share known, zero crawl/render/index fires, top-3 landing pages leak-free. If you're still in Fix at the end of Q2, invoke the hard cap.
 
@@ -113,7 +111,7 @@ Now the site holds water, so make it worth citing. Q2 is content, and it starts 
 
 **The work, week by week:**
 
-- **Weeks 14-17:** Build a full content inventory and give every page one of four verdicts: prune, merge, refresh, or leave alone. No page gets "ignore forever." Method: **[Content Audit for Live Sites](/content/audit/)**.
+- **Weeks 14-17:** Build a full content inventory and give every page one of four verdicts: prune, merge, refresh, or leave alone. No page gets "ignore forever." Method: **Content Audit for Live Sites**<!-- relink: /content/audit/ -->.
 - **Weeks 18-23:** Work through the verdicts. Prune the dead weight, merge the cannibals, and refresh your 10 highest-value pages by at least 15% substantive change each (the 15% rule: if you're not changing 15%, you're tidying, not refreshing).
 - **Weeks 24-26:** Draft one original-data asset (your numbers, your study, your benchmark) and do the entity and GEO groundwork so the strengthened pages are actually retrievable. Detail: **[GEO for Established Websites](/visibility/geo/)**.
 
@@ -135,7 +133,7 @@ The site holds water and it's worth citing. Now, and only now, you amplify. Ever
 
 **The work, week by week:**
 
-- **Weeks 27-31:** Digital PR on the Q2 data asset. Journalists don't cover your product update; they cover a number nobody else has. Pitch the finding. Method: **[Digital PR for Citations](/distribution/digital-pr/)**.
+- **Weeks 27-31:** Digital PR on the Q2 data asset. Journalists don't cover your product update; they cover a number nobody else has. Pitch the finding. Method: **Digital PR for Citations**<!-- relink: /distribution/digital-pr/ -->.
 - **Weeks 32-36:** Repurpose the asset across placements (newsletter, LinkedIn, short video, community answers) and grow the email list from your best content, not a homepage popup.
 - **Weeks 37-39:** Paid, but only behind the ticked checkbox: retargeting warm traffic and scaling a funnel you've proven converts. How much where: **[Website Marketing Budget](/strategy/budget/)**.
 
@@ -156,7 +154,7 @@ The quarter everyone skips, which is why everyone re-runs the same broken plan n
 **The work, week by week:**
 
 - **Weeks 40-43:** Re-run the same 20 prompts across the same three engines. Same prompts, so the comparison is honest.
-- **Weeks 44-47:** Re-baseline the 6 metrics and write a delta report: what moved, what didn't, what it cost. Track the AI side properly with **[tracking AI traffic](/measurement/ai-traffic/)**.
+- **Weeks 44-47:** Re-baseline the 6 metrics and write a delta report: what moved, what didn't, what it cost. Track the AI side properly with **tracking AI traffic**<!-- relink: /measurement/ai-traffic/ -->.
 - **Weeks 48-52:** Fill in next year's Q1. It's usually shorter, because you fixed the big leaks this cycle. If you're deciding where next year's effort goes, **[SEO vs GEO vs CRO](/strategy/seo-vs-geo-vs-cro/)** is the call to make now.
 
 **Exit gate (master table row Q4):** delta report written vs Q1 baseline, next-cycle plan filled in.

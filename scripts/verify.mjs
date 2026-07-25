@@ -1,16 +1,25 @@
 #!/usr/bin/env node
-// Acceptance gates for site.marketing per content/ops/stack-and-scaffold.md §6.
-// Fails the process on any gate failure. Run after `astro build`.
+// Acceptance gates for site.marketing per content/ops/stack-and-scaffold.md §6
+// and ADR §6. Fails the process on any gate failure. Run after `astro build`.
 //
 // Gates:
-//  1. Content in initial HTML — every route contains its known answer sentence.
-//  2. 0 KB JS on article routes — no <script src="*.js"> or client-JS artifacts.
-//  3. Chunk-clean markup — exactly one <h1>; every <h2>/<h3> immediately followed
-//     by text/list/table (no empty wrapper <div> between heading and answer).
-//  4. Schema valid — every article has an Article JSON-LD block that parses.
-//  5. RSS valid — every rss.xml parses as XML with required RSS fields.
-//  6. Reachability — every published route ≤ 2 clicks from the homepage.
-//  7. Bot files — robots.txt and llms.txt are present and non-empty.
+//   1. content-in-initial-html   — every route contains its known answer sentence.
+//   2. no-js-on-articles         — no <script src="*.js"> or inline JS on article routes.
+//   3. chunk-clean-markup        — one <h1>; every <h2>/<h3> immediately followed by content.
+//   4. schema-valid              — ADR §6 contract: Article + Person + BreadcrumbList per
+//                                  article, FAQPage where declared, Organization on /, and the
+//                                  Article author/publisher edges resolve to the Person @id.
+//   5. rss-valid                 — every rss.xml parses as XML with required RSS fields.
+//   6. reachability              — every published route ≤ 2 clicks from the homepage.
+//   7. bot-files                 — robots.txt and llms.txt present and non-empty.
+//   8. no-dead-links             — every internal href in dist HTML (and every site URL in
+//                                  llms.txt) resolves to a built route or an existing dist file.
+//   9. assets-exist              — every <img src> / og:image / twitter:image points at a file
+//                                  that exists in dist.
+//  10. head-limits              — <title> ≤ 60; <meta description> present, ≤ 160, not truncated.
+//  11. social-card-consistency  — summary_large_image ⇒ resolvable og:image; else summary.
+//  12. no-html-comments        — dist HTML ships zero HTML comments (no PRODUCTION NOTES
+//                                 editorial blocks, no `<!-- relink: -->` markers, none at all).
 
 import { readFile, readdir, stat } from 'node:fs/promises';
 import { join, relative, sep } from 'node:path';
@@ -20,6 +29,9 @@ import * as cheerio from 'cheerio';
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const DIST = join(__dirname, '..', 'dist');
 
+const SITE_ORIGIN = 'https://site.marketing';
+const PERSON_ID = 'https://site.marketing/#sunny-patel';
+
 const failures = [];
 const fail = (gate, msg) => failures.push({ gate, msg });
 const pass = (gate, msg) => console.log(`  ✓ ${gate}: ${msg}`);
@@ -27,7 +39,7 @@ const pass = (gate, msg) => console.log(`  ✓ ${gate}: ${msg}`);
 // Known answer sentences per route — extractable text you'd expect in the first HTML
 const CONTENT_PROBES = {
   'how-to-market-a-website': 'Marketing a website means increasing qualified visibility',
-  'geo-for-established-websites': "GEO isn't a second retainer",
+  'visibility/geo': "GEO isn't a second retainer",
   'strategy/audit': '90-minute',
   'strategy/budget': 'budget',
   'strategy/plan-template': 'Quarter',
@@ -45,10 +57,13 @@ const CONTENT_PROBES = {
 // Article routes must ship zero JS.
 const ARTICLE_ROUTE_PATTERNS = [
   /^how-to-market-a-website\//,
-  /^geo-for-established-websites\//,
+  /^visibility\/geo\//,
   /^strategy\/[^/]+\//,
   /^glossary\/[^/]+\//,
 ];
+
+// Routes whose source declares `faqs:` — these must ship a FAQPage block (ADR §6).
+const FAQ_ROUTES = new Set(['strategy/audit', 'strategy/budget', 'strategy/seo-vs-geo-vs-cro']);
 
 async function walk(dir, filter = () => true) {
   const out = [];
@@ -57,6 +72,90 @@ async function walk(dir, filter = () => true) {
     if (entry.isDirectory()) out.push(...(await walk(p, filter)));
     else if (filter(p)) out.push(p);
   }
+  return out;
+}
+
+// ── Shared dist model (routes + every emitted file) ─────────────────────────
+const routeOf = (file) => {
+  const dir = relative(DIST, file).split(sep).slice(0, -1).join('/');
+  return dir === '' ? '/' : `/${dir}/`;
+};
+
+const allHtml = await walk(DIST, (p) => p.endsWith('index.html'));
+const allRoutes = new Set(allHtml.map(routeOf));
+const allFiles = await walk(DIST);
+const distFiles = new Set(allFiles.map((p) => '/' + relative(DIST, p).split(sep).join('/')));
+
+const isArticleRoute = (rel) => ARTICLE_ROUTE_PATTERNS.some((re) => re.test(rel + '/'));
+
+// Normalise an internal href the way the reachability + dead-link gates expect.
+// Collects EVERY internal target — including links written with our own absolute
+// origin and relative (non-slash) links — not just site-absolute `/…` paths.
+// Returns a canonical site-absolute path, or null for genuinely external links
+// (other schemes / other hosts) and in-page anchors.
+//
+// `baseRoute` is the route of the containing page, used to resolve relative
+// hrefs (e.g. `foo/bar` from `/strategy/` → `/strategy/foo/bar/`).
+function normalizeInternalHref(raw, baseRoute = '/') {
+  let h = (raw || '').trim();
+  if (!h) return null;
+  // Our own absolute origin is internal — strip it so the http check below only
+  // rejects genuinely external URLs. (Mirrors gate 9's toDistPath.)
+  if (h.startsWith(SITE_ORIGIN)) h = h.slice(SITE_ORIGIN.length) || '/';
+  // Protocol-relative: only our own host is internal; any other host is external.
+  if (h.startsWith('//')) {
+    const marketing = '//site.marketing';
+    if (h === marketing || h.startsWith(marketing + '/')) h = h.slice(marketing.length) || '/';
+    else return null;
+  }
+  // Any remaining scheme (http:, https:, mailto:, tel:, …) is external.
+  if (/^[a-z][a-z0-9+.-]*:/i.test(h)) return null;
+  if (h.startsWith('#')) return null;
+  h = h.split('#')[0].split('?')[0];
+  if (!h) return null;
+  // Resolve relative hrefs against the containing route instead of discarding them.
+  if (!h.startsWith('/')) {
+    try {
+      h = new URL(h, SITE_ORIGIN + baseRoute).pathname;
+    } catch {
+      return null;
+    }
+  }
+  const lastSeg = h.split('/').pop();
+  if (lastSeg && !lastSeg.includes('.') && !h.endsWith('/')) h = h + '/';
+  return h;
+}
+
+// Convert a possibly-absolute asset URL to a dist-relative path, or null.
+function toDistPath(url) {
+  let u = (url || '').trim();
+  if (!u) return null;
+  if (u.startsWith(SITE_ORIGIN)) u = u.slice(SITE_ORIGIN.length);
+  if (!u.startsWith('/')) return null; // external host we cannot verify locally
+  return u.split('#')[0].split('?')[0];
+}
+
+// A normalised internal href is valid if it is a built route or an existing dist file.
+function isValidTarget(href) {
+  if (allRoutes.has(href)) return true;
+  if (distFiles.has(href)) return true;
+  // extensionless route form also matches a directory's index.html
+  if (href.endsWith('/') && distFiles.has(href + 'index.html')) return true;
+  return false;
+}
+
+// Parse all JSON-LD @type values (flattened) from a loaded document.
+function jsonLdBlocks($) {
+  const out = [];
+  $('script[type="application/ld+json"]').each((_, el) => {
+    const raw = $(el).text();
+    try {
+      const parsed = JSON.parse(raw);
+      for (const obj of Array.isArray(parsed) ? parsed : [parsed]) out.push(obj);
+    } catch (err) {
+      out.push({ __parseError: err.message });
+    }
+  });
   return out;
 }
 
@@ -82,14 +181,10 @@ async function gateContentInInitialHtml() {
 // ── Gate 2: 0 KB JS on article routes ───────────────────────────────────────
 async function gateNoJsOnArticleRoutes() {
   const gate = 'no-js-on-articles';
-  const htmlFiles = (await walk(DIST, (p) => p.endsWith('index.html'))).filter((p) => {
-    const rel = relative(DIST, p).split(sep).slice(0, -1).join('/');
-    return ARTICLE_ROUTE_PATTERNS.some((re) => re.test(rel + '/'));
-  });
+  const htmlFiles = allHtml.filter((p) => isArticleRoute(routeOf(p).replace(/^\/|\/$/g, '')));
   for (const file of htmlFiles) {
     const html = await readFile(file, 'utf8');
     const $ = cheerio.load(html);
-    // Any <script> with a src attribute pointing to a .js file, or type="module"
     const jsScripts = $('script[src]')
       .toArray()
       .filter((el) => {
@@ -97,15 +192,12 @@ async function gateNoJsOnArticleRoutes() {
         return src.endsWith('.js') || src.endsWith('.mjs');
       });
     if (jsScripts.length > 0) {
-      const rel = relative(DIST, file);
       const srcs = jsScripts.map((el) => $(el).attr('src')).join(', ');
-      fail(gate, `${rel}: shipped JS: ${srcs}`);
+      fail(gate, `${relative(DIST, file)}: shipped JS: ${srcs}`);
     }
-    // Also flag inline scripts that aren't application/ld+json
     const inline = $('script:not([src]):not([type="application/ld+json"])').toArray();
     if (inline.length > 0) {
-      const rel = relative(DIST, file);
-      fail(gate, `${rel}: has ${inline.length} inline <script> block(s)`);
+      fail(gate, `${relative(DIST, file)}: has ${inline.length} inline <script> block(s)`);
     }
   }
   if (!failures.some((f) => f.gate === gate)) {
@@ -116,31 +208,23 @@ async function gateNoJsOnArticleRoutes() {
 // ── Gate 3: Chunk-clean markup ──────────────────────────────────────────────
 async function gateChunkCleanMarkup() {
   const gate = 'chunk-clean-markup';
-  const htmlFiles = (await walk(DIST, (p) => p.endsWith('index.html'))).filter((p) => {
-    const rel = relative(DIST, p).split(sep).slice(0, -1).join('/');
-    return ARTICLE_ROUTE_PATTERNS.some((re) => re.test(rel + '/'));
-  });
+  const htmlFiles = allHtml.filter((p) => isArticleRoute(routeOf(p).replace(/^\/|\/$/g, '')));
   for (const file of htmlFiles) {
     const html = await readFile(file, 'utf8');
     const $ = cheerio.load(html);
     const rel = relative(DIST, file);
-
-    // Exactly one h1
     const h1s = $('main h1');
     if (h1s.length !== 1) {
       fail(gate, `${rel}: expected exactly 1 <h1> in <main>, found ${h1s.length}`);
     }
-
-    // Every h2/h3 must be immediately followed by text-carrying content:
-    // p, ul, ol, table, blockquote, pre, figure, dl — not an empty wrapper.
     $('main h2, main h3').each((_, heading) => {
       const $h = $(heading);
-      let $next = $h.next();
-      // Skip whitespace-only text nodes (cheerio already ignores those between elements)
-      const validNext = ['p', 'ul', 'ol', 'table', 'blockquote', 'pre', 'figure', 'dl', 'h3', 'h4'];
+      const $next = $h.next();
+      const validNext = ['p', 'ul', 'ol', 'table', 'blockquote', 'pre', 'figure', 'dl', 'h3', 'h4', 'div'];
       const tag = $next.length ? ($next[0].tagName || '').toLowerCase() : '';
-      if (!tag || !validNext.includes(tag)) {
-        // Div wrapper is the specific thing the ADR forbids
+      // A div is only acceptable when it is the table-scroll wrapper (B7).
+      const okDiv = tag === 'div' && ($next.attr('class') || '').includes('table-scroll');
+      if (!tag || (!validNext.includes(tag)) || (tag === 'div' && !okDiv)) {
         fail(
           gate,
           `${rel}: <${heading.tagName}>"${$h.text().trim().slice(0, 40)}" not followed by content (next: <${tag || 'none'}>)`,
@@ -153,42 +237,62 @@ async function gateChunkCleanMarkup() {
   }
 }
 
-// ── Gate 4: Schema present + parses ─────────────────────────────────────────
+// ── Gate 4: Schema present + parses (ADR §6 contract) ───────────────────────
 async function gateSchemaValid() {
   const gate = 'schema-valid';
-  const htmlFiles = (await walk(DIST, (p) => p.endsWith('index.html'))).filter((p) => {
-    const rel = relative(DIST, p).split(sep).slice(0, -1).join('/');
-    return ARTICLE_ROUTE_PATTERNS.some((re) => re.test(rel + '/'));
-  });
+  const htmlFiles = allHtml.filter((p) => isArticleRoute(routeOf(p).replace(/^\/|\/$/g, '')));
   for (const file of htmlFiles) {
     const html = await readFile(file, 'utf8');
     const $ = cheerio.load(html);
     const rel = relative(DIST, file);
-    const blocks = $('script[type="application/ld+json"]').toArray();
-    if (blocks.length === 0) {
+    const routeKey = routeOf(file).replace(/^\/|\/$/g, '');
+    const objs = jsonLdBlocks($);
+    const parseErr = objs.find((o) => o.__parseError);
+    if (parseErr) {
+      fail(gate, `${rel}: JSON-LD failed to parse: ${parseErr.__parseError}`);
+      continue;
+    }
+    const types = objs.map((o) => o['@type']);
+    if (objs.length === 0) {
       fail(gate, `${rel}: no application/ld+json blocks`);
       continue;
     }
-    let types = [];
-    for (const el of blocks) {
-      const raw = $(el).text();
-      try {
-        const parsed = JSON.parse(raw);
-        const arr = Array.isArray(parsed) ? parsed : [parsed];
-        for (const obj of arr) types.push(obj['@type']);
-      } catch (err) {
-        fail(gate, `${rel}: JSON-LD failed to parse: ${err.message}`);
+    for (const req of ['Article', 'Person', 'BreadcrumbList']) {
+      if (!types.includes(req)) {
+        fail(gate, `${rel}: missing ${req} JSON-LD (found: ${types.join(', ') || 'none'})`);
       }
     }
-    if (!types.includes('Article')) {
-      fail(gate, `${rel}: missing Article JSON-LD (found: ${types.join(', ') || 'none'})`);
+    if (FAQ_ROUTES.has(routeKey) && !types.includes('FAQPage')) {
+      fail(gate, `${rel}: missing FAQPage JSON-LD (route declares faqs)`);
     }
-    if (!types.includes('Person')) {
-      fail(gate, `${rel}: missing Person JSON-LD`);
+    // Author/publisher edges must resolve to the Person @id.
+    const article = objs.find((o) => o['@type'] === 'Article');
+    if (article) {
+      const authorId = article.author && article.author['@id'];
+      const publisherId = article.publisher && article.publisher['@id'];
+      if (authorId !== PERSON_ID) {
+        fail(gate, `${rel}: Article.author @id is "${authorId || 'none'}", expected ${PERSON_ID}`);
+      }
+      if (publisherId !== PERSON_ID) {
+        fail(gate, `${rel}: Article.publisher @id is "${publisherId || 'none'}", expected ${PERSON_ID}`);
+      }
     }
   }
+
+  // Homepage must carry an Organization block.
+  const homeFile = join(DIST, 'index.html');
+  try {
+    const $home = cheerio.load(await readFile(homeFile, 'utf8'));
+    const homeTypes = jsonLdBlocks($home).map((o) => o['@type']);
+    if (!homeTypes.includes('Organization')) {
+      fail(gate, `index.html: missing Organization JSON-LD (found: ${homeTypes.join(', ') || 'none'})`);
+    }
+  } catch {
+    fail(gate, `index.html: missing at ${homeFile}`);
+  }
+
   if (!failures.some((f) => f.gate === gate)) {
-    pass(gate, `${htmlFiles.length} article routes ship Article + Person JSON-LD`);
+    pass(gate, `${htmlFiles.length} article routes ship Article+Person+BreadcrumbList; homepage ships Organization`);
   }
 }
 
@@ -217,27 +321,19 @@ async function gateRssValid() {
 // ── Gate 6: Reachability (BFS from /) ───────────────────────────────────────
 async function gateReachability() {
   const gate = 'reachability';
-  const allHtml = await walk(DIST, (p) => p.endsWith('index.html'));
-  const allRoutes = new Set(
-    allHtml.map((p) => '/' + relative(DIST, p).split(sep).slice(0, -1).join('/').replace(/\/?$/, '/')).map((r) => (r === '//' ? '/' : r)),
-  );
-
   const linksFrom = new Map();
   for (const file of allHtml) {
     const html = await readFile(file, 'utf8');
     const $ = cheerio.load(html);
-    const from = '/' + relative(DIST, file).split(sep).slice(0, -1).join('/').replace(/\/?$/, '/');
-    const norm = from === '//' ? '/' : from;
+    const from = routeOf(file);
     const links = new Set();
     $('a[href]').each((_, a) => {
-      let href = ($(a).attr('href') || '').trim();
-      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('http')) return;
-      // Strip query and fragment
-      href = href.split('#')[0].split('?')[0];
-      if (!href.endsWith('/')) href = href + '/';
-      if (allRoutes.has(href)) links.add(href);
+      const href = normalizeInternalHref($(a).attr('href'), from);
+      // No pre-filter: record every internal href. BFS only advances into real
+      // routes; non-route targets are dead-end nodes and are checked by gate 8.
+      if (href) links.add(href);
     });
-    linksFrom.set(norm, links);
+    linksFrom.set(from, links);
   }
 
   const dist = new Map([['/', 0]]);
@@ -246,7 +342,7 @@ async function gateReachability() {
     const cur = queue.shift();
     const d = dist.get(cur);
     for (const next of linksFrom.get(cur) || []) {
-      if (!dist.has(next)) {
+      if (allRoutes.has(next) && !dist.has(next)) {
         dist.set(next, d + 1);
         queue.push(next);
       }
@@ -254,11 +350,8 @@ async function gateReachability() {
   }
 
   for (const route of allRoutes) {
-    if (!dist.has(route)) {
-      fail(gate, `${route}: unreachable from /`);
-    } else if (dist.get(route) > 2) {
-      fail(gate, `${route}: ${dist.get(route)} clicks from / (max allowed: 2)`);
-    }
+    if (!dist.has(route)) fail(gate, `${route}: unreachable from /`);
+    else if (dist.get(route) > 2) fail(gate, `${route}: ${dist.get(route)} clicks from / (max allowed: 2)`);
   }
   if (!failures.some((f) => f.gate === gate)) {
     pass(gate, `${allRoutes.size} routes all ≤ 2 clicks from /`);
@@ -277,7 +370,6 @@ async function gateBotFiles() {
       fail(gate, `${f}: missing at ${p}`);
     }
   }
-  // robots.txt must name the AI bots
   try {
     const robots = await readFile(join(DIST, 'robots.txt'), 'utf8');
     for (const bot of ['GPTBot', 'ClaudeBot', 'PerplexityBot', 'Google-Extended']) {
@@ -290,6 +382,153 @@ async function gateBotFiles() {
   }
 }
 
+// ── Gate 8: No dead internal links (HTML + llms.txt) ────────────────────────
+async function gateNoDeadLinks() {
+  const gate = 'no-dead-links';
+  const htmlFiles = await walk(DIST, (p) => p.endsWith('.html'));
+  for (const file of htmlFiles) {
+    const html = await readFile(file, 'utf8');
+    const $ = cheerio.load(html);
+    const rel = relative(DIST, file);
+    const baseRoute = routeOf(file);
+    const seen = new Set();
+    $('a[href]').each((_, a) => {
+      const raw = ($(a).attr('href') || '').trim();
+      const href = normalizeInternalHref(raw, baseRoute);
+      if (!href || seen.has(href)) return;
+      seen.add(href);
+      if (!isValidTarget(href)) fail(gate, `${rel}: dead internal link → ${raw}`);
+    });
+  }
+
+  // llms.txt: every site URL must resolve too.
+  try {
+    const llms = await readFile(join(DIST, 'llms.txt'), 'utf8');
+    const urls = llms.match(/https:\/\/site\.marketing\/[^\s)"'<>]*/g) || [];
+    for (const url of [...new Set(urls)]) {
+      let path = toDistPath(url);
+      if (!path) continue;
+      // normalise extensionless paths to trailing-slash route form
+      const lastSeg = path.split('/').pop();
+      if (lastSeg && !lastSeg.includes('.') && !path.endsWith('/')) path += '/';
+      if (!isValidTarget(path)) fail(gate, `llms.txt: dead link → ${url}`);
+    }
+  } catch {
+    fail(gate, 'llms.txt: missing, cannot verify links');
+  }
+
+  if (!failures.some((f) => f.gate === gate)) {
+    pass(gate, `all internal links in dist HTML + llms.txt resolve`);
+  }
+}
+
+// ── Gate 9: Referenced assets exist ─────────────────────────────────────────
+async function gateAssetsExist() {
+  const gate = 'assets-exist';
+  const htmlFiles = await walk(DIST, (p) => p.endsWith('.html'));
+  for (const file of htmlFiles) {
+    const html = await readFile(file, 'utf8');
+    const $ = cheerio.load(html);
+    const rel = relative(DIST, file);
+    const refs = [];
+    $('img[src]').each((_, el) => refs.push(['img src', $(el).attr('src')]));
+    $('meta[property="og:image"], meta[name="og:image"]').each((_, el) =>
+      refs.push(['og:image', $(el).attr('content')]),
+    );
+    $('meta[name="twitter:image"], meta[property="twitter:image"]').each((_, el) =>
+      refs.push(['twitter:image', $(el).attr('content')]),
+    );
+    for (const [label, url] of refs) {
+      const path = toDistPath(url);
+      if (!path) {
+        fail(gate, `${rel}: ${label} "${url}" is not a resolvable site/dist path`);
+        continue;
+      }
+      if (!distFiles.has(path)) fail(gate, `${rel}: ${label} "${url}" → missing file ${path}`);
+    }
+  }
+  if (!failures.some((f) => f.gate === gate)) {
+    pass(gate, `all <img>/og:image/twitter:image references exist in dist`);
+  }
+}
+
+// ── Gate 10: Head limits (title + meta description) ─────────────────────────
+async function gateHeadLimits() {
+  const gate = 'head-limits';
+  const htmlFiles = await walk(DIST, (p) => p.endsWith('.html'));
+  for (const file of htmlFiles) {
+    const rel = relative(DIST, file);
+    if (rel === '404.html') continue;
+    const html = await readFile(file, 'utf8');
+    const $ = cheerio.load(html);
+    const title = ($('head > title').first().text() || '').trim();
+    if (title.length > 60) fail(gate, `${rel}: <title> is ${title.length} chars (max 60): "${title}"`);
+    const desc = ($('meta[name="description"]').attr('content') || '').trim();
+    if (!desc) {
+      fail(gate, `${rel}: missing/empty <meta name="description">`);
+    } else {
+      if (desc.length > 160) fail(gate, `${rel}: meta description is ${desc.length} chars (max 160)`);
+      if (desc.endsWith('…') || desc.endsWith('...')) fail(gate, `${rel}: meta description ends truncated: "…${desc.slice(-30)}"`);
+    }
+  }
+  if (!failures.some((f) => f.gate === gate)) {
+    pass(gate, `all pages within title ≤ 60 / description ≤ 160 limits`);
+  }
+}
+
+// ── Gate 11: Social-card consistency ────────────────────────────────────────
+async function gateSocialCardConsistency() {
+  const gate = 'social-card-consistency';
+  const htmlFiles = await walk(DIST, (p) => p.endsWith('.html'));
+  for (const file of htmlFiles) {
+    const rel = relative(DIST, file);
+    const html = await readFile(file, 'utf8');
+    const $ = cheerio.load(html);
+    const card = ($('meta[name="twitter:card"], meta[property="twitter:card"]').attr('content') || '').trim();
+    if (!card) continue;
+    const ogImage = ($('meta[property="og:image"], meta[name="og:image"]').attr('content') || '').trim();
+    if (card === 'summary_large_image') {
+      if (!ogImage) {
+        fail(gate, `${rel}: twitter:card=summary_large_image but no og:image`);
+      } else {
+        const path = toDistPath(ogImage);
+        if (!path || !distFiles.has(path)) fail(gate, `${rel}: summary_large_image og:image "${ogImage}" not in dist`);
+      }
+    } else if (card === 'summary' && ogImage) {
+      // summary with an og:image is fine, but the image still must resolve (gate 9 covers it).
+    }
+    if (!ogImage && card === 'summary_large_image') {
+      // already reported above
+    }
+  }
+  if (!failures.some((f) => f.gate === gate)) {
+    pass(gate, `twitter:card ↔ og:image pairing consistent on all pages`);
+  }
+}
+
+// ── Gate 12: No HTML comments in dist output ────────────────────────────────
+async function gateNoHtmlComments() {
+  const gate = 'no-html-comments';
+  const htmlFiles = await walk(DIST, (p) => p.endsWith('.html'));
+  const commentRe = /<!--([\s\S]*?)-->/g;
+  for (const file of htmlFiles) {
+    const html = await readFile(file, 'utf8');
+    const rel = relative(DIST, file);
+    let m;
+    const found = new Set();
+    while ((m = commentRe.exec(html)) !== null) {
+      found.add(m[1].trim().slice(0, 60));
+    }
+    if (found.size > 0) {
+      const sample = [...found].slice(0, 3).map((s) => `"${s}…"`).join(', ');
+      fail(gate, `${rel}: ships ${found.size} HTML comment(s) (e.g. ${sample})`);
+    }
+  }
+  if (!failures.some((f) => f.gate === gate)) {
+    pass(gate, `no HTML comments (PRODUCTION NOTES / relink markers) in any dist HTML`);
+  }
+}
+
 // ── Run all gates ───────────────────────────────────────────────────────────
 console.log('Running acceptance gates on dist/…\n');
 await gateContentInInitialHtml();
@@ -299,6 +538,11 @@ await gateSchemaValid();
 await gateRssValid();
 await gateReachability();
 await gateBotFiles();
+await gateNoDeadLinks();
+await gateAssetsExist();
+await gateHeadLimits();
+await gateSocialCardConsistency();
+await gateNoHtmlComments();
 
 console.log('');
 if (failures.length === 0) {

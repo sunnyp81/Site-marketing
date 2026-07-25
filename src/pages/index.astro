@@ -1,12 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { pillarPath } from '../lib/urls';
 
 const pillars = (await getCollection('pillars', ({ data }) => !data.draft))
   .sort((a, b) => b.data.dateModified.valueOf() - a.data.dateModified.valueOf());
 ---
 <BaseLayout
-  title="site.marketing — the operator's manual for marketing an existing website"
+  title="site.marketing — marketing for websites that already exist"
   description="site.marketing is a resource for marketing a website that already exists. Sequence, not channels. Written by Sunny Patel."
   path="/"
 >
@@ -21,7 +22,7 @@ const pillars = (await getCollection('pillars', ({ data }) => !data.draft))
   <ul>
     {pillars.map((p) => (
       <li>
-        <a href={`/${p.id}/`}><strong>{p.data.title}</strong></a>
+        <a href={pillarPath(p)}><strong>{p.data.title}</strong></a>
         <br />
         <span class="meta">{p.data.description}</span>
       </li>
@@ -31,6 +32,7 @@ const pillars = (await getCollection('pillars', ({ data }) => !data.draft))
   <h2>Sections</h2>
   <ul>
     <li><a href="/strategy/"><strong>Website Marketing Strategy</strong></a> — the operating system: sequencing, budgets, audits, plans</li>
+    <li><a href="/visibility/"><strong>Search Visibility</strong></a> — getting retrieved and cited by search and AI answer engines</li>
     <li><a href="/glossary/"><strong>Glossary</strong></a> — definitions with a stance, not Wikipedia paraphrase</li>
   </ul>
 

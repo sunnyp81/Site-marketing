@@ -145,11 +145,11 @@ Every existing site is in one of four states. Find yours, take the verdict, igno
 | **Invisible-to-AI** | Ranks in Google, <8% citation share | **GEO-tilted visibility** | Add entity clarity + chunk answers | A separate GEO retainer |
 | **Healthy** | All three gates cleared | **Amplify** | Distribution, email, digital PR | More optimising — stop |
 
-**Leaky.** You have the traffic and it's converting below its own trailing baseline. Don't buy a single new visitor. The cheapest revenue on your site is the visits you're already wasting, and CRO banks that lift in weeks. Fix the five money pages, then A/B test the highest-traffic one. Start at the **[CRO audit](/conversion/audit/)**.
+**Leaky.** You have the traffic and it's converting below its own trailing baseline. Don't buy a single new visitor. The cheapest revenue on your site is the visits you're already wasting, and CRO banks that lift in weeks. Fix the five money pages, then A/B test the highest-traffic one. Start at the **CRO audit**<!-- relink: /conversion/audit/ -->.
 
-**Thin.** Under 1,000 sessions a month, testing is guesswork — two dozen conversions split two ways prove nothing. So "CRO" here means the free fixes only: rewrite the fuzzy headline, cut the dead form fields, unblock the checkout. Then put the real budget into visibility, because your bottleneck is that too few people ever arrive. Begin with **[GEO for established websites](/visibility/geo/)** and a **[content audit](/content/audit/)**.
+**Thin.** Under 1,000 sessions a month, testing is guesswork — two dozen conversions split two ways prove nothing. So "CRO" here means the free fixes only: rewrite the fuzzy headline, cut the dead form fields, unblock the checkout. Then put the real budget into visibility, because your bottleneck is that too few people ever arrive. Begin with **[GEO for established websites](/visibility/geo/)** and a **content audit**<!-- relink: /content/audit/ -->.
 
-**Invisible-to-AI.** You rank in Google but sit under the 8% citation share we found as the median across 50 established sites — you've earned the search trust, you're just not being retrieved into AI answers. This isn't a new project; it's tilting your existing visibility work toward entity clarity and self-contained answers. Set up **[citation monitoring](/measurement/citation-monitoring/)** so you can see the number move, then work the GEO lean into your pages.
+**Invisible-to-AI.** You rank in Google but sit under the 8% citation share we found as the median across 50 established sites — you've earned the search trust, you're just not being retrieved into AI answers. This isn't a new project; it's tilting your existing visibility work toward entity clarity and self-contained answers. Set up **citation monitoring**<!-- relink: /measurement/citation-monitoring/ --> so you can see the number move, then work the GEO lean into your pages.
 
 **Healthy.** All three gates cleared: traffic converts, the site's cited, the content inventory's clean. Stop optimising and start amplifying — digital PR, email, repurposing, the mentions LLMs learn from. That's Step 4 of the **[website marketing playbook](/how-to-market-a-website/)**, and it's the only state where spending on reach isn't a subsidy for a broken funnel.
 
@@ -168,7 +168,7 @@ What's unique to *this* page is the mapping: once you have the numbers, they dro
 | Rankings present, citation share <8% | Invisible-to-AI | GEO-tilt |
 | All clear | Healthy | Amplify |
 
-If your AI referrals look like zero, don't trust that they are — a chunk of AI-driven traffic arrives with no referrer. Confirm the real floor with **[AI traffic tracking](/measurement/ai-traffic/)** before you decide visibility isn't your problem.
+If your AI referrals look like zero, don't trust that they are — a chunk of AI-driven traffic arrives with no referrer. Confirm the real floor with **AI traffic tracking**<!-- relink: /measurement/ai-traffic/ --> before you decide visibility isn't your problem.
 
 ---
 
@@ -176,11 +176,11 @@ If your AI referrals look like zero, don't trust that they are — a chunk of AI
 
 Three situations override the default. Each is rare, each is decisive, and you'll know it when you see it.
 
-**A checkout or signup that's actually broken → CRO first, at any traffic level.** A dead payment step or a signup that 500s isn't a test, it's a fire. You don't need statistical significance to fix a page that converts zero. Fix it today, whatever your session count. Where the fires hide: **[CRO audit](/conversion/audit/)**.
+**A checkout or signup that's actually broken → CRO first, at any traffic level.** A dead payment step or a signup that 500s isn't a test, it's a fire. You don't need statistical significance to fix a page that converts zero. Fix it today, whatever your session count. Where the fires hide: **CRO audit**<!-- relink: /conversion/audit/ -->.
 
-**Low-traffic B2B with long sales cycles → messaging CRO, never A/B testing.** If you sell six-figure deals to 30 buyers a quarter, you will never reach test significance, and waiting for it wastes the year. Fix conversion by judgement and positioning, not experiments. The playbook for exactly this is **[A/B testing on low-traffic sites: what to do instead](/conversion/low-traffic-testing/)**.
+**Low-traffic B2B with long sales cycles → messaging CRO, never A/B testing.** If you sell six-figure deals to 30 buyers a quarter, you will never reach test significance, and waiting for it wastes the year. Fix conversion by judgement and positioning, not experiments. The playbook for exactly this is **A/B testing on low-traffic sites: what to do instead**<!-- relink: /conversion/low-traffic-testing/ -->.
 
-**A manual action or a rendering failure → technical first, above all three.** If Google's slapped you with a penalty, or your content only renders after JavaScript so crawlers and LLMs see a blank page, none of SEO, GEO or CRO can help — they're all downstream of a site that can't be read. Clear the blockage first: **[technical SEO audit](/technical/audit/)**. What isn't in the initial HTML doesn't exist.
+**A manual action or a rendering failure → technical first, above all three.** If Google's slapped you with a penalty, or your content only renders after JavaScript so crawlers and LLMs see a blank page, none of SEO, GEO or CRO can help — they're all downstream of a site that can't be read. Clear the blockage first: **technical SEO audit**<!-- relink: /technical/audit/ -->. What isn't in the initial HTML doesn't exist.
 
 ---
 

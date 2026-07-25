@@ -29,7 +29,7 @@ const glossary = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './content/glossary/terms' }),
   schema: z.object({
     title: z.string(),
-    description: z.string().max(200),
+    description: z.string().max(160),
     term: z.string(),
     datePublished: z.coerce.date(),
     dateModified: z.coerce.date(),

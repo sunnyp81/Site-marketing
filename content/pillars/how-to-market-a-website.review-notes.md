@@ -44,7 +44,7 @@ Mostly Sunny. Six lines flunked:
 ## Pre-publish checklist (from the production-notes block)
 
 - [ ] Verify SparkToro, Gartner, Ahrefs source links resolve
-- [ ] Framework image (`/images/website-marketing-framework.png`) produced and uploaded
+- [x] Framework image cut — the framework ships as the numbered list below it; no image needed.
 - [ ] Article + FAQPage + BreadcrumbList schema in place
 - [ ] Person schema for Sunny Patel with `sameAs` → LinkedIn
 - [ ] GPTBot, ClaudeBot, PerplexityBot, Google-Extended access verified

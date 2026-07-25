@@ -31,8 +31,6 @@ Here's the whole thing in four steps.
 
 ## TL;DR — The four-step framework
 
-![Four-step website marketing framework: 1 Measure your baseline, 2 Fix technical and conversion leaks, 3 Strengthen content worth citing, 4 Amplify through distribution](/images/website-marketing-framework.png)
-
 1. **[Measure](#step-1--measure-know-what-youre-actually-working-with)** — Baseline what you have before you touch anything.
 2. **[Fix](#step-2--fix-plug-the-leaks-before-you-buy-more-water)** — Plug technical and conversion leaks first.
 3. **[Strengthen](#step-3--strengthen-make-the-site-worth-citing)** — Make content worth ranking and worth citing.
@@ -56,7 +54,7 @@ That's the whole job. Everything else is a sub-task hanging off one of those fiv
 
 One clarification while we're here: the goal is not "more traffic". It's qualified traffic that converts. A visitor who was never going to buy costs you server time and flatters your dashboard. Every step below optimises for visitors worth having.
 
-The thing that changed is where the visibility happens. Search is leaving the ten blue links. **SparkToro's analysis of clickstream data found that around 60% of Google searches in the US and EU ended without a click in 2024** ([SparkToro, 2024](https://sparktoro.com/blog/2024-zero-click-search-study/)). People get their answer on the results page or inside a chatbot and never visit anyone's website. On top of that, **Gartner predicts traditional search engine volume will drop 25% by 2026 as users shift to AI chatbots and virtual agents** ([Gartner, 2024](https://www.gartner.com/en/newsroom/press-releases/2024-02-19-gartner-predicts-search-engine-volume-will-drop-25-percent-by-2026-due-to-ai-chatbots-and-other-virtual-agents)).
+The thing that changed is where the visibility happens. Search is leaving the ten blue links. **SparkToro's analysis of clickstream data found that around 60% of Google searches in the US and EU ended without a click in 2024** ([SparkToro, 2024](https://sparktoro.com/blog/2024-zero-click-search-study-for-every-1000-us-google-searches-only-374-clicks-go-to-the-open-web-in-the-eu-its-360/)). People get their answer on the results page or inside a chatbot and never visit anyone's website. On top of that, **Gartner predicts traditional search engine volume will drop 25% by 2026 as users shift to AI chatbots and virtual agents** ([Gartner, 2024](https://www.gartner.com/en/newsroom/press-releases/2024-02-19-gartner-predicts-search-engine-volume-will-drop-25-percent-by-2026-due-to-ai-chatbots-and-other-virtual-agents)).
 
 The traffic isn't disappearing. It's moving. Your job is to be visible where it goes.
 
@@ -85,7 +83,7 @@ There are six numbers. Not twelve, not a 40-tab dashboard. Six.
 
 Two of these deserve a word each.
 
-**AI referrals** are undercounted everywhere, because a chunk of AI-driven visits arrive with no referrer at all — someone reads an answer, then types your brand into a browser. The referrer report is your floor, not your total. How to see past the floor: **[Tracking AI Traffic: Referrers, Prompt-Level Visibility and Dark AI Traffic](/measurement/ai-traffic/)**.
+**AI referrals** are undercounted everywhere, because a chunk of AI-driven visits arrive with no referrer at all — someone reads an answer, then types your brand into a browser. The referrer report is your floor, not your total. How to see past the floor: **Tracking AI Traffic: Referrers, Prompt-Level Visibility and Dark AI Traffic**<!-- relink: /measurement/ai-traffic/ -->.
 
 **Revenue per visit** is the one to defend in meetings. Clicks lie. Rankings flatter. Revenue per visit tells you whether the site is getting better at its actual job. If you only track one number, track that one.
 
@@ -98,9 +96,9 @@ Most sites have no idea whether AI engines mention them. Here's a free way to fi
 3. For each answer, log three things: Are you mentioned? Are you cited with a link? Who got cited instead?
 4. Count your citation share per engine. That's your baseline.
 
-In our own audits across 50 established sites, the median citation share before any GEO work was 8%. Eight per cent. Most owners assumed it was zero, and a few assumed it was much higher. Both were wrong, which is exactly why you measure instead of guess. That pilot is now a larger, repeatable benchmark — 200+ sites, four engines, refreshed quarterly — and the full method is public: **[The Citation-Share Study](/research/citation-share-study/)**.
+In our own audits across 50 established sites, the median citation share before any GEO work was 8%. Eight per cent. Most owners assumed it was zero, and a few assumed it was much higher. Both were wrong, which is exactly why you measure instead of guess. That pilot is now being scaled into a larger, repeatable benchmark — 200+ sites, four engines, refreshed quarterly — and the full methodology publishes with wave 1: **The Citation-Share Study**<!-- relink: /research/citation-share-study/ -->.
 
-Do this once now, then again every quarter. It's the single cheapest visibility signal you can collect, and almost nobody collects it. When you're ready to automate it: **[AI Citation Monitoring: Tools and a DIY Method](/measurement/citation-monitoring/)**.
+Do this once now, then again every quarter. It's the single cheapest visibility signal you can collect, and almost nobody collects it. When you're ready to automate it: **AI Citation Monitoring: Tools and a DIY Method**<!-- relink: /measurement/citation-monitoring/ -->.
 
 ### The 90-minute website marketing audit
 
@@ -122,7 +120,7 @@ Most technical SEO advice is trivia. Focus on the three problems that actually c
 - **Rendering failures** — If your content only appears after JavaScript runs, some crawlers and most LLM retrievers won't see it. Put your important content in the initial HTML. What isn't in the source doesn't exist.
 - **Bot access misconfiguration** — In 2026 this includes AI crawlers. Decide your policy on GPTBot, ClaudeBot, PerplexityBot, and Google-Extended deliberately. Blocking them by accident (or by a default in your CDN) means you're invisible to the engines you're trying to win. Manage it with a clear `llms.txt` and robots policy.
 
-Skip the rest. Nobody was ever out-ranked because their canonical tags weren't quite perfect on a page with no traffic. Full detail: **[Technical SEO Audit for Marketers: What Actually Moves Rankings](/technical/audit/)**.
+Skip the rest. Nobody was ever out-ranked because their canonical tags weren't quite perfect on a page with no traffic. Full detail: **Technical SEO Audit for Marketers: What Actually Moves Rankings**<!-- relink: /technical/audit/ -->.
 
 ### Conversion leaks: the five pages that lose the most money
 
@@ -136,7 +134,7 @@ Five pages leak the most revenue on almost every site. Check them in this order:
 
 Speed scores are a hobby. Revenue-weighted fixes are a job. Rank every fix by the money it touches, not by your Lighthouse number. A 40-to-95 speed jump on a blog post is a nice screenshot and nothing else. Two seconds off your checkout is a raise.
 
-Where the money leaks and how to find it: **[CRO Audit: Finding the Money Leaks on an Existing Website](/conversion/audit/)**.
+Where the money leaks and how to find it: **CRO Audit: Finding the Money Leaks on an Existing Website**<!-- relink: /conversion/audit/ -->.
 
 ### Q&A: Should you fix technical SEO before doing CRO?
 
@@ -169,13 +167,13 @@ Every page on your site gets one of four verdicts. No page gets "ignore it forev
 | **Refresh** | Page ranks or converts but has slipped or gone stale | Update substantially: new data, better answers, current examples. |
 | **Leave alone** | Page performs well and isn't decaying | Nothing. Not every page needs your attention this quarter. |
 
-I've deleted 400 pages from a site and watched traffic go up. Clients love that conversation, right up until they see the graph. Fewer, stronger pages beat a big pile of thin ones, for Google and for LLMs both, because retrieval favours pages that clearly own an answer. Start here: **[Content Audit for Live Sites: Prune, Merge, Refresh or Leave Alone](/content/audit/)**.
+I've deleted 400 pages from a site and watched traffic go up. Clients love that conversation, right up until they see the graph. Fewer, stronger pages beat a big pile of thin ones, for Google and for LLMs both, because retrieval favours pages that clearly own an answer. Start here: **Content Audit for Live Sites: Prune, Merge, Refresh or Leave Alone**<!-- relink: /content/audit/ -->.
 
 ### Build topical authority from what you already rank for
 
 Expand from strength, not from vanity. Look at what you already rank for on page two and three, then build out the surrounding cluster: the sub-questions, the comparisons, the definitions. You have a running start on those topics. Google and answer engines already associate you with them. Reinforcing an existing signal is faster and cheaper than manufacturing a new one from zero.
 
-Vanity keywords are the opposite: high volume, no existing signal, brutal competition. Chasing them is how sites burn a year and move nothing. Map what you've already got first: **[Topical Authority for Existing Sites: Mapping What You've Already Got](/visibility/topical-authority/)**.
+Vanity keywords are the opposite: high volume, no existing signal, brutal competition. Chasing them is how sites burn a year and move nothing. Map what you've already got first: **[Topical Authority for Existing Sites: Mapping What You've Already Got](/glossary/topical-authority/)**.
 
 ### Information gain: publish what the LLMs can't already say
 
@@ -187,7 +185,7 @@ Three things LLMs can't manufacture:
 - **Named positions** — A clear stance, stated with certainty. "Speed scores are a hobby" is a position. "Site speed can be important" is filler.
 - **First-person experience** — What actually happened when you did the thing. The 400 deleted pages. The clients who went pale at the graph.
 
-Everything else is paraphrasable, which means it's replaceable. Make pages that aren't: **[Information Gain: Making Pages LLMs Can't Paraphrase Away](/content/information-gain/)**.
+Everything else is paraphrasable, which means it's replaceable. Make pages that aren't: **Information Gain: Making Pages LLMs Can't Paraphrase Away**<!-- relink: /content/information-gain/ -->.
 
 ### One visibility discipline: what SEO and GEO share, and the 20% that differs
 
@@ -215,21 +213,21 @@ The site holds water and it's worth citing. Now, and only now, amplify it. Distr
 
 Digital PR in 2026 is about getting mentioned in the sources answer engines actually retrieve from. Industry publications, respected roundups, journalist-sourced articles — the pages LLMs read when they build an answer. A link is nice. A mention in a source the model trusts is what gets you into the answer.
 
-**Ahrefs found that the number of times a brand is mentioned across the web correlated more strongly with its appearance in AI answers than almost any other factor** ([Ahrefs, 2025](https://ahrefs.com/blog/ai-brand-visibility-study/)). Mentions are the currency.
+**Ahrefs found that the number of times a brand is mentioned across the web correlated more strongly with its appearance in AI answers than almost any other factor** ([Ahrefs, 2025](https://ahrefs.com/blog/ai-overview-brand-correlation/)). Mentions are the currency.
 
-And the best PR asset you own is the original data from Step 3. Journalists don't cover your product update. They cover "median site appears in 8% of AI answers" — a number nobody else has. Run a study, publish the numbers, pitch the finding. One dataset earns mentions for a year — which is exactly what **[The Citation-Share Study](/research/citation-share-study/)** is built to do. How to turn it into coverage: **[Digital PR for Citations: Getting Mentioned Where LLMs Are Listening](/distribution/digital-pr/)**.
+And the best PR asset you own is the original data from Step 3. Journalists don't cover your product update. They cover "median site appears in 8% of AI answers" — a number nobody else has. Run a study, publish the numbers, pitch the finding. One dataset earns mentions for a year — which is exactly what **The Citation-Share Study**<!-- relink: /research/citation-share-study/ --> is built to do. How to turn it into coverage: **Digital PR for Citations: Getting Mentioned Where LLMs Are Listening**<!-- relink: /distribution/digital-pr/ -->.
 
 ### Email: the only channel an answer engine can't intercept
 
 Email is the one channel no algorithm sits between you and your audience. Google can bury you. ChatGPT can answer instead of sending the click. Your email list opens the message you sent, when you sent it, with nothing in between.
 
-Two rules make it work on an existing site. First, capture where the intent already is: your top landing pages and best content, not a popup on the homepage. Second, send on a schedule you can actually keep — one useful email a week beats a brilliant one every random six weeks. A 2,000-person list that opens beats 50,000 monthly visitors who bounce, because you can reach the list on purpose. Build it: **[Email as a Distribution Moat: Owning the Audience AI Can't Intercept](/distribution/email-moat/)**.
+Two rules make it work on an existing site. First, capture where the intent already is: your top landing pages and best content, not a popup on the homepage. Second, send on a schedule you can actually keep — one useful email a week beats a brilliant one every random six weeks. A 2,000-person list that opens beats 50,000 monthly visitors who bounce, because you can reach the list on purpose. Build it: **Email as a Distribution Moat: Owning the Audience AI Can't Intercept**<!-- relink: /distribution/email-moat/ -->.
 
 ### Repurposing: one asset, twelve placements
 
 Repurposing is a system, not a hustle. One strong asset (this playbook, say) becomes a dozen placements: a LinkedIn thread, a newsletter issue, three short videos, a Reddit answer, a slide deck, a podcast talking point, a set of quote graphics. You already did the thinking. Distribution is delivering it to where people already are.
 
-The word "system" is doing the work in that sentence. It's a checklist you run after every major asset ships, not a burst of inspiration when you remember. Twelve placements per asset, every asset, is how one piece of thinking shows up everywhere the models and the buyers are reading. The system: **[Content Repurposing System: One Asset, Twelve Placements](/distribution/repurposing/)**.
+The word "system" is doing the work in that sentence. It's a checklist you run after every major asset ships, not a burst of inspiration when you remember. Twelve placements per asset, every asset, is how one piece of thinking shows up everywhere the models and the buyers are reading. The system: **Content Repurposing System: One Asset, Twelve Placements**<!-- relink: /distribution/repurposing/ -->.
 
 ### Paid: when it makes sense on an existing site
 

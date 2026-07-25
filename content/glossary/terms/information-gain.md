@@ -1,6 +1,6 @@
 ---
 title: "Information gain"
-description: "Information gain is the measurable new information a page adds beyond what already exists in the corpus a model was trained on. It is the value a page contributes that could not be…"
+description: "Information gain is the measurable new information a page adds beyond what already sits in a model's corpus — and why it decides who gets cited."
 term: "Information gain"
 datePublished: 2026-07-23
 dateModified: 2026-07-23
@@ -22,4 +22,4 @@ Three places gain actually comes from:
 3. **First-person results** — what happened when you did the thing. "I deleted 400 pages and traffic went up" can't be paraphrased from anyone else.
 
 **Related:** [Topical authority](/glossary/topical-authority/) · [E-E-A-T](/glossary/e-e-a-t/)
-**Read up:** [Information Gain: Pages LLMs Can't Paraphrase](/content/information-gain/) · [Content Audit for Live Sites](/content/audit/) · [How to Market a Website in 2026](/how-to-market-a-website/) <!-- all LIVE day one; /content/information-gain/ [PROVISIONAL slug] -->
+**Read up:** **Information Gain: Pages LLMs Can't Paraphrase**<!-- relink: /content/information-gain/ --> · **Content Audit for Live Sites**<!-- relink: /content/audit/ --> · [How to Market a Website in 2026](/how-to-market-a-website/) <!-- all LIVE day one; /content/information-gain/ [PROVISIONAL slug] -->

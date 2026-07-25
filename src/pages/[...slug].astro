@@ -1,11 +1,12 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { pillarPath } from '../lib/urls';
 
 export async function getStaticPaths() {
   const pillars = await getCollection('pillars', ({ data }) => !data.draft);
   return pillars.map((entry) => ({
-    params: { slug: entry.id },
+    params: { slug: pillarPath(entry).replace(/^\/|\/$/g, '') },
     props: { entry },
   }));
 }
@@ -18,7 +19,7 @@ const { Content } = await render(entry);
   description={entry.data.description}
   datePublished={entry.data.datePublished}
   dateModified={entry.data.dateModified}
-  path={`/${entry.id}/`}
+  path={pillarPath(entry)}
   faqs={entry.data.faqs}
   articleSchema
 >

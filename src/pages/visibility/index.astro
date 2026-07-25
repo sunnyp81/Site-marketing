@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { pillarPath } from '../../lib/urls';
+
+const entries = (await getCollection('pillars', ({ data }) => !data.draft && data.section === 'visibility'))
+  .sort((a, b) => b.data.dateModified.valueOf() - a.data.dateModified.valueOf());
+---
+<BaseLayout
+  title="Search Visibility — getting found by search and AI engines"
+  description="Search visibility for an existing website: getting retrieved and cited by AI engines, topical authority, and query fan-out, without a second retainer."
+  path="/visibility/"
+>
+  <h1>Search Visibility</h1>
+  <p class="meta">Getting an existing site retrieved and cited — by classic search and by AI answer engines.</p>
+
+  <p>Visibility is the second move after measurement: make the pages that already exist retrievable, quotable, and citation-worthy. SEO and GEO share most of their inputs; this section is the part that differs.</p>
+
+  <h2>Start here</h2>
+  <ul>
+    {entries.map((e) => (
+      <li>
+        <a href={pillarPath(e)}><strong>{e.data.title}</strong></a>
+        <br />
+        <span class="meta">{e.data.description}</span>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
