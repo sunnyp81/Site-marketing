@@ -75,7 +75,7 @@ It checks the handful of inputs that both Google and AI answer engines are tryin
 
 Nobody was ever out-ranked because their canonical tags weren't quite perfect on a page with no traffic. They were out-ranked because a crawler gave up before reaching the pages that mattered, or because an AI retriever fetched their page and got served an empty `<div>`. This audit goes after the second kind of problem, in order of how much it costs you.
 
-One more reason this list has changed shape: **Gartner predicts traditional search engine volume will drop 25% by 2026 as users shift to AI chatbots and virtual agents** ([Gartner, 2024](https://www.gartner.com/en/newsroom/press-releases/2024-02-19-gartner-predicts-search-engine-volume-will-drop-25-percent-by-2026-due-to-ai-chatbots-and-other-virtual-agents)). A technical audit that only checks what Googlebot needs is auditing a quarter of a shrinking pie. Rendering and bot access below aren't optional add-ons for 2026 — they're half the point.
+One more reason this list has changed shape: **Gartner predicts traditional search engine volume will drop 25% by 2026 as users shift to AI chatbots and virtual agents** ([Gartner, 2024](https://www.gartner.com/en/newsroom/press-releases/2024-02-19-gartner-predicts-search-engine-volume-will-drop-25-percent-by-2026-due-to-ai-chatbots-and-other-virtual-agents)). A technical audit that only asks what Googlebot needs is auditing the side of the market that's shrinking. Rendering and AI-bot access below aren't optional add-ons for 2026 — they're half the point.
 
 ---
 
@@ -113,7 +113,7 @@ The fix, in priority order:
 - **Put critical content in the HTML even on JS-heavy pages.** Product data, FAQ answers, and key claims can live in the initial payload even if the interactive layer loads on top.
 - **Re-run the View Source test after every major front-end change.** A framework migration is exactly when this silently breaks.
 
-Get this wrong and every other number on this site's own case for AI visibility explains why it matters: our 50-site pilot found the median site's citation share, before any fixes, was just 8%. Some of that ceiling is a content problem. A meaningful chunk of it is pages an AI retriever simply never got to read. You can't be cited for a page a crawler never saw — that's covered from the retrieval side in **[How AI Answer Engines Choose Citations](/visibility/citations/)**.
+Get this wrong and the citation numbers show you the bill. Across our own 50-site pilot, the median site's citation share before any fixes was just 8%. Some of that ceiling is a content problem. A meaningful chunk of it is pages an AI retriever simply never got to read. You can't be cited for a page a crawler never saw — that's covered from the retrieval side in **[How AI Answer Engines Choose Citations](/visibility/citations/)**.
 
 ### Q&A: Should I trust Google's Mobile-Friendly Test to check rendering?
 

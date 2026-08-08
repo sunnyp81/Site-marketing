@@ -61,7 +61,7 @@ VERIFY GPTBot, ClaudeBot, PerplexityBot, Google-Extended access per bot policy. 
 
 **A CRO audit is an instrumented review of an existing site's revenue-generating pages — homepage, pricing, top landing page, forms, checkout or signup — that finds exactly where visitors abandon and prices the fix by revenue, not by a Lighthouse score. You run it on traffic you already paid for, using session recordings and analytics you already have, and you end with a ranked list of leaks, not a design opinion.** That's the deliverable. Everything below is how to produce it properly, page by page.
 
-You already have visitors. That's the whole point of this audit and the reason it comes before almost everything else in the [website marketing playbook](/how-to-market-a-website/). Traffic is getting more expensive to earn — around **60% of US and EU Google searches now end without a single click** ([SparkToro, 2024](https://sparktoro.com/blog/2024-zero-click-search-study-for-every-1000-us-google-searches-only-374-clicks-go-to-the-open-web-in-the-eu-its-360/)) — so the visitors who do land on your site are increasingly precious, and wasting them is increasingly expensive. A CRO audit is how you stop wasting them.
+You already have visitors. That's the whole point of this audit and the reason it comes before almost everything else in the **[website marketing playbook](/how-to-market-a-website/)**. Traffic is getting more expensive to earn — **around 60% of US and EU Google searches ended without a click in 2024** ([SparkToro, 2024](https://sparktoro.com/blog/2024-zero-click-search-study-for-every-1000-us-google-searches-only-374-clicks-go-to-the-open-web-in-the-eu-its-360/)) — so the visitors who do land on your site are increasingly precious, and wasting them is increasingly expensive. A CRO audit is how you stop wasting them.
 
 > **TL;DR**
 > - [What a CRO audit checks](#what-does-a-cro-audit-actually-check) — the instrumented version of a money-pages review.
@@ -76,7 +76,7 @@ You already have visitors. That's the whole point of this audit and the reason i
 
 A CRO audit checks whether the visitors you already have can complete the job they came to do, and where, specifically, they get stuck. That's different from a redesign, a rebrand, or a speed audit — none of those start from "where does the money actually leak," and all three are popular precisely because they're easier to sell than an honest look at abandonment data.
 
-If you've run the [90-minute website marketing audit](/strategy/audit/), you've already done the fast version of this: a five-question yes/no grid across five pages, in twenty minutes, on your phone. That block is a triage — it tells you *that* something's wrong with checkout, not *what*. This audit is the instrumented follow-up: session recordings, form-field analytics, funnel drop-off by step, and a message-match check against the traffic source. Where the 90-minute check gives you a hunch, this one gives you a number and a fix.
+If you've run the **[90-minute website marketing audit](/strategy/audit/)**, you've already done the fast version of this: a five-question yes/no grid across five pages, in twenty minutes, on your phone. That block is a triage — it tells you *that* something's wrong with checkout, not *what*. This audit is the instrumented follow-up: session recordings, form-field analytics, funnel drop-off by step, and a message-match check against the traffic source. Where the 90-minute check gives you a hunch, this one gives you a number and a fix.
 
 Three things this audit deliberately isn't:
 
@@ -88,7 +88,7 @@ Three things this audit deliberately isn't:
 
 ## Why Is Revenue Per Visit the Only Honest CRO Metric?
 
-Revenue per visit — total revenue divided by total sessions — is the only CRO metric that can't be gamed by chasing a vanity number, because it's the one number a CFO actually cares about. Conversion rate alone rewards you for optimising the wrong thing: you can lift a form-completion rate by asking for less information and collect a pile of unqualified leads that never close. Revenue per visit doesn't care how you got there. It just tells you whether the site got better at its actual job.
+Revenue per visit — total revenue divided by total sessions — is the only CRO metric that can't be gamed by chasing a vanity number. It's **the number that survives a CFO**. Conversion rate alone rewards you for optimising the wrong thing: you can lift a form-completion rate by asking for less information and collect a pile of unqualified leads that never close. Revenue per visit doesn't care how you got there. It just tells you whether the site got better at its actual job.
 
 That's not an argument against conversion rate — it's an argument for pairing it with what happens after the conversion. Track both, but report the one that survives a boardroom conversation.
 
@@ -178,7 +178,9 @@ The instrumented version of a friction hunt uses three inputs the five-point che
 2. **Form-field analytics.** Time-to-complete and abandonment by individual field, not just overall form completion rate. One field is usually responsible for most of the drop-off, and it's rarely the one your team assumes.
 3. **Funnel drop-off by step**, not just top-of-funnel-to-conversion. A funnel that loses 40% overall but 25% at one specific step tells you exactly where to spend the next sprint, instead of vaguely "improving the funnel."
 
-Speed scores are a hobby. Revenue-weighted fixes are a job. A Lighthouse number in isolation is not a finding — "checkout loads in six seconds on 4G and we lose people at the payment step" is a finding, because it names a page and a cost. Chase speed only where the session recordings or the funnel data show it's actually where people leave.
+**Speed scores are a hobby. Revenue-weighted fixes are a job.** A Lighthouse number in isolation is not a finding — "checkout loads in six seconds on 4G and we lose people at the payment step" is a finding, because it names a page and a cost. Chase speed only where the session recordings or the funnel data show it's actually where people leave.
+
+One kind of slow isn't yours to price, though, and it's worth handing off cleanly: a page so slow that a crawler gives up before it fetches at all never gets indexed or retrieved, which costs you the visitor before conversion is even in play. That's a server and hosting problem, not a funnel one, and it belongs in the **[technical SEO audit](/technical/audit/)**. This page prices the slow that costs you a sale. That page catches the slow that costs you the visit.
 
 ---
 
@@ -196,7 +198,7 @@ Fixing message-market fit is cheaper than almost any other item on this audit, b
 
 Yes — visitors arriving from ChatGPT, Perplexity or Gemini have usually already had part of the sale made for them, because they read a synthesised answer that named you before they ever clicked through. That changes what the landing page needs to do. A visitor who searched cold needs to be educated and persuaded from nothing. A visitor who arrives having read "here's a tool that does X, here's how it compares to Y" doesn't need the top-of-funnel pitch again — they need confirmation that the page matches what they were just told, plus the specific proof that gets them to act now.
 
-Building for that second kind of visitor means treating an AI-referred landing experience differently from a cold-search one: skip the re-explanation of the category, lead with the specific claim the answer engine likely made about you, and get to proof and action fast. Most sites don't yet know how many of their visitors arrive this way, because a chunk of AI-driven traffic carries no referrer at all and hides inside "direct." Measuring the real number, not just the undercount in your analytics, is its own job: **[Tracking AI Traffic: Referrers, Prompt-Level Visibility and Dark AI Traffic](/measurement/ai-traffic/)**.
+Building for that second kind of visitor means treating an AI-referred landing experience differently from a cold-search one: skip the re-explanation of the category, lead with the specific claim the answer engine likely made about you, and get to proof and action fast. Most sites don't yet know how many of their visitors arrive this way, because a chunk of AI-driven traffic carries no referrer at all and hides inside "direct" — that's **[dark AI traffic](/glossary/dark-ai-traffic/)**, and it means your analytics number is a floor, not a total. Measuring the real one is its own job: **[Tracking AI Traffic: Referrers, Prompt-Level Visibility and Dark AI Traffic](/measurement/ai-traffic/)**.
 
 ---
 
@@ -235,6 +237,8 @@ You score every leak on revenue impact and effort, then divide, exactly the way 
 **Priority = Revenue impact ÷ Effort.** Sort descending, take the top ten, and genuinely delete the rest of the list rather than parking it. A cheap fix on the checkout page will nearly always outrank an expensive redesign of a page few people see — that's the point of dividing by effort rather than just ranking by impact.
 
 Feed the ranked list straight into your quarter: sequence the fixes against everything else on the **[website marketing plan template](/strategy/plan-template/)**, and re-run this audit once the top ten are shipped. Leaks recur — a new landing page, a pricing change, a redesigned checkout can all reopen one — so this isn't a once-and-done exercise any more than the 90-minute audit is.
+
+Once the leaks are shut, the next thing that earns a quarter is the content feeding those pages: that's the **[content audit](/content/audit/)**, and it comes after this one on purpose. Pruning and rewriting a site that still loses people at checkout is decorating a room with a hole in the floor.
 
 ---
 

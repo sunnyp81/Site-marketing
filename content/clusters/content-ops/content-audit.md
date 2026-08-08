@@ -64,11 +64,11 @@ as the reader-facing path. Reconcile against the stack ADR's /content-ops/* mapp
 
 **A content audit is a full inventory of every page on a live site, each one assigned exactly one verdict: prune, merge, refresh, or leave alone. It uses Search Console and analytics data, not opinion, and it ends with a dispositioned list — not a report nobody actions.** That's the whole job. Below is how to build the inventory, apply the verdicts, and run it without losing a quarter to it.
 
-If you've run the [90-minute website marketing audit](/strategy/audit/), you already know your index bloat number — the percentage of indexed pages that earned zero clicks in 90 days. That number is a smoke alarm. It tells you the building's on fire. It doesn't tell you which rooms to save. This page is the room-by-room walk-through: every page, one verdict, no page left in limbo.
+If you've run the **[90-minute website marketing audit](/strategy/audit/)**, you already know your index bloat number — the percentage of indexed pages that earned zero clicks in 90 days. That number is a smoke alarm. It tells you the building's on fire. It doesn't tell you which rooms to save. This page is the room-by-room walk-through: every page, one verdict, no page left in limbo.
 
 > **TL;DR — the four verdicts**
 > 1. [Prune](#what-are-the-four-verdicts-and-how-do-you-decide-between-them) — delete or redirect
-> 2. [Merge](#what-are-the-four-verdicts-and-how-do-you-decide-between-them) — combine competing pages into one
+> 2. [Merge](#how-do-you-spot-cannibalisation-before-it-costs-you-rankings) — combine competing pages into one
 > 3. [Refresh](#what-actually-counts-as-a-refresh-the-15-rule) — rewrite 15%+ of the substance
 > 4. [Leave alone](#what-are-the-four-verdicts-and-how-do-you-decide-between-them) — do nothing, on purpose
 
@@ -84,11 +84,11 @@ Because most of what's already on your site is quietly costing you, and adding t
 
 ## How Is This Different from the 90-Minute Audit's Index Bloat Check?
 
-Speed and depth. Block 3 of the [90-minute audit](/strategy/audit/) gives you a single bloat percentage in 15 minutes — clicked pages divided by indexed pages — so you know *whether* content is your bottleneck this quarter. If under 50% of your indexed pages earned a click in 90 days, that block tells you content operations is your first priority. What it doesn't give you is a page-by-page plan, because it can't — that's a different time box entirely.
+Speed and depth. Block 3 of the **[90-minute audit](/strategy/audit/)** gives you a single bloat percentage in 15 minutes — clicked pages divided by indexed pages — so you know *whether* content is your bottleneck this quarter. If under 50% of your indexed pages earned a click in 90 days, that block tells you content operations is your first priority. What it doesn't give you is a page-by-page plan, because it can't — that's a different time box entirely.
 
 This page is that plan. Where the 90-minute audit spends 15 minutes and produces one number, a content audit spends a working week (more, on a large site) and produces a dispositioned inventory: every URL, one verdict, one action, one owner. Run the 90-minute audit first if you haven't — it tells you whether this page is worth your time this quarter. If your bloat number came back under 50%, it is.
 
-One boundary worth drawing before you start deleting: a page with zero clicks might not have a content problem at all. If it isn't indexed, or Google can't render it, that's a crawl or rendering fault, not a content one — send it to the [technical SEO audit](/technical/audit/) first. Pruning a page that was never given a fair shot at ranking isn't a verdict, it's a guess.
+One boundary worth drawing before you start deleting: a page with zero clicks might not have a content problem at all. If it isn't indexed, or Google can't render it, that's a crawl or rendering fault, not a content one — send it to the **[technical SEO audit](/technical/audit/)** first. Pruning a page that was never given a fair shot at ranking isn't a verdict, it's a guess.
 
 ---
 
@@ -153,7 +153,7 @@ Three signals, checked in this order, because each one is cheaper to pull than t
 2. **Ranking position drift.** Average position moving from single digits into double digits, or off page 1 entirely, over the same window. Position drift usually shows up a few weeks before the click drop does — it's your early warning, not your confirmation.
 3. **Conversion rate decline on the page.** A page can hold its traffic and still be decaying if the content stopped matching what the visitor actually wanted — the query intent shifted underneath it. Pull this from GA4, segmented by landing page, same comparison window.
 
-One signal that lags the other three, worth knowing so you don't over-read it: citation share. In our data, **citations lag Google rankings by roughly 1–2 months** — a page can already be sliding in traditional search while still showing up fine in your last AI-visibility check, because the answer engines haven't caught up to the drop yet. Don't treat a healthy citation number as proof a decaying page is fine. It's a trailing indicator here, not a leading one. If you're tracking this continuously rather than at audit time, that's exactly what [AI citation monitoring](/measurement/citation-monitoring/) is for.
+One signal that lags the other three, worth knowing so you don't over-read it: citation share. In our data, **citations lag Google rankings by roughly 1–2 months** — a page can already be sliding in traditional search while still showing up fine in your last AI-visibility check, because the answer engines haven't caught up to the drop yet. Don't treat a healthy citation number as proof a decaying page is fine. It's a trailing indicator here, not a leading one. If you're tracking this continuously rather than at audit time, that's exactly what **[AI citation monitoring](/measurement/citation-monitoring/)** is for.
 
 ---
 
@@ -193,13 +193,13 @@ Fifteen per cent is also the same threshold this site holds itself to — every 
 
 ## Why Does Deleting Pages Grow Traffic?
 
-Because a page that earns nothing still costs you three things: crawl budget, authority concentration, and topical clarity — and all three get more expensive to waste as the amount of open web worth crawling shrinks.
+Because a page that earns nothing still costs you three things: authority concentration, topical clarity, and — past a certain size — crawl budget. The first two cost you at any scale, and both get more expensive to waste as the amount of open web worth crawling shrinks.
 
-**Crawl budget** is finite, even on a mid-sized site. Every dead page a bot crawls is a visit it didn't spend on a page that could actually rank. Cut the dead weight and you redirect that budget toward pages that earn. More on the mechanics: [crawl budget](/glossary/crawl-budget/).
+**Authority concentration** is the biggest lever. A thin page doesn't just fail to help — it dilutes the **[topical authority](/glossary/topical-authority/)** signal your strong pages are trying to send. Google and LLM retrievers both read "how coherently does this site own this topic," and fifty thin pages scattered across a subject read as less coherent than five pages that clearly own it. I've deleted 400 pages from a site and watched traffic go up. Clients love that conversation right up until they see the graph — the instinct to keep everything is almost always wrong.
 
-**Authority concentration** is the bigger lever. A thin page doesn't just fail to help — it dilutes the [topical authority](/glossary/topical-authority/) signal your strong pages are trying to send. Google and LLM retrievers both read "how coherently does this site own this topic," and fifty thin pages scattered across a subject read as less coherent than five pages that clearly own it. I've deleted 400 pages from a site and watched traffic go up. Clients love that conversation right up until they see the graph — the instinct to keep everything is almost always wrong.
+**Topical clarity** is the retrieval angle specifically. A model deciding what to cite is looking for the page that most clearly and completely owns an answer, not the site with the most pages on the subject. Sprawl reads as noise. A focused inventory reads as a source. If you want the deeper argument for why the pages you keep need to say something the model can't already generate, that's **[information gain](/content/information-gain/)** — read it alongside this page, because pruning and information gain are the same discipline pointed in opposite directions: one clears the dead weight, the other makes sure what's left is worth keeping.
 
-**Topical clarity** is the retrieval angle specifically. A model deciding what to cite is looking for the page that most clearly and completely owns an answer, not the site with the most pages on the subject. Sprawl reads as noise. A focused inventory reads as a source. If you want the deeper argument for why the pages you keep need to say something the model can't already generate, that's [information gain](/content/information-gain/) — read it alongside this page, because pruning and information gain are the same discipline pointed in opposite directions: one clears the dead weight, the other makes sure what's left is worth keeping.
+**Crawl budget** comes last, and it's worth sizing honestly rather than inflating: under about 10,000 URLs it's a hobby worry, because Google crawls a small healthy site fine. Past that, every dead page a bot fetches is a fetch it didn't spend on a page that could rank, and the waste compounds with every batch you publish. More on where that line actually sits: **[crawl budget](/glossary/crawl-budget/)**.
 
 None of this means delete aggressively without checking. It means every page that survives the audit should have a reason to exist beyond "we wrote it once." That's a lower bar than it sounds, and most sites still fail it on a third of their pages.
 
@@ -214,7 +214,7 @@ Batch it, and don't repeat the full pass more often than the data justifies.
 - **Work the verdicts in this order:** prune first (fastest, cheapest, immediate crawl-budget relief), then merge (kills cannibalisation before it compounds), then refresh (the slowest line item — budget a writer's time against it), then confirm leave-alone last, because it needs the least attention and shouldn't eat time you owe the other three.
 - **One owner and one deadline per row**, or the spreadsheet becomes exactly the kind of report this page argued against. If a row still says "TBD" after 90 days, that's not a pending verdict. That's a prune you're avoiding.
 
-If you're sequencing this against the rest of your quarter, the [website marketing playbook](/how-to-market-a-website/) puts the content audit at the start of its Strengthen step — after the leaks are fixed, before anything gets amplified. Don't run this before the fix step is done; a beautifully pruned site sitting behind a broken checkout is still a broken checkout.
+If you're sequencing this against the rest of your quarter, the **[website marketing playbook](/how-to-market-a-website/)** puts the content audit at the start of its Strengthen step — after the leaks are fixed, before anything gets amplified. Don't run this before the fix step is done. A beautifully pruned site sitting behind a broken checkout is still a broken checkout, and finding that checkout is the **[CRO audit](/conversion/audit/)**'s job, not this one's.
 
 ---
 
@@ -222,7 +222,7 @@ If you're sequencing this against the rest of your quarter, the [website marketi
 
 ### How is a content audit different from the index bloat check in the 90-minute audit?
 
-Scope. The [90-minute audit's](/strategy/audit/) Block 3 gives you one number — the percentage of indexed pages earning a click — in 15 minutes, so you know whether content is your bottleneck. A content audit is the follow-up: every page gets pulled into an inventory and given one of four verdicts. One tells you if you have a problem. The other fixes it, page by page.
+Scope. The **[90-minute audit's](/strategy/audit/)** Block 3 gives you one number — the percentage of indexed pages earning a click — in 15 minutes, so you know whether content is your bottleneck. A content audit is the follow-up: every page gets pulled into an inventory and given one of four verdicts. One tells you if you have a problem. The other fixes it, page by page.
 
 ### How often should you run a full content audit?
 
@@ -248,6 +248,6 @@ Check whether either page could stand alone as the definitive answer. If both ar
 
 ## Run the Inventory This Quarter
 
-Pull the three exports, build the sheet, verdict every row. If you haven't run the [90-minute website marketing audit](/strategy/audit/) yet, start there — it tells you in 90 minutes whether this is your quarter's priority or whether the leak is somewhere else entirely. If it comes back showing bloat, this is the page that turns that one number into a dispositioned list, row by row, with an owner and a deadline on every line.
+Pull the three exports, build the sheet, verdict every row. If you haven't run the **[90-minute website marketing audit](/strategy/audit/)** yet, start there — it tells you in 90 minutes whether this is your quarter's priority or whether the leak is somewhere else entirely. If it comes back showing bloat, this is the page that turns that one number into a dispositioned list, row by row, with an owner and a deadline on every line.
 
 *Written by Sunny Patel — in SEO since 2010, specialising in semantic SEO, topical authority and AI search. Last updated 8 August 2026.*
