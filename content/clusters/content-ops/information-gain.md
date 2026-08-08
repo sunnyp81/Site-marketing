@@ -16,7 +16,7 @@ faqs:
   - q: "Do I need a proper research study to have information gain?"
     a: "No. A single honest number from your own operations counts — conversion rate by page type, time-to-fix on a common issue, a before/after from one project. Our whole in-house proof point is a 50-site pilot, not a funded study. Small and yours beats large and borrowed."
   - q: "Is information gain the same thing as E-E-A-T?"
-    a: "No, they overlap but answer different questions. E-E-A-T is evidence that you're a credible source — named author, real credentials, consistent entity data. Information gain is evidence your specific page adds something new. You can have E-E-A-T and still publish a paraphrasable page. See E-E-A-T for the credibility half of this."
+    a: "No, they overlap but answer different questions. E-E-A-T is evidence that you're a credible source — named author, real credentials, consistent entity data. Information gain is evidence your specific page adds something new. You can have E-E-A-T and still publish a paraphrasable page, and most sites do."
   - q: "Does Google's information-gain patent prove AI search actually works this way?"
     a: "No. Google holds patent filings that describe scoring a document by how much it adds beyond what a system has already shown a user — but a patent application is evidence of an idea Google's engineers considered, not confirmation of a live ranking system. Google hasn't confirmed or denied using it. Treat it as a data point, not proof."
   - q: "How often should I run an information-gain audit?"
@@ -42,8 +42,9 @@ CITATION POLICY (this batch)
   considerably. Flag for the Citation-Share Study wave 1.
 
 ROUTING
-- /content/audit/ and /visibility/citations/ ship in the same batch as this page (8-page phase). Links here assume
-  they resolve; if that phase slips, these become relink markers until they do.
+- /content/audit/, /visibility/citations/, /measurement/citation-monitoring/ and /distribution/digital-pr/ ship in
+  the same batch as this page (8-page phase). Links here assume they resolve; if any of those slip, the links to
+  them become relink markers until they do.
 -->
 
 # Information Gain: Pages LLMs Can't Paraphrase Away
@@ -52,7 +53,7 @@ ROUTING
 
 Most content teams are optimising for a test nobody grades any more. They write competently, cover the topic, hit the word count — and produce something an LLM could reconstruct from three other pages it already knows. That page ranks fine and gets cited never, because there's nothing on it the model needs to fetch. It already has the paragraph.
 
-If you just want the one-paragraph version of what information gain is, it's in the **[glossary](/glossary/information-gain/)**. This page is the rest of it: where the moats actually come from, and how to build them on a site that isn't a research lab.
+If you just want the one-paragraph version, the **[information gain definition](/glossary/information-gain/)** in the glossary covers it. This page is the rest of it: where the moats actually come from, and how to build them on a site that isn't a research lab.
 
 ## What Are the Three Moats a Model Can't Fake?
 
@@ -74,7 +75,7 @@ You use data you already have, sized to what you can defend, not data you wish y
 
 ### What Counts as "Your Own Numbers"?
 
-Anything from your own operations that nobody outside your company could publish, because nobody outside your company has it. Time-to-resolve on your ten most common support tickets. Conversion rate by traffic source on your own site. The percentage of client projects where a specific mistake showed up. None of these need a methodology section. They need one honest sentence: what you measured, over what period, on what sample. "Across our last 40 client onboardings, the average time from signed contract to first live page was 11 days" is information gain. "Faster onboarding leads to better outcomes" is filler a model already knows.
+Anything from your own operations that nobody outside your company could publish, because nobody outside your company has it. Time-to-resolve on your ten most common support tickets. Conversion rate by traffic source on your own site. The percentage of client projects where a specific mistake showed up. None of these need a methodology section. They need one honest sentence: what you measured, over what period, on what sample. An agency that writes "across our last 40 onboardings, the average time from signed contract to first live page was 11 days" has information gain, because only that agency can write it. "Faster onboarding leads to better outcomes" is filler a model already knows.
 
 ### How Small Can a Study Be and Still Count?
 
@@ -85,6 +86,8 @@ Smaller than you think. Our own headline figure — median citation share of 8% 
 Because assembling one is tedious, not because it's hard. A structured comparison is a table that puts things side by side that nobody's bothered to put side by side: your top five competitors' pricing tiers mapped against actual feature access, not marketing copy; the real turnaround time across the tools in your category, tested by you, not quoted from their homepages; a decision matrix for a choice your buyers make weekly ("in-house vs agency vs freelancer for X"). Nobody links to a wall of text making this case. People link to the table, because the table is the citable object — it's the thing a model can quote a row from without misrepresenting you.
 
 The pattern across all three: you're not inventing data from nothing. You're formalising something you already do or already know, and refusing to leave it as an unmeasured opinion.
+
+There's a second payoff, and it's the one most teams miss. An original number is the only content asset that doubles as a pitch. Nobody covers your opinion piece; a journalist will cover a figure nobody else has. That's the whole basis of **[digital PR for citations](/distribution/digital-pr/)** — the same dataset that makes a page unparaphrasable is the thing that earns the off-site mentions answer engines weigh when they decide who to trust.
 
 ## Why Does Paraphrase-Proof Content Matter in a Zero-Click World?
 
@@ -128,15 +131,13 @@ The instinct to treat this as a special case — "well, you're a marketing site,
 
 No — it's a data point, not a confirmation, and it's worth being precise about the difference. Google holds patent filings that describe a scoring concept along these lines: a document's value can be measured, in part, by how much it adds beyond information a system has already surfaced to a user. That's a description of the idea, not a quote from the filing, and deliberately so — patent language is dense, contested, and easy to misquote, and a wrong quote is worse than no quote.
 
-Here's the caveat that has to travel with it every time it's mentioned: a patent application is evidence that Google's engineers thought about the problem this way at some point. It is not evidence that a live ranking or retrieval system uses that exact scoring method today, and it's not evidence of how heavily any such signal is weighted if it does. Google has never confirmed or denied using it. Treat the patent as intellectual company for the argument, not as its foundation. The actual proof is simpler and doesn't need a patent number to hold up: pages that only restate the consensus don't get cited by any of the three engines we tested, patent or no patent. That's an observed pattern across our own pilot, not a legal filing.
+Here's the caveat that has to travel with it every time it's mentioned: a patent application is evidence that Google's engineers thought about the problem this way at some point. It is not evidence that a live ranking or retrieval system uses that exact scoring method today, and it's not evidence of how heavily any such signal is weighted if it does. Google has never confirmed or denied using it. Treat the patent as intellectual company for the argument, not as its foundation.
+
+The argument doesn't need it anyway. A model cites what it can't already write. That's not a patent claim, it's the mechanics of retrieval — and you can watch it happen in any answer engine in about ten minutes, which is more than you can say for most ranking-factor theories.
 
 ## Where This Fits in the Bigger Sequence
 
 Information gain is Step 3 of the **[website marketing playbook](/how-to-market-a-website/)** — you strengthen a site's content only after you've fixed what leaks, because publishing original data onto a site with a broken checkout is a waste of a good number. It's also one input into the wider **[GEO for established websites](/visibility/geo/)** playbook, sitting alongside entity clarity and chunk-level structure as one of the handful of things that actually move citation share, rather than the many things that don't.
-
-## Your Next Move
-
-You don't need a content calendar for this. You need to open your ten highest-value pages and run the paraphrase test against each one this afternoon. Most will fail. That's the finding, not a setback — it's the same story every site tells before it fixes anything. If you haven't baselined where you stand yet, start with the **[90-minute website marketing audit](/strategy/audit/)** — Block 2 measures your current citation share in 30 minutes, so you know whether you're starting from 8%, from zero, or from somewhere better than you assumed. Fix the gap page by page after that, one moat at a time.
 
 ## FAQ
 
@@ -150,7 +151,7 @@ It's the part of your page a model can't already generate from what it was train
 
 ### Is information gain the same thing as E-E-A-T?
 
-**No**, they overlap but answer different questions. **[E-E-A-T](/glossary/e-e-a-t/)** is evidence that you're a credible source — named author, real credentials, consistent entity data. Information gain is evidence your specific page adds something new. You can have E-E-A-T and still publish a paraphrasable page.
+**No**, they overlap but answer different questions. **[E-E-A-T](/glossary/e-e-a-t/)** is evidence that you're a credible source — named author, real credentials, consistent entity data. Information gain is evidence your specific page adds something new. You can have E-E-A-T and still publish a paraphrasable page, and most sites do.
 
 ### Does Google's information-gain patent prove AI search actually works this way?
 
@@ -161,5 +162,9 @@ It's the part of your page a model can't already generate from what it was train
 Alongside every quarterly content audit, not as a separate project. Tag pages while you're already deciding prune, merge, refresh or leave alone — a page failing the paraphrase test is a refresh candidate by definition. Running it standalone just duplicates work you're already doing elsewhere.
 
 ---
+
+## Your Next Move
+
+You don't need a content calendar for this. You need to open your ten highest-value pages and run the paraphrase test against each one this afternoon. Most will fail. That's the finding, not a setback — it's the same story every site tells before it fixes anything. If you haven't baselined where you stand yet, start with the **[90-minute website marketing audit](/strategy/audit/)** — Block 2 measures your current citation share in 30 minutes, so you know whether you're starting from 8%, from zero, or from somewhere better than you assumed. Fix the gap page by page after that, one moat at a time.
 
 *Written by Sunny Patel — in SEO since 2010, specialising in semantic SEO, topical authority and AI search. Last updated 8 August 2026.*
