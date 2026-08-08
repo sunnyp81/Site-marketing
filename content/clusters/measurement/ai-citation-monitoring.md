@@ -22,12 +22,56 @@ faqs:
   - q: "What counts as a citation, versus just a mention?"
     a: "A citation is the engine naming you and linking your URL in its answer. A mention is your brand named with no link. Score citations 2, mentions 1, absence 0, and report citation share on the 2s only — mentions are useful colour, not the headline number."
   - q: "Is citation share the same as AI referral traffic?"
-    a: "No. Citation share measures whether AI engines cite you when asked; AI referral traffic measures whether cited readers actually clicked through. You can have a healthy citation share and quiet referral numbers if readers get their answer from the citation and never click. See **[Tracking AI Traffic](/measurement/ai-traffic/)** for the click-side half of this picture."
+    a: "No. Citation share measures whether AI engines cite you when asked; AI referral traffic measures whether cited readers actually clicked through. You can have a healthy citation share and quiet referral numbers if readers get their answer from the citation and never click. Tracking AI traffic is the click-side half of this picture."
   - q: "Why doesn't citation share move as fast as my Google rankings?"
     a: "Because the engines refresh on a different clock. In our data, citations lag Google ranking improvements by roughly one to two months — a page that starts ranking in week two often doesn't show up in an AI answer until the following monitoring cycle. Don't judge a fix by next week's check; judge it by next month's."
   - q: "When should I pay for a citation-monitoring tool?"
     a: "When your prompt panel needs to exceed roughly 40 prompts, when 90 minutes a month stops covering the ground you need, or when you're tracking citation share for several competitors at once and the manual log becomes the bottleneck. Below that line, a spreadsheet and a fixed monthly slot beats a subscription."
 ---
+
+<!--
+PRODUCTION NOTES (do not publish this block)
+
+SCHEMA
+- Schema: Article + FAQPage + BreadcrumbList. Author Person schema for Sunny Patel, sameAs -> LinkedIn.
+- FAQPage generated from front-matter faqs[] (6 pairs). Do not double-mark the visible FAQ section separately.
+- Front-matter faq answers must stay PLAIN PROSE. BaseLayout passes `f.a` straight into
+  acceptedAnswer.text, so any markdown left in there ships as literal `**[text](/url/)**` inside the
+  JSON-LD. Put the links in the visible FAQ body instead — that half is markdown-rendered.
+- Visible dateModified on page (author line). Refresh diary: January 2027, 15%+ substantive change.
+
+DATA CONSISTENCY (locked upstream — do not restate differently)
+- 8% median citation share = the informal 50-site pilot, owned by pillar #1 (/how-to-market-a-website/)
+  and /research/citation-share-study/. A MEASURED figure: single median, n=50, no segmentation. Never
+  publish a distribution, an industry cut, or "X% of sites score below Y" — those numbers do not exist.
+- ">=30% = good" is a SET BAR, not a measured figure. Canonical wording at pillar #1: "cited in >=30%
+  of relevant prompts across the three main engines"; repeated on /strategy/audit/ Block 1 and in
+  content/ops/measurement-and-citation-monitoring-setup.md §5. Per the claims register in
+  content/distribution/linkedin-launch-sequence.md it must always read as site.marketing's own
+  benchmark, never as a published third-party stat. Keep the measured/set distinction explicit.
+- "Citations lag Google rankings by ~1-2 months" is our data — same phrasing as the GEO pillar and
+  /strategy/seo-vs-geo-vs-cro/. Keep the "our data" attribution every time.
+- Citation share = score-2 (cited WITH a link) / checks completed. This matches
+  content/ops/measurement-and-citation-monitoring-setup.md §5, which is the binding spec. NOTE: the GEO
+  pillar's methodology box currently reads "cited or mentioned", which is the score-2+score-1 unit and
+  contradicts the ops spec. Flagged for the owner — this page follows the ops spec. Do not silently
+  switch units to resolve it.
+- Scoring scale, prompt-panel rules, 60-check grid, unrunnable-check rule and the >40-prompt / >3-hrs
+  upgrade triggers all mirror the ops spec §5 and §10. Sync this page if that spec changes on review.
+- SCOPE: this page owns the ONGOING prompt-panel monitoring system (cadence, scoring, calculation,
+  tooling threshold). /measurement/ai-traffic/ owns analytics — referrers, dark traffic, branded search.
+  /strategy/audit/ owns the one-off 20-prompt method itself. Do not let the three collapse on a refresh.
+- The 90-min monthly figure (ops spec §5/§8) and the 30-min figure on /strategy/audit/ Block 2 are both
+  correct and now explicitly reconciled in the run section — the delta is competitor logging and
+  screenshots. Keep that reconciliation if either number is ever edited.
+
+ROUTING FLAG (not a content issue): this page links to /measurement/ai-traffic/, /visibility/citations/,
+/content/information-gain/ and /distribution/digital-pr/ as reader-facing paths, matching the topical map
+and the other 7 pages in this batch. Reconcile against the stack ADR's collection-to-route mapping before
+launch so none of these 404. Cross-page consistency wins until routing settles.
+
+VERIFY GPTBot, ClaudeBot, PerplexityBot, Google-Extended access per bot policy. All content in initial HTML.
+-->
 
 # AI Citation Monitoring: A DIY Method That Works
 
@@ -39,7 +83,7 @@ If you haven't measured this yet, start with the one-off version: the 20-prompt 
 
 ## What Is Citation Share, Exactly?
 
-Citation share is the count of prompt-checks where an AI engine cited your URL, divided by the number of checks you actually completed. Run 20 prompts across 3 engines and you've completed 60 checks; if 5 of them cite you with a link, your citation share is 5 ÷ 60, or roughly 8%.
+Citation share is the count of prompt-checks where an AI engine cited your URL, divided by the number of checks you actually completed. Run 20 prompts across 3 engines and you've completed 60 checks; if 6 of them cite you with a link, your citation share is 6 ÷ 60 — 10%.
 
 The word "cited" is doing the work in that sentence, so score it precisely, not vaguely. Three states, not two:
 
@@ -91,6 +135,8 @@ The mechanics, in order:
 3. **Log the competitor who won, every time you lose.** This field is not optional. A citation-share number tells you there's a problem; the competitor log tells you which page to write next. If you lose every "X vs Y" prompt to the same site, that's not bad luck, that's a comparison page you haven't published.
 4. **Screenshot every citation and mention.** An engine's answer today is often unreproducible next month — the index moves on. A screenshot is the only receipt you'll have when you want to show the before-and-after later.
 
+Budget 90 minutes, and don't be surprised that it's longer than the 30 minutes the one-off audit takes for the same 60 checks. The extra hour isn't the prompting — it's steps 3 and 4. A baseline pass only needs your own score; a monitoring run has to log who beat you and file a screenshot for every hit, because those are the two things you cannot reconstruct later. Skip them and you've saved an hour and kept a number you can't explain.
+
 Same operator, same day, same panel, every month. Boring is the point.
 
 ---
@@ -113,9 +159,18 @@ Completed means exactly that — checks you actually ran and could score, nothin
 
 ## What's a Good Citation Share?
 
-Two named numbers to anchor against, both from our own audit work, not an industry survey: **the median citation share across our 50-site pilot, before any GEO work, was 8%.** Most owners guessed wrong in both directions before we measured — some assumed zero, some assumed they were "everywhere." Both were wrong, which is the entire argument for measuring instead of guessing. If your first check lands under 10%, you're not behind, you're typical.
+Two numbers anchor the scale, and they are not the same kind of number. Keep them straight or you'll misread your own result.
 
-**≥30% is the bar worth calling "good."** Below 8%, you're likely invisible on the comparison and recommendation prompts that carry buying intent. Between 8% and 30%, you're being cited inconsistently — present for some intents, absent for others, which is exactly what the per-engine and per-prompt breakdown is for. Above 30%, you're a source the engines reach for by default on your core topics, and the job shifts from "get cited" to "stay cited."
+| Number | What it is | Where it comes from |
+|---|---|---|
+| **8%** | The **median** citation share we measured before any GEO work | Our own 50-site pilot — 20 prompts, three engines, one median |
+| **≥30%** | The **bar** we call "good" — cited in 30% or more of relevant prompts | A target we set, not a figure the pilot measured |
+
+**The median is 8%.** Most owners guessed wrong in both directions before we measured — some assumed zero, some assumed they were "everywhere." Both were wrong, which is the entire argument for measuring instead of guessing. So if your first check lands near 8%, you aren't behind. You're mid-table, alongside everyone else who hasn't done this deliberately.
+
+Be careful what you read into that, though. A pilot of 50 sites gives one honest median and nothing else — no distribution, no per-industry cut, no "X% of sites score below Y." Anyone quoting you those numbers is inventing them, us included if we ever tried. What the median tells you is where the middle sits. Where *you* sit relative to it is the only comparison it supports.
+
+**The bar is ≥30%,** and it's ours — a target, not a survey finding. Below it you're being cited inconsistently: present for some intents, absent for others, which is exactly what the per-engine and per-prompt breakdown is for. At or above it, you're a source the engines reach for by default on your core topics, and the job changes from "get cited" to "stay cited." The distance between your number and 30% is your actual workload.
 
 If you're trying to place where your site sits overall — not just on citations but against the traffic and conversion picture too — the **["Invisible-to-AI" state](/strategy/seo-vs-geo-vs-cro/)** in the SEO vs GEO vs CRO framework uses this exact 8% line as its gate.
 
@@ -125,13 +180,13 @@ If you're trying to place where your site sits overall — not just on citations
 
 Mostly two things: being mentioned elsewhere, and being easy to lift a clean answer from. Neither is a meta-tag fix.
 
-**Being mentioned elsewhere matters more than almost anything else you can do on-page.** Ahrefs' 2025 analysis found that [brand mentions across the web correlated more strongly with appearing in AI answers than almost any other factor tested](https://ahrefs.com/blog/ai-overview-brand-correlation/) — stronger than most of the classic on-page ranking signals. AI engines lean on the web's consensus about who's credible on a topic, and consensus is built off-site, one mention at a time. That's a **[digital PR](/distribution/digital-pr/)** job as much as a content job — get named on the pages the engines already trust, and citations follow.
+**Being mentioned elsewhere matters more than almost anything else you can do on-page.** Ahrefs' 2025 analysis found that [brand mentions across the web correlated more strongly with appearing in AI answers than almost any other factor it tested](https://ahrefs.com/blog/ai-overview-brand-correlation/). Mentions, note — with or without a link. AI engines lean on the web's consensus about who's credible on a topic, and consensus is built off-site, one mention at a time. That's a **[digital PR](/distribution/digital-pr/)** job as much as a content job — get named on the pages the engines already trust, and citations follow.
 
 **Being easy to lift a clean answer from matters almost as much.** An engine that's synthesising an answer favours a page that states the fact plainly and self-contained over one that buries it in three paragraphs of preamble. That's what **[information gain](/glossary/information-gain/)** and self-contained answer structure are actually for — see the deeper build guide at **[Information Gain](/content/information-gain/)**. Entity clarity plays the same role: an engine has to be confident about *who* it's citing before it cites you, which is the core argument of **[GEO for established websites](/visibility/geo/)** (glossary: **[GEO](/glossary/geo/)**, **[AEO](/glossary/aeo/)**).
 
 If you want the mechanics of how an engine actually chooses a source over a shelf of alternatives — the retrieval and ranking logic behind the citation decision — that's a dedicated page: **[How AI Answer Engines Choose Citations](/visibility/citations/)**.
 
-Why this is worth the effort at all, in one line each: search volume itself is shrinking as an on-ramp — Gartner projects [traditional search engine volume drops 25% by 2026](https://www.gartner.com/en/newsroom/press-releases/2024-02-19-gartner-predicts-search-engine-volume-will-drop-25-percent-by-2026-due-to-ai-chatbots-and-other-virtual-agents) as the shift to chatbots continues — and even the search that remains increasingly doesn't end in a click: SparkToro's 2024 study found [roughly 60% of Google searches end without one](https://sparktoro.com/blog/2024-zero-click-search-study-for-every-1000-us-google-searches-only-374-clicks-go-to-the-open-web-in-the-eu-its-360/), with only 374 of every 1,000 US searches reaching the open web at all. A citation inside an AI answer is increasingly the only exposure a buyer gets. If you're not measuring it, you don't know whether you're getting any.
+Why this is worth the effort at all, in one line each: search volume itself is shrinking as an on-ramp — Gartner projects [traditional search engine volume drops 25% by 2026](https://www.gartner.com/en/newsroom/press-releases/2024-02-19-gartner-predicts-search-engine-volume-will-drop-25-percent-by-2026-due-to-ai-chatbots-and-other-virtual-agents) as the shift to chatbots continues — and the search that remains mostly doesn't end in a click: SparkToro's 2024 study found [roughly 60% of US and EU Google searches ended without one](https://sparktoro.com/blog/2024-zero-click-search-study-for-every-1000-us-google-searches-only-374-clicks-go-to-the-open-web-in-the-eu-its-360/), with only 374 of every 1,000 US searches reaching the open web at all. A citation inside an AI answer is increasingly the only exposure a buyer gets. If you're not measuring it, you don't know whether you're getting any.
 
 ---
 

@@ -20,7 +20,7 @@ faqs:
   - q: "Which AI referrer hostnames should I filter for in GA4?"
     a: "At minimum: chatgpt.com, chat.openai.com, perplexity.ai, gemini.google.com, copilot.microsoft.com, claude.ai, you.com and meta.ai. Build them into one custom channel group rather than hunting them individually in the default reports, and flag search.brave.com separately — it mixes classic and AI-answer results, so it isn't a clean AI signal on its own."
   - q: "Is a rise in branded search proof that AI answers are sending me traffic?"
-    a: "Not proof — a signal. Branded search volume rises for lots of reasons. But paired with a citation-share increase from your prompt audit and a lag of roughly one to two months, it's the closest thing to a paper trail dark AI traffic leaves behind. One metric moving is a coincidence; two moving together, in order, is a pattern."
+    a: "No — it's a signal, not proof. Branded search volume rises for lots of reasons. But paired with a citation-share increase from your prompt audit and a lag of roughly one to two months, it's the closest thing to a paper trail dark AI traffic leaves behind. One metric moving is a coincidence; two moving together, in order, is a pattern."
   - q: "Do I need a paid citation-tracking tool to see prompt-level visibility?"
     a: "No, not to start. A manual 20-prompt audit across ChatGPT, Perplexity and Gemini takes about 30 minutes and tells you your citation share today. A paid tool earns its keep once that manual pass becomes the bottleneck — more prompts than one sitting can cover, or a need for weekly deltas — not before."
   - q: "What's the difference between tracking AI traffic and citation monitoring?"
@@ -38,8 +38,14 @@ SCHEMA
 - Visible dateModified on page (author line). Refresh diary: January 2027, 15%+ substantive change.
 
 DATA CONSISTENCY (locked upstream — do not restate differently)
-- 8% median citation share = the informal 50-site pilot (pillar #1, /how-to-market-a-website/). >=30% = the "good"
-  threshold. Both figures owned by the pillar and the audit page — keep phrasing identical on every refresh.
+- 8% median citation share = the informal 50-site pilot (pillar #1, /how-to-market-a-website/). It is a MEASURED
+  median: single median, n=50, no segmentation. Never imply a distribution, a per-intent cut, or "most sites sit
+  at X" from it.
+- ">=30% = good" is a DIFFERENT KIND of number: a bar we set, not a figure the pilot measured. Canonical wording
+  lives at pillar #1 ("cited in >=30% of relevant prompts across the three main engines") and is repeated on
+  /strategy/audit/ Block 1. Per the claims register in content/distribution/linkedin-launch-sequence.md it must
+  always read as site.marketing's own benchmark, never as a published third-party stat. Keep the two numbers
+  attributed differently on every refresh — measured vs set.
 - "Citations lag Google rankings by ~1-2 months" is in-house data (our data), same figure used on
   /strategy/seo-vs-geo-vs-cro/ — do not restate with a different range.
 - GA4 custom-channel-group hostname list and regex mirror content/ops/measurement-and-citation-monitoring-setup.md
@@ -141,7 +147,7 @@ Two things weaken branded search as a signal on their own, which is why it's a c
 
 Use it as one more data point next to your AI Referral line and your citation share, not as a replacement for either. Three imperfect signals moving in the same direction over two consecutive quarters is a real trend. One signal moving on its own is noise until proven otherwise.
 
-Worth saying plainly, because it reframes why any of this measurement work matters now rather than later: Gartner predicts traditional search engine volume [drops 25% by 2026](https://www.gartner.com/en/newsroom/press-releases/2024-02-19-gartner-predicts-search-engine-volume-will-drop-25-percent-by-2026-due-to-ai-chatbots-and-other-virtual-agents) as users shift to AI chatbots and virtual agents, and SparkToro's research already puts the open web's share of Google searches at roughly [374 clicks per 1,000 US searches](https://sparktoro.com/blog/2024-zero-click-search-study-for-every-1000-us-google-searches-only-374-clicks-go-to-the-open-web-in-the-eu-its-360/) — under 360 in the EU. Clicks were never the whole picture. They're becoming a smaller slice of it every quarter, which is exactly why the floor-not-total framing on this page isn't a caveat — it's the headline.
+Worth saying plainly, because it reframes why any of this measurement work matters now rather than later: Gartner predicts traditional search engine volume [drops 25% by 2026](https://www.gartner.com/en/newsroom/press-releases/2024-02-19-gartner-predicts-search-engine-volume-will-drop-25-percent-by-2026-due-to-ai-chatbots-and-other-virtual-agents) as users shift to AI chatbots and virtual agents. And the clicks that do survive are already a minority: SparkToro found that per [1,000 US Google searches, only 374 clicks reach the open web](https://sparktoro.com/blog/2024-zero-click-search-study-for-every-1000-us-google-searches-only-374-clicks-go-to-the-open-web-in-the-eu-its-360/) — 360 in the EU. Clicks were never the whole picture. They're a shrinking slice of it, which is exactly why the floor-not-total framing on this page isn't a caveat. It's the headline.
 
 ---
 
@@ -149,7 +155,7 @@ Worth saying plainly, because it reframes why any of this measurement work matte
 
 You ask them directly — referral traffic and branded search are both downstream signals, and neither tells you your current citation status on its own. The direct method is the 20-prompt audit: write 20 buyer-language questions, run them through ChatGPT, Perplexity and Gemini in fresh chats, and log whether you're mentioned, cited with a link, or absent. The full step-by-step — the prompt template, the timing, the scoring — already lives in **[the 90-minute website marketing audit](/strategy/audit/)**, Block 2. It's not repeated here; go there for the how.
 
-What belongs on this page is where that number sits in the wider picture. Across our own 50-site pilot, the median site's citation share before any deliberate GEO work was **8%**. The bar for "good" is **30% or higher**. If your prompt audit lands you well under 8%, that's not a crisis — it's the median starting point, and the same one nearly every site not actively working on this sits at. If a competitor keeps coming up instead of you, that's the "who got cited instead" column doing its job — and it's worth reading **[how AI answer engines choose citations](/visibility/citations/)** to understand what you're being out-competed on.
+What belongs on this page is where that number sits in the wider picture. Across our own 50-site pilot, the median site's citation share before any deliberate GEO work was **8%**. Our bar for "good" is being cited in **30% or more** of relevant prompts across the three main engines — that's a target we set, not a figure the pilot measured. So a first reading somewhere around 8% isn't a crisis; it's the middle of the pack, and the gap between the two numbers is the work. If a competitor keeps coming up instead of you, that's the "who got cited instead" column doing its job — and it's worth reading **[how AI answer engines choose citations](/visibility/citations/)** to understand what you're being out-competed on.
 
 A one-off prompt audit gives you a snapshot. Repeating it on a fixed schedule, with the same prompts each time, is what turns it into a trend line — and that's a different job with its own method, timing and tooling questions. That's **[citation monitoring](/measurement/citation-monitoring/)**, and it's built to run alongside this page, not instead of it: this page tells you what already happened in your analytics; citation monitoring tells you what's currently true in the engines.
 
@@ -198,7 +204,7 @@ At minimum: chatgpt.com, chat.openai.com, perplexity.ai, gemini.google.com, copi
 
 ### Is a rise in branded search proof that AI answers are sending me traffic?
 
-**Not proof** — a signal. Branded search volume rises for lots of reasons. But paired with a citation-share increase from your prompt audit and a lag of roughly one to two months, it's the closest thing to a paper trail dark AI traffic leaves behind. One metric moving is a coincidence; two moving together, in order, is a pattern.
+**No** — it's a signal, not proof. Branded search volume rises for lots of reasons. But paired with a citation-share increase from your prompt audit and a lag of roughly one to two months, it's the closest thing to a paper trail dark AI traffic leaves behind. One metric moving is a coincidence; two moving together, in order, is a pattern.
 
 ### Do I need a paid citation-tracking tool to see prompt-level visibility?
 
