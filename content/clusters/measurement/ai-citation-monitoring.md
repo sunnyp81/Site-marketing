@@ -36,8 +36,8 @@ SCHEMA
 - Schema: Article + FAQPage + BreadcrumbList. Author Person schema for Sunny Patel, sameAs -> LinkedIn.
 - FAQPage generated from front-matter faqs[] (6 pairs). Do not double-mark the visible FAQ section separately.
 - Front-matter faq answers must stay PLAIN PROSE. BaseLayout passes `f.a` straight into
-  acceptedAnswer.text, so any markdown left in there ships as literal `**[text](/url/)**` inside the
-  JSON-LD. Put the links in the visible FAQ body instead — that half is markdown-rendered.
+  acceptedAnswer.text, so any markdown left in there ships as raw asterisks and bracket syntax inside
+  the JSON-LD. Put the links in the visible FAQ body instead — that half is markdown-rendered.
 - Visible dateModified on page (author line). Refresh diary: January 2027, 15%+ substantive change.
 
 DATA CONSISTENCY (locked upstream — do not restate differently)
@@ -77,7 +77,7 @@ VERIFY GPTBot, ClaudeBot, PerplexityBot, Google-Extended access per bot policy. 
 
 **Citation share is the percentage of relevant AI answers that cite your site — not just mention you, cite you, with a link. It's the one number that tells you whether ChatGPT, Perplexity and Gemini actually recommend you when a buyer asks the question you'd want to own.** You build it with a fixed panel of buyer prompts, a monthly check across three engines, and a log — no subscription required to get a real baseline, and no subscription required to keep it current for months after that.
 
-If you haven't measured this yet, start with the one-off version: the 20-prompt AI visibility audit inside the **[90-Minute Website Marketing Audit](/strategy/audit/)** gets you a baseline in 30 minutes. This page is what you do next — the ongoing system that turns a single number into a trend line you can act on, and the measurement step the **[website marketing playbook](/how-to-market-a-website/)** tells you to run and re-run.
+If you haven't measured this yet, start with the one-off version: the 20-prompt AI visibility audit inside the **[90-minute website marketing audit](/strategy/audit/)** gets you a baseline in 30 minutes. This page is what you do next — the ongoing system that turns a single number into a trend line you can act on, and the measurement step the **[website marketing playbook](/how-to-market-a-website/)** tells you to run and re-run.
 
 ---
 
@@ -113,7 +113,7 @@ If you're weighing whether measurement deserves a slice of budget at all, it's a
 
 ## How Do You Build the Prompt Panel?
 
-You build it from real buyer questions, not keywords — the exact phrasing someone would type into ChatGPT when they have your problem, not the terms you'd type into a rank tracker. The full template for this — the four intent buckets, the example shapes, how many of each — already lives at the **[90-Minute Website Marketing Audit](/strategy/audit/)**, so this page won't re-teach it. Borrow that panel wholesale for your first month; it's built to be copied.
+You build it from real buyer questions, not keywords — the exact phrasing someone would type into ChatGPT when they have your problem, not the terms you'd type into a rank tracker. The full template for this — the four intent buckets, the example shapes, how many of each — already lives at the **[90-minute website marketing audit](/strategy/audit/)**, so this page won't re-teach it. Borrow that panel wholesale for your first month; it's built to be copied.
 
 What matters for the ongoing system, beyond the panel itself, is two habits the one-off audit doesn't need to worry about:
 
@@ -269,6 +269,6 @@ When your prompt panel needs to exceed roughly 40 prompts, when 90 minutes a mon
 
 You don't need a tool, a trial or a meeting to start. You need a locked panel of real buyer questions, 90 minutes on the same day each month, and a spreadsheet with three columns: mentioned, cited, who beat you. Run it once and you have a baseline. Run it every month and you have the only number that tells you whether your AI visibility is actually improving or just feels like it should be.
 
-If you haven't set your baseline yet, that's Block 2 of the **[90-Minute Website Marketing Audit](/strategy/audit/)** — do that first, then bring the same panel back here every month.
+If you haven't set your baseline yet, that's Block 2 of the **[90-minute website marketing audit](/strategy/audit/)** — do that first, then bring the same panel back here every month.
 
 *Written by Sunny Patel — in SEO since 2010, specialising in semantic SEO, topical authority and AI search. Last updated 8 August 2026.*
