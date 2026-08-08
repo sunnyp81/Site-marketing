@@ -124,13 +124,13 @@ Two named thresholds to write on the wall: **citation share of ≥30% is good; 8
 The 60-second retrieval for each, so you don't lose the block hunting through menus:
 
 1. **Organic clicks** — GSC → Performance → Search results. Set the date range to last 3 months, filter to Search type "Web." Read the total Clicks. Note whether one page is carrying the total.
-2. **AI referrals** — GA4 → Reports → Acquisition → Traffic acquisition. Add a filter or search for `chatgpt.com`, then `perplexity.ai`, then `gemini.google.com`. Sum the sessions. This is your floor, not your total — dark AI traffic arrives with no referrer. For the ceiling, see **Tracking AI Traffic**<!-- relink: /measurement/ai-traffic/ -->.
+2. **AI referrals** — GA4 → Reports → Acquisition → Traffic acquisition. Add a filter or search for `chatgpt.com`, then `perplexity.ai`, then `gemini.google.com`. Sum the sessions. This is your floor, not your total — dark AI traffic arrives with no referrer. For the ceiling, see **[Tracking AI Traffic](/measurement/ai-traffic/)**.
 3. **Citation share** — leave blank for now; Block 2 fills it in.
 4. **Conversion rate** — GA4 → Engagement or Monetisation, segmented by landing page or page path. Grab the rate for homepage, pricing, and your top landing page.
 5. **Indexed vs valuable pages** — GSC → Indexing → Pages. Read the "indexed" count. Hold it; Block 3 does the maths.
 6. **Revenue per visit** — total revenue ÷ total sessions for the last 90 days. One division. Done.
 
-Six numbers in the Sheet's tab 1. When you're ready to watch citation share continuously instead of quarterly, that's a **citation-monitoring**<!-- relink: /measurement/citation-monitoring/ --> job — not today's.
+Six numbers in the Sheet's tab 1. When you're ready to watch citation share continuously instead of quarterly, that's a **[citation-monitoring](/measurement/citation-monitoring/)** job — not today's.
 
 ---
 
@@ -156,7 +156,7 @@ Now the number that reframes the whole exercise. Across our 50-site pilot audit,
 
 ### Q&A: Do I need a citation-tracking tool for this?
 
-**No.** Manual quarterly beats automated never. A £99/month tool that you set up in three months' time tracks nothing today; twenty prompts and a fresh browser tab track everything you need for a baseline right now. Run it by hand this quarter. When the manual pass becomes the bottleneck — more topics than one sitting can cover, or you want weekly deltas — that's when you **automate citation monitoring**<!-- relink: /measurement/citation-monitoring/ -->, not before. For the how-to-get-cited playbook once you know your number, see [GEO for established websites](/visibility/geo/) (and the definitions for [GEO](/glossary/geo/) and [AEO](/glossary/aeo/) if you want them).
+**No.** Manual quarterly beats automated never. A £99/month tool that you set up in three months' time tracks nothing today; twenty prompts and a fresh browser tab track everything you need for a baseline right now. Run it by hand this quarter. When the manual pass becomes the bottleneck — more topics than one sitting can cover, or you want weekly deltas — that's when you **[automate citation monitoring](/measurement/citation-monitoring/)**, not before. For the how-to-get-cited playbook once you know your number, see [GEO for established websites](/visibility/geo/) (and the definitions for [GEO](/glossary/geo/) and [AEO](/glossary/aeo/) if you want them).
 
 Citation share into tab 1. Move on — the clock says 0:45.
 
@@ -174,7 +174,7 @@ The named threshold: **if under 50% of your indexed pages earned a click in 90 d
 
 > 1,240 indexed pages. 310 of them earned at least one organic click in 90 days. That's 25%. Verdict: prune. Three-quarters of what Google crawls on this site is dead weight, diluting authority and burning crawl budget on pages no human visits.
 
-I once deleted 400 pages from a site and watched traffic go up; index bloat is usually why that works. Fewer, stronger pages beat a big pile of thin ones, for Google and for LLM retrievers both. Start the cleanup with a **content audit**<!-- relink: /content/audit/ --> — that's the deep version of this block. One caveat before you reach for the delete key: if pages aren't indexed *at all*, that's a different problem for a different page — a crawl or rendering fault belongs in the **technical SEO audit**<!-- relink: /technical/audit/ -->, not the prune pile.
+I once deleted 400 pages from a site and watched traffic go up; index bloat is usually why that works. Fewer, stronger pages beat a big pile of thin ones, for Google and for LLM retrievers both. Start the cleanup with a **[content audit](/content/audit/)** — that's the deep version of this block. One caveat before you reach for the delete key: if pages aren't indexed *at all*, that's a different problem for a different page — a crawl or rendering fault belongs in the **[technical SEO audit](/technical/audit/)**, not the prune pile.
 
 Bloat percentage into the Sheet. Clock says 1:00. Halfway isn't the word — you're two-thirds done and the fastest wins are still ahead.
 
@@ -198,7 +198,7 @@ Now the rule that keeps this block honest: **Speed scores are a hobby. Revenue-w
 
 ### Q&A: Should I run Lighthouse during the audit?
 
-**No.** Load each page on your phone instead — that's the test your buyers actually run. Lighthouse gives you a lab score in ideal conditions; your buyer is on a train with two bars and one thumb. If a page feels slow on your phone, that's the leak, and it goes on the list with a revenue guess next to it. The deep, instrumented version of this block lives in the **CRO audit**<!-- relink: /conversion/audit/ -->. Today you're just finding the leaks worth fixing.
+**No.** Load each page on your phone instead — that's the test your buyers actually run. Lighthouse gives you a lab score in ideal conditions; your buyer is on a train with two bars and one thumb. If a page feels slow on your phone, that's the leak, and it goes on the list with a revenue guess next to it. The deep, instrumented version of this block lives in the **[CRO audit](/conversion/audit/)**. Today you're just finding the leaks worth fixing.
 
 Every "no" from the grid becomes a row in the fix list. Ten minutes left.
 
@@ -239,11 +239,11 @@ Your fix list feeds the next two pages directly: sequence it across quarters wit
 
 This is triage, not surgery. Triage's job is to tell you which surgery to book — and to be finishable, which the 200-point checklists never are. Five things it skips on purpose, each with the one condition that earns it a deeper look later:
 
-- **Full site crawl.** Skipped because it takes longer than the whole audit. Earns a look when Block 3 shows heavy bloat and you need the page-by-page list to prune from — that's a **content audit**<!-- relink: /content/audit/ -->.
-- **Backlink profile.** Skipped because it needs a paid tool and won't reorder your top ten this quarter. Earns a look when brand mentions are the thing holding your citation share down — a **digital PR**<!-- relink: /distribution/digital-pr/ --> job, not an audit line.
+- **Full site crawl.** Skipped because it takes longer than the whole audit. Earns a look when Block 3 shows heavy bloat and you need the page-by-page list to prune from — that's a **[content audit](/content/audit/)**.
+- **Backlink profile.** Skipped because it needs a paid tool and won't reorder your top ten this quarter. Earns a look when brand mentions are the thing holding your citation share down — a **[digital PR](/distribution/digital-pr/)** job, not an audit line.
 - **Keyword research.** Skipped because you're auditing what a live site *does*, not planning what it could rank for. Earns a look when the fix list is done and you're choosing what to build next.
 - **Competitor teardown.** Skipped because "who got cited instead" in Block 2 already gives you the only competitive signal you can act on this week. Earns a look when you're setting strategy, not fixing leaks.
-- **Log-file analysis.** Skipped because it's a deep technical dive with a specialist's setup cost. Earns a look when you suspect crawl-budget waste that GSC's reports can't confirm — a **technical SEO audit**<!-- relink: /technical/audit/ --> escalation.
+- **Log-file analysis.** Skipped because it's a deep technical dive with a specialist's setup cost. Earns a look when you suspect crawl-budget waste that GSC's reports can't confirm — a **[technical SEO audit](/technical/audit/)** escalation.
 
 If you're deciding where all of this sits in the bigger sequence — search, generative visibility, or conversion first — that's the [SEO vs GEO vs CRO](/strategy/seo-vs-geo-vs-cro/) question. The audit tells you which one your site is bleeding from. That's its whole job, and it's enough.
 
@@ -265,11 +265,11 @@ Three: Google Search Console, GA4 (or your analytics), and a browser. Plus the f
 
 ### How is this different from a technical SEO audit?
 
-Scope. A **technical SEO audit**<!-- relink: /technical/audit/ --> goes deep on crawlability, rendering, and indexation — one discipline. This audit is a fast triage across visibility, content, technical health, and conversion, ending in a ranked fix list. It tells you whether you even need the deep technical dive.
+Scope. A **[technical SEO audit](/technical/audit/)** goes deep on crawlability, rendering, and indexation — one discipline. This audit is a fast triage across visibility, content, technical health, and conversion, ending in a ranked fix list. It tells you whether you even need the deep technical dive.
 
 ### Do I need to check backlinks?
 
-**No**, not in the 90 minutes. Backlinks and brand mentions matter, but a link profile pull needs a paid tool and doesn't change your top-ten fix list this quarter. When off-site mentions become the bottleneck, that's a **digital PR**<!-- relink: /distribution/digital-pr/ --> job, not an audit line item.
+**No**, not in the 90 minutes. Backlinks and brand mentions matter, but a link profile pull needs a paid tool and doesn't change your top-ten fix list this quarter. When off-site mentions become the bottleneck, that's a **[digital PR](/distribution/digital-pr/)** job, not an audit line item.
 
 ---
 

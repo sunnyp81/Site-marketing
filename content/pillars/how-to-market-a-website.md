@@ -83,7 +83,7 @@ There are six numbers. Not twelve, not a 40-tab dashboard. Six.
 
 Two of these deserve a word each.
 
-**AI referrals** are undercounted everywhere, because a chunk of AI-driven visits arrive with no referrer at all — someone reads an answer, then types your brand into a browser. The referrer report is your floor, not your total. How to see past the floor: **Tracking AI Traffic: Referrers, Prompt-Level Visibility and Dark AI Traffic**<!-- relink: /measurement/ai-traffic/ -->.
+**AI referrals** are undercounted everywhere, because a chunk of AI-driven visits arrive with no referrer at all — someone reads an answer, then types your brand into a browser. The referrer report is your floor, not your total. How to see past the floor: **[Tracking AI Traffic: Referrers, Prompt-Level Visibility and Dark AI Traffic](/measurement/ai-traffic/)**.
 
 **Revenue per visit** is the one to defend in meetings. Clicks lie. Rankings flatter. Revenue per visit tells you whether the site is getting better at its actual job. If you only track one number, track that one.
 
@@ -98,7 +98,7 @@ Most sites have no idea whether AI engines mention them. Here's a free way to fi
 
 In our own audits across 50 established sites, the median citation share before any GEO work was 8%. Eight per cent. Most owners assumed it was zero, and a few assumed it was much higher. Both were wrong, which is exactly why you measure instead of guess. That pilot is now being scaled into a larger, repeatable benchmark — 200+ sites, four engines, refreshed quarterly — and the full methodology publishes with wave 1: **The Citation-Share Study**<!-- relink: /research/citation-share-study/ -->.
 
-Do this once now, then again every quarter. It's the single cheapest visibility signal you can collect, and almost nobody collects it. When you're ready to automate it: **AI Citation Monitoring: Tools and a DIY Method**<!-- relink: /measurement/citation-monitoring/ -->.
+Do this once now, then again every quarter. It's the single cheapest visibility signal you can collect, and almost nobody collects it. When you're ready to automate it: **[AI Citation Monitoring: Tools and a DIY Method](/measurement/citation-monitoring/)**.
 
 ### The 90-minute website marketing audit
 
@@ -120,7 +120,7 @@ Most technical SEO advice is trivia. Focus on the three problems that actually c
 - **Rendering failures** — If your content only appears after JavaScript runs, some crawlers and most LLM retrievers won't see it. Put your important content in the initial HTML. What isn't in the source doesn't exist.
 - **Bot access misconfiguration** — In 2026 this includes AI crawlers. Decide your policy on GPTBot, ClaudeBot, PerplexityBot, and Google-Extended deliberately. Blocking them by accident (or by a default in your CDN) means you're invisible to the engines you're trying to win. Manage it with a clear `llms.txt` and robots policy.
 
-Skip the rest. Nobody was ever out-ranked because their canonical tags weren't quite perfect on a page with no traffic. Full detail: **Technical SEO Audit for Marketers: What Actually Moves Rankings**<!-- relink: /technical/audit/ -->.
+Skip the rest. Nobody was ever out-ranked because their canonical tags weren't quite perfect on a page with no traffic. Full detail: **[Technical SEO Audit for Marketers: What Actually Moves Rankings](/technical/audit/)**.
 
 ### Conversion leaks: the five pages that lose the most money
 
@@ -134,7 +134,7 @@ Five pages leak the most revenue on almost every site. Check them in this order:
 
 Speed scores are a hobby. Revenue-weighted fixes are a job. Rank every fix by the money it touches, not by your Lighthouse number. A 40-to-95 speed jump on a blog post is a nice screenshot and nothing else. Two seconds off your checkout is a raise.
 
-Where the money leaks and how to find it: **CRO Audit: Finding the Money Leaks on an Existing Website**<!-- relink: /conversion/audit/ -->.
+Where the money leaks and how to find it: **[CRO Audit: Finding the Money Leaks on an Existing Website](/conversion/audit/)**.
 
 ### Q&A: Should you fix technical SEO before doing CRO?
 
@@ -167,7 +167,7 @@ Every page on your site gets one of four verdicts. No page gets "ignore it forev
 | **Refresh** | Page ranks or converts but has slipped or gone stale | Update substantially: new data, better answers, current examples. |
 | **Leave alone** | Page performs well and isn't decaying | Nothing. Not every page needs your attention this quarter. |
 
-I've deleted 400 pages from a site and watched traffic go up. Clients love that conversation, right up until they see the graph. Fewer, stronger pages beat a big pile of thin ones, for Google and for LLMs both, because retrieval favours pages that clearly own an answer. Start here: **Content Audit for Live Sites: Prune, Merge, Refresh or Leave Alone**<!-- relink: /content/audit/ -->.
+I've deleted 400 pages from a site and watched traffic go up. Clients love that conversation, right up until they see the graph. Fewer, stronger pages beat a big pile of thin ones, for Google and for LLMs both, because retrieval favours pages that clearly own an answer. Start here: **[Content Audit for Live Sites: Prune, Merge, Refresh or Leave Alone](/content/audit/)**.
 
 ### Build topical authority from what you already rank for
 
@@ -185,7 +185,7 @@ Three things LLMs can't manufacture:
 - **Named positions** — A clear stance, stated with certainty. "Speed scores are a hobby" is a position. "Site speed can be important" is filler.
 - **First-person experience** — What actually happened when you did the thing. The 400 deleted pages. The clients who went pale at the graph.
 
-Everything else is paraphrasable, which means it's replaceable. Make pages that aren't: **Information Gain: Making Pages LLMs Can't Paraphrase Away**<!-- relink: /content/information-gain/ -->.
+Everything else is paraphrasable, which means it's replaceable. Make pages that aren't: **[Information Gain: Making Pages LLMs Can't Paraphrase Away](/content/information-gain/)**.
 
 ### One visibility discipline: what SEO and GEO share, and the 20% that differs
 
@@ -215,7 +215,7 @@ Digital PR in 2026 is about getting mentioned in the sources answer engines actu
 
 **Ahrefs found that the number of times a brand is mentioned across the web correlated more strongly with its appearance in AI answers than almost any other factor** ([Ahrefs, 2025](https://ahrefs.com/blog/ai-overview-brand-correlation/)). Mentions are the currency.
 
-And the best PR asset you own is the original data from Step 3. Journalists don't cover your product update. They cover "median site appears in 8% of AI answers" — a number nobody else has. Run a study, publish the numbers, pitch the finding. One dataset earns mentions for a year — which is exactly what **The Citation-Share Study**<!-- relink: /research/citation-share-study/ --> is built to do. How to turn it into coverage: **Digital PR for Citations: Getting Mentioned Where LLMs Are Listening**<!-- relink: /distribution/digital-pr/ -->.
+And the best PR asset you own is the original data from Step 3. Journalists don't cover your product update. They cover "median site appears in 8% of AI answers" — a number nobody else has. Run a study, publish the numbers, pitch the finding. One dataset earns mentions for a year — which is exactly what **The Citation-Share Study**<!-- relink: /research/citation-share-study/ --> is built to do. How to turn it into coverage: **[Digital PR for Citations: Getting Mentioned Where LLMs Are Listening](/distribution/digital-pr/)**.
 
 ### Email: the only channel an answer engine can't intercept
 

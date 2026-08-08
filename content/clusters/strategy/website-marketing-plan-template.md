@@ -92,7 +92,7 @@ The unglamorous quarter, and the one that makes every other quarter work. You me
 
 - **Weeks 1-2:** Run the **[90-minute website marketing audit](/strategy/audit/)** and record your 6 baseline numbers: organic clicks, AI referrals, citation share, conversion rate, indexed-vs-valuable pages, revenue per visit.
 - **Weeks 2-3:** Run the 20-prompt citation audit across ChatGPT, Perplexity, and Gemini. Log whether you're mentioned, cited with a link, and who got cited instead. That's your citation-share baseline. If you've never measured, assume you're near the crowd: the median site in our **50-site citation-share pilot**<!-- relink: /research/citation-share-study/ --> appeared in just 8% of relevant AI answers.
-- **Weeks 4-13:** Work the fix list, capped at 12 items, 5 money pages first (homepage, pricing, top landing page, forms, checkout/signup). Put out fires first (anything blocking crawl, render, or indexing), then plug conversion leaks. Full method: **CRO Audit**<!-- relink: /conversion/audit/ -->.
+- **Weeks 4-13:** Work the fix list, capped at 12 items, 5 money pages first (homepage, pricing, top landing page, forms, checkout/signup). Put out fires first (anything blocking crawl, render, or indexing), then plug conversion leaks. Full method: **[CRO Audit](/conversion/audit/)**.
 
 **Exit gate (see the master table row Q1):** 6 numbers recorded, citation share known, zero crawl/render/index fires, top-3 landing pages leak-free. If you're still in Fix at the end of Q2, invoke the hard cap.
 
@@ -111,7 +111,7 @@ Now the site holds water, so make it worth citing. Q2 is content, and it starts 
 
 **The work, week by week:**
 
-- **Weeks 14-17:** Build a full content inventory and give every page one of four verdicts: prune, merge, refresh, or leave alone. No page gets "ignore forever." Method: **Content Audit for Live Sites**<!-- relink: /content/audit/ -->.
+- **Weeks 14-17:** Build a full content inventory and give every page one of four verdicts: prune, merge, refresh, or leave alone. No page gets "ignore forever." Method: **[Content Audit for Live Sites](/content/audit/)**.
 - **Weeks 18-23:** Work through the verdicts. Prune the dead weight, merge the cannibals, and refresh your 10 highest-value pages by at least 15% substantive change each (the 15% rule: if you're not changing 15%, you're tidying, not refreshing).
 - **Weeks 24-26:** Draft one original-data asset (your numbers, your study, your benchmark) and do the entity and GEO groundwork so the strengthened pages are actually retrievable. Detail: **[GEO for Established Websites](/visibility/geo/)**.
 
@@ -133,7 +133,7 @@ The site holds water and it's worth citing. Now, and only now, you amplify. Ever
 
 **The work, week by week:**
 
-- **Weeks 27-31:** Digital PR on the Q2 data asset. Journalists don't cover your product update; they cover a number nobody else has. Pitch the finding. Method: **Digital PR for Citations**<!-- relink: /distribution/digital-pr/ -->.
+- **Weeks 27-31:** Digital PR on the Q2 data asset. Journalists don't cover your product update; they cover a number nobody else has. Pitch the finding. Method: **[Digital PR for Citations](/distribution/digital-pr/)**.
 - **Weeks 32-36:** Repurpose the asset across placements (newsletter, LinkedIn, short video, community answers) and grow the email list from your best content, not a homepage popup.
 - **Weeks 37-39:** Paid, but only behind the ticked checkbox: retargeting warm traffic and scaling a funnel you've proven converts. How much where: **[Website Marketing Budget](/strategy/budget/)**.
 
@@ -154,7 +154,7 @@ The quarter everyone skips, which is why everyone re-runs the same broken plan n
 **The work, week by week:**
 
 - **Weeks 40-43:** Re-run the same 20 prompts across the same three engines. Same prompts, so the comparison is honest.
-- **Weeks 44-47:** Re-baseline the 6 metrics and write a delta report: what moved, what didn't, what it cost. Track the AI side properly with **tracking AI traffic**<!-- relink: /measurement/ai-traffic/ -->.
+- **Weeks 44-47:** Re-baseline the 6 metrics and write a delta report: what moved, what didn't, what it cost. Track the AI side properly with **[tracking AI traffic](/measurement/ai-traffic/)**.
 - **Weeks 48-52:** Fill in next year's Q1. It's usually shorter, because you fixed the big leaks this cycle. If you're deciding where next year's effort goes, **[SEO vs GEO vs CRO](/strategy/seo-vs-geo-vs-cro/)** is the call to make now.
 
 **Exit gate (master table row Q4):** delta report written vs Q1 baseline, next-cycle plan filled in.

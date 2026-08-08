@@ -19,4 +19,4 @@ Under 10,000 URLs, classic crawl budget is a hobby worry. Google will happily cr
 **A: No, if you're under ~10,000 URLs — worry about AI-bot access instead.** At that scale Google crawls you fine. The failure that actually costs you citations is a `robots.txt` or firewall rule blocking AI crawlers, so audit bot access first and leave classic crawl-budget tuning to sites with six-figure URL counts.
 
 **Related:** [Topical authority](/glossary/topical-authority/) · [Dark AI traffic](/glossary/dark-ai-traffic/)
-**Read up:** [How to Market a Website in 2026 — Step 2: Fix](/how-to-market-a-website/) · **Technical Foundation**<!-- relink: /technical/ --> <!-- pillar + section ROOT are LIVE day one. Deep parents /technical/bots/ (llms.txt & AI crawlers) and /technical/audit/ are [PHASE-2] — Section 4 not in the day-one batch; wire when it ships. -->
+**Read up:** [How to Market a Website in 2026 — Step 2: Fix](/how-to-market-a-website/) · **[Technical SEO Audit](/technical/audit/)** · **[Technical Foundation](/technical/)** <!-- /technical/llms-txt/ (llms.txt & AI crawlers) is still unwritten — wire when it ships. -->

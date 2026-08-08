@@ -28,4 +28,4 @@ One prompt fans out into 5–10 sub-queries you never see. The engine writes its
 Six retrievals, one answer. Own six chunks and you're in it six ways.
 
 **Related:** [AEO](/glossary/aeo/) · [GEO](/glossary/geo/)
-**Read up:** [Query Fan-Out for Existing Sites](/glossary/query-fan-out/) · **How AI Answer Engines Choose Citations**<!-- relink: /visibility/citations/ --> · **Information Gain**<!-- relink: /content/information-gain/ --> <!-- all LIVE day one; slugs [PROVISIONAL] -->
+**Read up:** [Query Fan-Out for Existing Sites](/glossary/query-fan-out/) · **[How AI Answer Engines Choose Citations](/visibility/citations/)** · **[Information Gain](/content/information-gain/)**

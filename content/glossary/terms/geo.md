@@ -22,4 +22,4 @@ GEO shares about 80% of its inputs with SEO. Crawlable pages, clear structure, r
 | Topical coverage and depth | Optimising to be cited, not clicked | A "ChatGPT rankings" dashboard with no method |
 
 **Related:** [AEO](/glossary/aeo/) · [Query fan-out](/glossary/query-fan-out/)
-**Read up:** [GEO for Established Websites](/visibility/geo/) · [How to Market a Website in 2026](/how-to-market-a-website/) <!-- both LIVE day one. Plan's third link, /measurement/ai-traffic/, is [PHASE-2] — wire when Section 7 ships. -->
+**Read up:** [GEO for Established Websites](/visibility/geo/) · [How to Market a Website in 2026](/how-to-market-a-website/) · **[Tracking AI Traffic](/measurement/ai-traffic/)**

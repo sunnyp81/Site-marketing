@@ -19,4 +19,4 @@ AEO is a formatting discipline, not a channel. Nobody staffs a separate AEO team
 **A: No at the strategy level, yes at the page level.** GEO decides what earns a citation — the topical coverage, the entity strength, the original data. AEO formats the chunk that gets extracted once you've earned the look. Same goal, different altitude: one is what you say, the other is how you shape it so it lifts cleanly.
 
 **Related:** [GEO](/glossary/geo/) · [Query fan-out](/glossary/query-fan-out/)
-**Read up:** **How AI Answer Engines Choose Citations**<!-- relink: /visibility/citations/ --> · [GEO for Established Websites](/visibility/geo/) · [How to Market a Website in 2026](/how-to-market-a-website/) <!-- all LIVE day one; /visibility/citations/ [PROVISIONAL slug] -->
+**Read up:** **[How AI Answer Engines Choose Citations](/visibility/citations/)** · [GEO for Established Websites](/visibility/geo/) · [How to Market a Website in 2026](/how-to-market-a-website/)

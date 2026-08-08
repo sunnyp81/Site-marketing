@@ -52,6 +52,14 @@ const CONTENT_PROBES = {
   'glossary/query-fan-out': 'query fan-out',
   'glossary/crawl-budget': 'crawl budget',
   'glossary/dark-ai-traffic': 'dark AI traffic',
+  'technical/audit': 'audit for marketers checks five things',
+  'content/audit': 'each one assigned exactly one verdict',
+  'conversion/audit': 'an instrumented review of an existing site',
+  'measurement/ai-traffic': 'means separating three different signals',
+  'measurement/citation-monitoring': 'percentage of relevant AI answers that cite',
+  'distribution/digital-pr': 'the practice of earning mentions in publications',
+  'content/information-gain': 'original data, a defended position',
+  'visibility/citations': 'picks its citations in five steps',
 };
 
 // Article routes must ship zero JS.
@@ -68,7 +76,19 @@ const ARTICLE_ROUTE_PATTERNS = [
 ];
 
 // Routes whose source declares `faqs:` — these must ship a FAQPage block (ADR §6).
-const FAQ_ROUTES = new Set(['strategy/audit', 'strategy/budget', 'strategy/seo-vs-geo-vs-cro']);
+const FAQ_ROUTES = new Set([
+  'strategy/audit',
+  'strategy/budget',
+  'strategy/seo-vs-geo-vs-cro',
+  'technical/audit',
+  'content/audit',
+  'conversion/audit',
+  'measurement/ai-traffic',
+  'measurement/citation-monitoring',
+  'distribution/digital-pr',
+  'content/information-gain',
+  'visibility/citations',
+]);
 
 async function walk(dir, filter = () => true) {
   const out = [];

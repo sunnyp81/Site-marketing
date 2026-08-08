@@ -111,7 +111,7 @@ Read the middle two columns. Twelve rows say Yes and Yes. That's not a coinciden
 
 Counting along? This page says the GEO-specific 20% is five inputs, and the table shows three GEO-weighted rows. Both are true. Two of the five — citation-worthiness and off-site mentions — live inside rows you're already paying for: topical depth and digital PR. GEO changes what that work aims at, not what it costs. Only three rows are genuinely new emphasis, and none of them is a new team.
 
-This is exactly the "where to invest" question, and it has its own page: [SEO vs GEO vs CRO: Where to Invest First](/strategy/seo-vs-geo-vs-cro/). The shared-input rows also live in your **technical audit**<!-- relink: /technical/audit/ --> — because that's where they already were.
+This is exactly the "where to invest" question, and it has its own page: [SEO vs GEO vs CRO: Where to Invest First](/strategy/seo-vs-geo-vs-cro/). The shared-input rows also live in your **[technical audit](/technical/audit/)** — because that's where they already were.
 
 ---
 
@@ -138,7 +138,7 @@ The mechanism, query to citation, is the same shape across all of them:
 4. It selects the chunks that answer each one most cleanly.
 5. It composes an answer and cites the chunks it used.
 
-Notice step four. It selects *chunks*, not pages. That's the whole reason chunk self-containment is a GEO input and not an SEO one. The full mechanics live here: **How AI Answer Engines Choose Citations**<!-- relink: /visibility/citations/ -->.
+Notice step four. It selects *chunks*, not pages. That's the whole reason chunk self-containment is a GEO input and not an SEO one. The full mechanics live here: **[How AI Answer Engines Choose Citations](/visibility/citations/)**.
 
 ---
 
@@ -181,7 +181,7 @@ Keep the prompt log — it's the asset. A simple sheet with columns for prompt, 
 
 Here's what the log tells you that a score never will. Say you run 20 prompts and land at 10% citation share. The score says "low." The log says which specific prompts you lose and to whom — and nine times out of ten there's a pattern. Maybe you win informational queries and lose every comparison ("X vs Y"), which means you have no comparison pages. Maybe one competitor owns every answer, which means they published data you didn't. The number tells you that you have a problem. The log tells you which page to write on Monday.
 
-Do it once now, then every quarter. When you're ready to stop doing it by hand: **AI Citation Monitoring: Tools and a DIY Method**<!-- relink: /measurement/citation-monitoring/ -->. And to catch the AI-driven visits already hiding in your analytics: **Tracking AI Traffic**<!-- relink: /measurement/ai-traffic/ -->.
+Do it once now, then every quarter. When you're ready to stop doing it by hand: **[AI Citation Monitoring: Tools and a DIY Method](/measurement/citation-monitoring/)**. And to catch the AI-driven visits already hiding in your analytics: **[Tracking AI Traffic](/measurement/ai-traffic/)**.
 
 ---
 
@@ -279,13 +279,13 @@ The tactic: add the AI user-agent check to your regular technical audit so a "pr
 
 **Publish something the model can't already generate from everything else it's read. Original data, a named position, first-hand experience. If your page only restates the consensus, the engine paraphrases it and cites someone with an actual point of view.**
 
-The tactic: put at least one original data point or stated position on every important page. Our 8% median citation figure is an example — nobody else has that number, so anyone who wants it has to cite us. That's the durable moat: **Information Gain: Making Pages LLMs Can't Paraphrase Away**<!-- relink: /content/information-gain/ -->.
+The tactic: put at least one original data point or stated position on every important page. Our 8% median citation figure is an example — nobody else has that number, so anyone who wants it has to cite us. That's the durable moat: **[Information Gain: Making Pages LLMs Can't Paraphrase Away](/content/information-gain/)**.
 
 ### <a id="h3-off-site-mention-footprint"></a>Off-site mention footprint
 
 **Get named across the sources the models read. For AI visibility, being mentioned matters more than being linked. The engines learn who's credible from how often the wider web talks about you, with or without a hyperlink.**
 
-The tactic: pitch your original data to publications and roundups your buyers already read. **Ahrefs found that the number of times a brand is mentioned across the web correlated more strongly with its appearance in AI answers than almost any other factor** ([Ahrefs, 2025](https://ahrefs.com/blog/ai-overview-brand-correlation/)). Mentions are the currency. How to earn them: **Digital PR for Citations**<!-- relink: /distribution/digital-pr/ --> and **Brand Mentions vs Backlinks: Which Moves AI Visibility More**<!-- relink: /distribution/mentions-vs-backlinks/ -->.
+The tactic: pitch your original data to publications and roundups your buyers already read. **Ahrefs found that the number of times a brand is mentioned across the web correlated more strongly with its appearance in AI answers than almost any other factor** ([Ahrefs, 2025](https://ahrefs.com/blog/ai-overview-brand-correlation/)). Mentions are the currency. How to earn them: **[Digital PR for Citations](/distribution/digital-pr/)** and **Brand Mentions vs Backlinks: Which Moves AI Visibility More**<!-- relink: /distribution/mentions-vs-backlinks/ -->.
 
 Quick decision checklist before you call this done:
 
