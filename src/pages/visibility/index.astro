@@ -1,10 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { pillarPath } from '../../lib/urls';
+import { pillarPath, clusterPath } from '../../lib/urls';
 
 const entries = (await getCollection('pillars', ({ data }) => !data.draft && data.section === 'visibility'))
   .sort((a, b) => b.data.dateModified.valueOf() - a.data.dateModified.valueOf());
+
+const clusters = (await getCollection('visibility', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 <BaseLayout
   title="Search Visibility — getting found by search and AI engines"
@@ -26,4 +29,19 @@ const entries = (await getCollection('pillars', ({ data }) => !data.draft && dat
       </li>
     ))}
   </ul>
+
+  <h2>Cluster pages</h2>
+  {clusters.length === 0 ? (
+    <p>Nothing published in this section yet beyond the pillar above.</p>
+  ) : (
+    <ul>
+      {clusters.map((e) => (
+        <li>
+          <a href={clusterPath('visibility', e)}><strong>{e.data.title}</strong></a>
+          <br />
+          <span class="meta">{e.data.description}</span>
+        </li>
+      ))}
+    </ul>
+  )}
 </BaseLayout>

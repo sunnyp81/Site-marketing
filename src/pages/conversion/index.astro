@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { clusterPath } from '../../lib/urls';
+
+const entries = (await getCollection('conversion', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+<BaseLayout
+  title="Conversion & Revenue — traffic you already have"
+  description="Turning the traffic you already have into money: testing, messaging, forms, pricing pages and friction removal on an existing site."
+  path="/conversion/"
+>
+  <h1>Conversion &amp; Revenue</h1>
+  <p class="meta">Turning the visits you've already paid for into revenue.</p>
+
+  <p>The cheapest traffic you'll ever get is the traffic already arriving. Amplifying a leaky site is paying to lose faster, so the leaks go first: homepage, pricing, top landing page, forms, checkout. Five pages, most of the money.</p>
+
+  <h2>Start here</h2>
+  <ul>
+    <li><a href="/how-to-market-a-website/"><strong>How to Market a Website in 2026: The Existing-Site Playbook</strong></a> — the parent playbook. This section is step 2, fix.</li>
+  </ul>
+
+  <h2>Cluster pages</h2>
+  {entries.length === 0 ? (
+    <p>Nothing published in this section yet. The <a href="/how-to-market-a-website/">playbook</a> carries the short version until it lands.</p>
+  ) : (
+    <ul>
+      {entries.map((e) => (
+        <li>
+          <a href={clusterPath('conversion', e)}><strong>{e.data.title}</strong></a>
+          <br />
+          <span class="meta">{e.data.description}</span>
+        </li>
+      ))}
+    </ul>
+  )}
+</BaseLayout>

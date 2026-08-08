@@ -1,0 +1,27 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { clusterSlug } from '../../lib/urls';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('technical', ({ data }) => !data.draft);
+  return entries.map((entry) => ({
+    params: { slug: clusterSlug(entry) },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  datePublished={entry.data.datePublished}
+  dateModified={entry.data.dateModified}
+  path={`/technical/${clusterSlug(entry)}/`}
+  faqs={entry.data.faqs}
+  articleSchema
+>
+  <Content />
+</BaseLayout>

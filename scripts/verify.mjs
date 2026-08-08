@@ -57,8 +57,13 @@ const CONTENT_PROBES = {
 // Article routes must ship zero JS.
 const ARTICLE_ROUTE_PATTERNS = [
   /^how-to-market-a-website\//,
-  /^visibility\/geo\//,
   /^strategy\/[^/]+\//,
+  /^visibility\/[^/]+\//,
+  /^content\/[^/]+\//,
+  /^technical\/[^/]+\//,
+  /^conversion\/[^/]+\//,
+  /^distribution\/[^/]+\//,
+  /^measurement\/[^/]+\//,
   /^glossary\/[^/]+\//,
 ];
 

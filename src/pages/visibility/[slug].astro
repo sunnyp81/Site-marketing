@@ -1,0 +1,30 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { clusterSlug } from '../../lib/urls';
+
+// Cluster pages only. The /visibility/geo/ pillar keeps its own route via
+// src/pages/[...slug].astro — a rest route, which Astro ranks below this one,
+// so the two never contend for the same path.
+export async function getStaticPaths() {
+  const entries = await getCollection('visibility', ({ data }) => !data.draft);
+  return entries.map((entry) => ({
+    params: { slug: clusterSlug(entry) },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  datePublished={entry.data.datePublished}
+  dateModified={entry.data.dateModified}
+  path={`/visibility/${clusterSlug(entry)}/`}
+  faqs={entry.data.faqs}
+  articleSchema
+>
+  <Content />
+</BaseLayout>

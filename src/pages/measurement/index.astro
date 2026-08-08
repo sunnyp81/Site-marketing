@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { clusterPath } from '../../lib/urls';
+
+const entries = (await getCollection('measurement', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+<BaseLayout
+  title="Measurement & Attribution — proving what worked"
+  description="Proving what worked when clicks are vanishing: AI-referral tracking, citation monitoring, blended attribution and reporting that survives a CFO."
+  path="/measurement/"
+>
+  <h1>Measurement &amp; Attribution</h1>
+  <p class="meta">Proving what worked when a growing share of the answer never becomes a click.</p>
+
+  <p>Measurement is the first move, not the report you write at the end. You can't fix what you haven't baselined, and "we think it's working" has never once survived a budget review. Baseline first, then earn the right to change something.</p>
+
+  <h2>Start here</h2>
+  <ul>
+    <li><a href="/how-to-market-a-website/"><strong>How to Market a Website in 2026: The Existing-Site Playbook</strong></a> — the parent playbook. This section is step 1, measure.</li>
+  </ul>
+
+  <h2>Cluster pages</h2>
+  {entries.length === 0 ? (
+    <p>Nothing published in this section yet. The <a href="/how-to-market-a-website/">playbook</a> carries the short version until it lands.</p>
+  ) : (
+    <ul>
+      {entries.map((e) => (
+        <li>
+          <a href={clusterPath('measurement', e)}><strong>{e.data.title}</strong></a>
+          <br />
+          <span class="meta">{e.data.description}</span>
+        </li>
+      ))}
+    </ul>
+  )}
+</BaseLayout>

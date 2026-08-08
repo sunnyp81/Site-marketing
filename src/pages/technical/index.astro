@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { clusterPath } from '../../lib/urls';
+
+const entries = (await getCollection('technical', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+<BaseLayout
+  title="Technical Foundation — crawl, render, speed, schema"
+  description="Crawlability, rendering, speed, schema and llms.txt-era machine-readability: lowering the cost of retrieval for bots and LLMs alike."
+  path="/technical/"
+>
+  <h1>Technical Foundation</h1>
+  <p class="meta">Lowering the cost of retrieval — for Googlebot, for GPTBot, and for the person reading on a train.</p>
+
+  <p>Technical work is the <em>fix</em> move, and it's the one most often done for its own sake. Nobody ever bought anything because your LCP went green. Plenty of people left because it didn't. Rank the fixes by money, not by Lighthouse score.</p>
+
+  <h2>Start here</h2>
+  <ul>
+    <li><a href="/how-to-market-a-website/"><strong>How to Market a Website in 2026: The Existing-Site Playbook</strong></a> — the parent playbook. This section is step 2, fix.</li>
+  </ul>
+
+  <h2>Cluster pages</h2>
+  {entries.length === 0 ? (
+    <p>Nothing published in this section yet. The <a href="/how-to-market-a-website/">playbook</a> carries the short version until it lands.</p>
+  ) : (
+    <ul>
+      {entries.map((e) => (
+        <li>
+          <a href={clusterPath('technical', e)}><strong>{e.data.title}</strong></a>
+          <br />
+          <span class="meta">{e.data.description}</span>
+        </li>
+      ))}
+    </ul>
+  )}
+</BaseLayout>

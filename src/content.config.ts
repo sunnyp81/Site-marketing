@@ -25,6 +25,38 @@ const strategy = defineCollection({
   schema: articleSchema,
 });
 
+// Core-section cluster collections. One per topical-map core section; each one
+// reuses articleSchema and resolves its route from frontmatter `slug`.
+const visibility = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './content/clusters/visibility' }),
+  schema: articleSchema,
+});
+
+const contentOps = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './content/clusters/content-ops' }),
+  schema: articleSchema,
+});
+
+const technical = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './content/clusters/technical' }),
+  schema: articleSchema,
+});
+
+const conversion = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './content/clusters/conversion' }),
+  schema: articleSchema,
+});
+
+const distribution = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './content/clusters/distribution' }),
+  schema: articleSchema,
+});
+
+const measurement = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './content/clusters/measurement' }),
+  schema: articleSchema,
+});
+
 const glossary = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './content/glossary/terms' }),
   schema: z.object({
@@ -38,4 +70,14 @@ const glossary = defineCollection({
   }),
 });
 
-export const collections = { pillars, strategy, glossary };
+export const collections = {
+  pillars,
+  strategy,
+  visibility,
+  contentOps,
+  technical,
+  conversion,
+  distribution,
+  measurement,
+  glossary,
+};
